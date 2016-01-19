@@ -5,8 +5,8 @@ import {expect} from 'chai';
 
 import setup_fake_dom from './setup_fake_dom';
 
-var TestUtils = require('react-addons-test-utils');
-var assert = require('assert');
+let TestUtils = require('react-addons-test-utils');
+let assert = require('assert');
 
 import {LoginForm} from '../../components/LoginForm';
 
@@ -15,7 +15,7 @@ import {LoginForm} from '../../components/LoginForm';
 //
 // See https://github.com/jhnns/rewire-webpack/issues/12#issuecomment-95797024
 // for an explanation
-var rewire = require('rewire');
+let rewire = require('rewire');
 
 describe('LoginForm', () => {
   it('should render', () => {
