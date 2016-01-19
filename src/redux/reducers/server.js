@@ -50,8 +50,7 @@ export const server = (state = initialState, action) => {
 
 		case RESET_ERROR:
 			return Object.assign({}, state, {
-				serverError: null,
-				userError: null
+				serverError: null
 			})
 
 		default:
