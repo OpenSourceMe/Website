@@ -40,14 +40,7 @@ export const NumbBox = React.createClass({
 	propTypes: {
 	    numb: React.PropTypes.number.isRequired
 	  },
-
-	//state is used, as changes in this component are not sent to redux store via actions. rather they are just stored internally
-	//as the data doesn't need to be elsewhere.
-	getInitialState() {
-		return {
-			buttonStyle: "default"
-		}
-	},
+	  
 	onNumbClick() {
 		const newColour = changeButtonColour(this.props.colour)
 		this.props.actions.changeNumbColour(this.props.index, newColour)
