@@ -1,10 +1,7 @@
 import {expect} from 'chai'
 
-import { paragraphs } from '../../redux/paragraphsReducer'
-import { hints } from '../../redux/hintsReducer'
-
 import mockStore from '../mocks/store'
-import * as actions from '../../redux/actions'
+import * as actions from '../../src/redux/actions/actions'
 
 describe('asynchronous ACs', () => {
 

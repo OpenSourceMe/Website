@@ -53,7 +53,9 @@ The Redux part consists of the files found in the "src/redux" folder.
 
 Redux specifies "state" logic for the app (what data is stored in the app). This is a useful abstraction because rather than worrying about a bunch of seperate interconnecting states of objects, all required state is stored in the "store" (which can be easily viewed with the Redux debug tools chrome extension).
 
+## Notes
 
+Running test suite does not work. Sorry.
 
 
 

@@ -1,7 +1,7 @@
 import {expect} from 'chai'
 
-import {server} from '../../redux/serverReducer'
-import * as actionTypes from '../../redux/actions'
+import {server} from '../../src/redux/reducers/server'
+import * as actionTypes from '../../src/redux/actions/actions'
 
 describe('server error ACs', () => {
 
