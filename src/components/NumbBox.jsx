@@ -49,12 +49,12 @@ export const NumbBox = React.createClass({
 		}
 	},
 	onNumbClick() {
-		this.setState({buttonStyle: changeButtonColour(this.state.buttonStyle)})
-		
+		const newColour = changeButtonColour(this.props.colour)
+		this.props.actions.changeNumbColour(this.props.index, newColour)
 	},
 	render() {
 		return (
-			<button className={"btn btn-sm btn-" + this.state.buttonStyle} onClick={this.onNumbClick}>
+			<button className={"btn btn-sm btn-" + this.props.colour} onClick={this.onNumbClick}>
 				{this.props.numb}
 				<br />
 			</button>

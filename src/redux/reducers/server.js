@@ -5,7 +5,7 @@ import {
 	LOGIN_ERROR,
 	RESET_ERROR,
 	RESET_STATUS
-} from './actions'
+} from '../actions/actions'
 
 let initialState = {
 	status: 0,

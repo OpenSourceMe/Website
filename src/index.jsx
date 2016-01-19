@@ -1,4 +1,4 @@
-require("./node_modules/bootstrap/dist/css/bootstrap.min.css")
+require("../node_modules/bootstrap/dist/css/bootstrap.min.css")
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Map} from 'immutable';
@@ -8,7 +8,7 @@ import {Provider} from 'react-redux'
 import {configureStore} from './redux/store'
 import {connect} from 'react-redux'
 import { bindActionCreators } from 'redux'
-import * as allActions from './redux/actions'
+import * as allActions from './redux/actions/actions'
 
 //components
 import {NumbList} from './components/NumbList'

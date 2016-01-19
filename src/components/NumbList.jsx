@@ -9,9 +9,11 @@ export const NumbList = React.createClass({
 				<h3 style={{color: "brown"}}> Numbers </h3>
 					{Object.keys(this.props.numbs).map((index) => {
 						return <NumbBox
+							index={index}
 							key={index}
 							numb={this.props.numbs[index].number}
 							actions={this.props.actions}
+							colour={this.props.numbs[index].colour}
 						/>
 					})}
 		       <hr />

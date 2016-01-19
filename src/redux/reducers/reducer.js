@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import {numbs} from './numbsReducer'
-import {server} from './serverReducer'
+import {numbs} from './numbs'
+import {server} from './server'
 
 export const reducer = combineReducers({
 	numbs,

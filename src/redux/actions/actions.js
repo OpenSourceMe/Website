@@ -1,7 +1,7 @@
 
 import thunk from 'redux-thunk'
 import Promise from 'bluebird'
-import Backend from './backend'
+import Backend from '../backend'
 
 let theBackend = new Backend()
 
@@ -12,7 +12,17 @@ export const ADD_RAND_NUMB = 'ADD_RAND_NUMB'
 export const addRandNumb = () => {
 	return({
 		type: ADD_RAND_NUMB,
-		numb: Math.round(Math.random()*100)
+		numb: Math.round(Math.random()*100),
+		colour: "default"
+	})
+}
+
+export const CHANGE_NUMB_COLOUR = 'CHANGE_NUMB_COLOUR'
+export const changeNumbColour = (index, colour) => {
+	return ({
+		type: CHANGE_NUMB_COLOUR,
+		index: index,
+		colour: colour
 	})
 }
 
