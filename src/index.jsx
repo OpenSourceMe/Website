@@ -1,5 +1,5 @@
 require("../node_modules/bootstrap/dist/css/bootstrap.min.css")
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import {Map} from 'immutable';
 
@@ -8,21 +8,21 @@ import {Provider} from 'react-redux'
 import {configureStore} from './redux/store'
 import {connect} from 'react-redux'
 import { bindActionCreators } from 'redux'
-import * as allActions from './redux/actions/actions'
+import * as serverActions from './redux/reducers/server'
+import * as numbsActions from './redux/reducers/numbs'
 
 //components
 import {NumbList} from './components/NumbList'
 import {LoginForm} from './components/LoginForm'
 import Title from './components/Title'
 
-//actions are array for mapDispatchToProps
-const actions = [allActions];
-
 /* create container as stateless function to indicate pure component */
-export const App = React.createClass ({
-	resetError() {
+export class App extends Component {
+
+	resetError = () => {
 		this.props.actions.resetStatus(); this.props.actions.resetError()
-	},
+	};
+
 	render() {
 		return (
 			<div>
@@ -45,7 +45,7 @@ export const App = React.createClass ({
 			</div>
 		);
 	}
-})
+}
 
 /* NOTE: Add <DevTools /> in before the last div to debug with Redux Devtools */
 
@@ -54,6 +54,9 @@ function mapStateToProps(state) {
       ...state
   };
 }
+
+//actions are array for mapDispatchToProps
+const actions = [serverActions, numbsActions];
 
 function mapDispatchToProps(dispatch) {
   const creators = Map()

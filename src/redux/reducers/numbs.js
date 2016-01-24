@@ -1,11 +1,28 @@
-import {
-	ADD_RAND_NUMB,
-	CHANGE_NUMB_COLOUR
-} from '../actions/actions'
+/* synchronous actions */
+/* *************************** */
+const initialState = []
+
+export const ADD_RAND_NUMB = 'numbs/ADD_RAND_NUMB'
+export const addRandNumb = () => {
+	return({
+		type: ADD_RAND_NUMB,
+		numb: Math.round(Math.random()*100),
+		colour: "default"
+	})
+}
+
+export const CHANGE_NUMB_COLOUR = 'numbs/CHANGE_NUMB_COLOUR'
+export const changeNumbColour = (index, colour) => {
+	return ({
+		type: CHANGE_NUMB_COLOUR,
+		index: index,
+		colour: colour
+	})
+}
+
+/* *************************** */
 
 /* paragraph reducer */
-
-const initialState = []
 
 export const numbs = (state = initialState, action) => {
 	let newState = state.slice()

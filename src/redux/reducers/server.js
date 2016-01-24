@@ -1,17 +1,71 @@
-import {
-	SERVER_SUCCESS,
-	SERVER_ERROR,
-	LOGIN_SUCCESS,
-	LOGIN_ERROR,
-	RESET_ERROR,
-	RESET_STATUS
-} from '../actions/actions'
+import Backend from '../backend'
+import Promise from 'bluebird'
 
-let initialState = {
+const theBackend = new Backend();
+
+const initialState = {
 	status: 0,
 	loggedIn: false,
 	serverError: null
 }
+
+/* error actions */
+/* *************************** */
+export const SERVER_SUCCESS = 'server/SERVER_SUCCESS'
+export const serverSuccess = () => {
+	return {
+		type: SERVER_SUCCESS
+	}
+}
+
+export const SERVER_ERROR = 'server/SERVER_ERROR'
+export const serverError = (error) => {
+	return {
+		type: SERVER_ERROR,
+		error
+	}
+}
+
+export const RESET_STATUS = 'server/RESET_STATUS'
+export const resetStatus = () => {
+	return {
+		type: RESET_STATUS
+	}
+}
+
+export const RESET_ERROR = 'server/RESET_ERROR'
+export const resetError = () => {
+	return {
+		type: RESET_ERROR
+	}
+}
+
+/* *************************** */
+
+/* backend actions */
+/* *************************** */
+
+export const LOGIN_SUCCESS = 'server/LOGIN_SUCCESS'
+export const LOGIN_ERROR = 'server/LOGIN_ERROR'
+export const login = (username, password) => {
+	return dispatch => {
+		// loginToParse
+		theBackend.login(username,password).then(state => {
+			return dispatch({
+				type: LOGIN_SUCCESS,
+				state: state
+			})
+		}).catch(error => {
+			return dispatch({
+				type: LOGIN_ERROR,
+				error: error
+			})
+		})
+	}
+}
+
+
+/* ************************* */
 
 export const server = (state = initialState, action) => {
 
