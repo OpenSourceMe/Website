@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import { numbs } from './numbs';
+import { title } from './title';
 import { server } from './server';
 
 export const reducer = combineReducers({
-  numbs,
+  title,
   server,
 });

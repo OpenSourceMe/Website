@@ -11,7 +11,7 @@ import Promise from 'bluebird';
 export default class Backend {
 
   constructor() {
-    console.log('constructing instance');
+    // console.log('constructing instance');
     /* INITIALIZE*/
     // Parse.initialize(
     //  "application id",

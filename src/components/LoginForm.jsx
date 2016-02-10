@@ -27,11 +27,15 @@ export const LoginForm = React.createClass({
   },
   render() {
     return (
-        <div style={{margin: '0 auto', width: '250px' }}>
-          <input onChange={this.handleUChange} onKeyDown={this.onEnter} type='text' placeholder='Username' />
-          <input onChange={this.handlePChange} onKeyDown={this.onEnter} type='password' placeholder="Password"/>
+        <div className='text-center'>
+          <div>
+            <input onChange={this.handleUChange} onKeyDown={this.onEnter} type='text' placeholder='Username' />
+          </div>
+          <div>
+            <input onChange={this.handlePChange} onKeyDown={this.onEnter} type='password' placeholder="Password"/>
+          </div>
           <hr/>
-            {this.props.error? <div className="alert alert-danger"> Login failed. 
+            {this.props.error? <div className="alert alert-danger"> Login failed.
             <br/>
             <b>Error:&nbsp;&nbsp;</b><i>{this.props.error}</i> </div> : <div></div>}
           <div>

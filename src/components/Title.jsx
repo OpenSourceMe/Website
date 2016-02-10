@@ -1,14 +1,15 @@
 import React from 'react';
 
-const Title = React.createClass({
-	render() {
-		return (
-			    <div>
-			    <h1 className="text-center">React-Redux Boilerplate</h1>
-			    <br></br>
-			    </div>
-		)
-	}
-})
+const titleStyle = {
+  textAlign: 'center',
+};
 
-export default Title
+const Title = (props) => {
+  return (
+    <div style={titleStyle} >
+      <h3>{props.title}</h3>
+    </div>
+  );
+};
+
+export default Title;
