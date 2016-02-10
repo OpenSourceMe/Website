@@ -5,7 +5,7 @@
   "main": "''",
   "scripts": {
     "build": "webpack --progress --profile --colors",
-    "dev": "webpack-dev-server --progress --profile --colors",
+    "dev": "webpack-dev-server --progress --colors",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js  --recursive",
     "test:watch": "npm run test -- --watch",
     "lint": "eslint src"
