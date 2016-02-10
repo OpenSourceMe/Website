@@ -37,7 +37,9 @@ export class App extends Component {
               &nbsp;&nbsp;&nbsp;&nbsp;
               Error:&nbsp;&nbsp;</span> <i>{this.props.server.serverError.message}</i> </div>: <div></div>}
 
-              <NumbList actions={this.props.actions} numbs={this.props.numbs} />
+              <div className='container text-center'>
+                This is where you put the actual app.
+              </div>
             </div>
           }
       </div>

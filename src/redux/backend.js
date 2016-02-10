@@ -26,7 +26,7 @@ export default class Backend {
         resolve('success, logged in');
       } else {
         console.log('bad creds');
-        reject('username and password are incorrect. get them right.');
+        reject('username and password are "admin" & "admin". hooked up to a mock backend at the moment, see ./src/backend.js');
       }
     });
   }
