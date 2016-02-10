@@ -1,7 +1,5 @@
 # React-Redux-Boilerplate
-Boiler plate for a react redux web app.
-
-[What it looks like at a glance.](https://i.imgur.com/NgP8oL3.png)
+Boiler plate for a react redux web app, bootstrap classes available.
 
 ## install
 
@@ -10,23 +8,19 @@ git clone this repository, then build with:
 > $ npm install
 ```
 
-This will create the node_modules file with the needed dependencies.
-
-## run
-
-You can simply run webpack build using this command: 
-
-```
-> $ npm run build
-```
-
-If you want to run with webpack-dev-server simply run this command: 
+If you want to run with webpack-dev-server simply run this command:
 
 ```
 > $ npm run dev
 ```
 
 Open the web browser to `http://localhost:8080/`
+
+For building static files, run:
+
+```
+> $ npm run build
+```
 
 ## overview
 
@@ -55,7 +49,7 @@ Redux specifies "state" logic for the app (what data is stored in the app). This
 
 ## Notes
 
-Running test suite does not work. Sorry.
+Tests still to be written. Test suite runs, but haven't added any.
 
 
 
