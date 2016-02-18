@@ -7,23 +7,20 @@
 
 ******** */
 export const UPDATE_TITLE = 'title/UPDATE_TITLE';
-export const updateTitle = (title) => {
-  return({
-    type: UPDATE_TITLE,
-    title,
-  });
-};
+export const updateTitle = title => ({
+  type: UPDATE_TITLE,
+  title,
+});
 
-export const title = (state = { title: 'welcome', }, action) => {
-  switch(action.type) {
+export const title = (state = { title: 'welcome' }, action) => {
+  switch (action.type) {
 
-  case UPDATE_TITLE:
-    return {
-      title: action.title,
-    };
+    case UPDATE_TITLE:
+      return {
+        title: action.title,
+      };
 
-  default:
-    return state;
+    default:
+      return state;
   }
-
-}
+};
