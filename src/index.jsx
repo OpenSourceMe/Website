@@ -3,6 +3,10 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import {Map} from 'immutable';
 
+/* ROUTER */
+import { Router, Route, browserHistory } from 'react-router';
+import { LinkContainer } from 'react-router-bootstrap';
+
 /* REDUX */
 import {Provider} from 'react-redux';
 import {configureStore} from './redux/store';
@@ -16,32 +20,15 @@ import Title from './components/Title';
 
 /* create container as stateless function to indicate pure component */
 export class App extends Component {
-
-  resetError = () => {
-    this.props.actions.resetStatus(); this.props.actions.resetError()
-  };
-
   render() {
     return (
-      <div className='container'>
-        <Title {...this.props.title}/>
-          {!this.props.server.loggedIn
-          ? <div>
-            <LoginForm actions={this.props.actions} error={this.props.server.serverError} />
-          </div>
-          : <div>
-              {this.props.server.serverError? <div className="alert alert-danger">
-              <a className="close" onClick={this.resetError} ariaLabel="close">&times;</a>
-              <span className="glyphicon glyphicon-exclamation-sign"></span>
-              &nbsp;Something went wrong, sorry. Check your internet connection. <span style={{fontWeight: "bold"}}>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              Error:&nbsp;&nbsp;</span> <i>{this.props.server.serverError.message}</i> </div>: <div></div>}
+      <div>
+        SOMETHING <br />
+        <LinkContainer to='about'>
+          <a href='#'>ABOUT</a>
+        </LinkContainer>
 
-              <div className='container text-center'>
-                This is where you put the actual app.
-              </div>
-            </div>
-          }
+        {this.props.children}
       </div>
     );
   }
@@ -70,7 +57,11 @@ export const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App)
 
 ReactDOM.render(
   <Provider store={configureStore()}>
-    <AppContainer/>
+    <Router history={browserHistory}>
+      <Route path='/' component={AppContainer}>
+        <Route path='/about' component={Title} />
+      </Route>
+    </Router>
   </Provider>,
   document.querySelector("#app")
 );
