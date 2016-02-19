@@ -14,8 +14,10 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as serverActions from './redux/reducers/server';
 
+/* BOOTSTRAP */
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
+
 //components
-import { LoginForm } from './components/LoginForm';
 import Title from './components/Title';
 
 /* create container as stateless function to indicate pure component */
@@ -23,10 +25,26 @@ export class App extends Component {
   render() {
     return (
       <div>
-        SOMETHING <br />
-        <LinkContainer to='about'>
-          <a href='#'>ABOUT</a>
-        </LinkContainer>
+        <Navbar inverse>
+            <Navbar.Header>
+              <Navbar.Brand>
+                <LinkContainer to="/home">
+                  <a href='#'>Home</a>
+                </LinkContainer>
+              </Navbar.Brand>
+            </Navbar.Header>
+            <Nav bsStyle="tabs">
+                <LinkContainer to="/about">
+                  <NavItem href="#">About</NavItem>
+                </LinkContainer>
+                <LinkContainer to="/orders">
+                  <NavItem href="#">Orders</NavItem>
+                </LinkContainer>
+                <LinkContainer to="/settings">
+                  <NavItem href="#">Settings</NavItem>
+                </LinkContainer>
+            </Nav>
+        </Navbar>
 
         {this.props.children}
       </div>
