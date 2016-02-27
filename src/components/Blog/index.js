@@ -25,7 +25,7 @@ const styles = {
 
 const createFrag = (post, index, onFragClick) => {
   return (
-    <Frag key={index} goTo={onFragClick} title={post.title} date={post.date} />
+    <Frag key={index} onClickHandler={onFragClick} title={post.title} date={post.date} />
   );
 };
 
@@ -41,7 +41,10 @@ const Blog = React.createClass({
       <div>
         <div style={styles.center}>
           {this.props.posts.map((post, index) => {
-            return createFrag(post, index, this.props.actions.push);
+            const onFragClick = () => {
+              this.props.actions.push('blog/'+index);
+            };
+            return createFrag(post, index, onFragClick);
           })}
         </div>
       </div>

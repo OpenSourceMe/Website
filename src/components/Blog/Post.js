@@ -6,6 +6,11 @@
 
 ******** */
 import React from 'react';
+import { connect } from 'react-redux';
+import { routerActions } from 'react-router-redux';
+import { bindActionCreators } from 'redux';
+import { Map } from 'immutable';
+
 import Markdown from 'react-remarkable';
 import { Style } from 'radium';
 import theme from '../../theme';
@@ -27,9 +32,11 @@ const rules = {
 }
 
 const Post = (props) => {
+  const details = props.posts[props.params.blogId];
+  console.log(details)
   return (
     <div>
-      <h3>{props.post.title} <br /> <small>{props.post.date}</small></h3>
+      <h3>{details.title} <br /> <small>{details.date}</small></h3>
       <Style rules={rules} />
       <Markdown
         options={'full', {
@@ -38,9 +45,29 @@ const Post = (props) => {
           typographer: true,
           linkify: true,
         }}
-        source={props.post.content} />
+        source={details.content} />
     </div>
   );
 };
 
-export default Post;
+function mapStateToProps(state) {
+  return {
+      ...state.blog,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  const actions = [routerActions];
+  const creators = Map()
+    .merge(...actions)
+    .filter(value => typeof value === 'function')
+    .toObject();
+
+  return {
+    actions: bindActionCreators(creators, dispatch),
+    dispatch,
+  };
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Post);
