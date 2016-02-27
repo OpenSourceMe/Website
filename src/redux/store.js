@@ -1,10 +1,14 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import multi from 'redux-multi';
+import { browserHistory } from 'react-router';
+import { routerMiddleware } from 'react-router-redux';
 import { reducer } from './reducers/reducer';
 
+const routingMiddleware = routerMiddleware(browserHistory);
+
 const createFinalStore = compose(
-  applyMiddleware(thunk, multi),
+  applyMiddleware(thunk, multi, routingMiddleware),
   window.devToolsExtension ? window.devToolsExtension() : f => f
 )(createStore);
 

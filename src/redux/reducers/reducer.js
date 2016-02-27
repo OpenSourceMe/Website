@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import { title } from './title';
+import { blog } from './blog';
 import { routerReducer } from 'react-router-redux';
 
 export const reducer = combineReducers({
   routing: routerReducer,
-  title,
+  blog,
 });

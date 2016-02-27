@@ -6,10 +6,16 @@
     posts in props ought to be strings of a certain format (see lib/posts for examples)
 
 ******** */
-import React from 'react';
-import Post from './Post';
+import React, {
+  PropTypes,
+} from 'react';
+
+import { bindActionCreators } from 'redux';
+import { push, routerActions } from 'react-router-redux';
+import { connect } from 'react-redux';
+import {Map} from 'immutable';
+
 import Frag from './Frag';
-import {createBlogObject} from './utils';
 
 const styles = {
   center: {
@@ -17,45 +23,51 @@ const styles = {
   },
 };
 
-const createFrag = (md, index, onFragClick) => {
-  const blogObj = createBlogObject(md);
-
+const createFrag = (post, index, onFragClick) => {
   return (
-    <Frag key={index} onClickHandler={onFragClick} {...blogObj} />
+    <Frag key={index} goTo={onFragClick} title={post.title} date={post.date} />
   );
 };
 
 const Blog = React.createClass({
-  getInitialState: function() {
-    return {
-      postShowing: false
-    };
-  },
 
-  showPost: () => {
-    console.log(this.state);
+  propTypes: {
+    dispatch: PropTypes.func.isRequired,
+    posts: PropTypes.array.isRequired,
   },
 
   render() {
     return (
       <div>
-        {this.state.postShowing
-          ? <Post post={this.state.postShowing} />
-          : <div style={styles.center}>
-              {this.props.posts.map((md, index) => {
-                const onFragClick = () => {
-                  this.setState({
-                    postShowing: createBlogObject(md),
-                  });
-                };
-                return createFrag(md, index, onFragClick);
-              })}
-            </div>}
+        <div style={styles.center}>
+          {this.props.posts.map((post, index) => {
+            return createFrag(post, index, this.props.actions.push);
+          })}
+        </div>
       </div>
 
     );
   }
 });
 
+function mapStateToProps(state) {
+  return {
+      ...state.blog,
+  };
+}
 
-export default Blog;
+function mapDispatchToProps(dispatch) {
+  const actions = [routerActions];
+  const creators = Map()
+    .merge(...actions)
+    .filter(value => typeof value === 'function')
+    .toObject();
+
+  return {
+    actions: bindActionCreators(creators, dispatch),
+    dispatch,
+  };
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Blog);

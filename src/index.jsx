@@ -5,8 +5,6 @@ import {Map} from 'immutable';
 
 /* ROUTER */
 import { Router, Route, Link, browserHistory } from 'react-router';
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
 import { syncHistoryWithStore } from 'react-router-redux';
 
 /* REDUX */
@@ -17,14 +15,13 @@ import { bindActionCreators } from 'redux';
 
 //components
 import SiteNav from './components/SiteNav';
-import Title from './components/Title';
+import BlogPost from './components/Blog/Post';
 import Home from './pages/Home';
 import About from './pages/About';
 import Music from './pages/Music';
 import Portfolio from './pages/Portfolio';
 import Resume from './pages/Resume';
 
-// styles
 const styles = {
   nav: {
     backgroundColor: 'transparent',
@@ -67,14 +64,15 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-const store = configureStore();
 export const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App)
 
+const store = configureStore();
+const history = syncHistoryWithStore(browserHistory, store);
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={syncHistoryWithStore(browserHistory, store)}>
+    <Router history={history}>
       <Route path='/' component={AppContainer}>
-        <Route path='home' component={Home} />
+        <Route path='blog/:blogId' component={BlogPost} />
         <Route path='about' component={About} />
         <Route path='music' component={Music} />
         <Route path='portfolio' component={Portfolio} />

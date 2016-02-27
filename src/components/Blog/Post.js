@@ -7,13 +7,30 @@
 ******** */
 import React from 'react';
 import Markdown from 'react-remarkable';
+import { Style } from 'radium';
+import theme from '../../theme';
 
+// styles for markdown
+//
+const rules = {
+  'h3': {
+    ...theme.header,
+    textAlign: 'right',
+  },
+  'a': {
+    ...theme.link
+  },
+  'a:hover': {
+    ...theme.link[':hover'], // no deep merging in spread syntax
+    textDecoration: 'none',
+  }
+}
 
 const Post = (props) => {
   return (
     <div>
       <h3>{props.post.title} <br /> <small>{props.post.date}</small></h3>
-      <button>Back to blog</button>
+      <Style rules={rules} />
       <Markdown
         options={'full', {
           full: true,

@@ -16,8 +16,12 @@ const styles = {
 };
 
 const Frag = (props) => {
+  const goTo = () => {
+    console.log('JEESSUIS')
+    props.goTo(props.title)
+  }
   return (
-    <div onClick={props.onClickHandler} className='row'>
+    <div onClick={goTo} className='row'>
       <div className='col-md-6 col-md-offset-3'>
         <div style={styles.date}>{props.date}</div>
         <a style={styles.title}>{props.title}</a>
