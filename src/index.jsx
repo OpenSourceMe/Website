@@ -17,7 +17,8 @@ import { bindActionCreators } from 'redux';
 import SiteNav from './components/SiteNav';
 import BlogPost from './components/Blog/Post';
 import Footer from './components/Footer';
-import Home from './pages/Home';
+
+import Blog from './components/Blog';
 import About from './pages/About';
 import Music from './pages/Music';
 import Portfolio from './pages/Portfolio';
@@ -38,7 +39,7 @@ export class App extends Component {
         </div>
         <div>
           {this.props.routing.locationBeforeTransitions.pathname === '/'
-          ? <Home />
+          ? <Blog posts={this.props.blog.posts} />
           : <div>{this.props.children}</div>}
         </div>
         <Footer />
@@ -74,11 +75,11 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Route path='/' component={AppContainer}>
-        <Route path='blog/:blogId' component={BlogPost} />
-        <Route path='about' component={About} />
-        <Route path='music' component={Music} />
-        <Route path='portfolio' component={Portfolio} />
-        <Route path='resume' component={Resume} />
+        <Route path='/blog/:postName' component={BlogPost} />
+        <Route path='/about' component={About} />
+        <Route path='/music' component={Music} />
+        <Route path='/portfolio' component={Portfolio} />
+        <Route path='/resume' component={Resume} />
       </Route>
     </Router>
   </Provider>,

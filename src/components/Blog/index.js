@@ -42,7 +42,8 @@ const Blog = React.createClass({
         <div style={styles.center}>
           {this.props.posts.map((post, index) => {
             const onFragClick = () => {
-              this.props.actions.push('blog/'+index);
+              const name = post.title.replace(/\s+/g, '-').toLowerCase();
+              this.props.actions.push('/blog/'+name);
             };
             return createFrag(post, index, onFragClick);
           })}

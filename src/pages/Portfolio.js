@@ -1,13 +1,11 @@
 import React from 'react';
-import Markup from 'react-remarkable';
+import Page from '../components/Page'
 import data from '../data/portfolio.txt';
-import theme from '../theme';
 
 const Portfolio = (props) => {
   return (
     <div>
-      <h3 style={theme.header}>Portfolio</h3>
-      <Markup source={data} options={'full'}/>
+      <Page title='portfolio' content={data} />
     </div>
   );
 };
