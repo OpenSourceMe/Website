@@ -5,6 +5,8 @@ const styles = {
   nav: {
     padding: 20,
     margin: 10,
+    height: '100px',
+    width: '100%',
   },
   navHead: {
     padding: 15,

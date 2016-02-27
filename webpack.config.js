@@ -25,6 +25,10 @@ module.exports = {
                 exclude: /(node_modules|bower_components)/,
                 loaders: ['babel'],
             },
+            {
+                test: /\.txt$/,
+                loader: 'raw-loader',
+            },
 
             {
                 test: /\.css$/,

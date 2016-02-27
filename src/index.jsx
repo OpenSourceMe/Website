@@ -18,6 +18,10 @@ import { bindActionCreators } from 'redux';
 //components
 import NavWrapper from './components/NavWrapper';
 import Title from './components/Title';
+import Home from './pages/Home';
+import About from './pages/About';
+import Music from './pages/Music';
+import Portfolio from './pages/Portfolio';
 
 const styles = {
   nav: {
@@ -66,7 +70,11 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={syncHistoryWithStore(browserHistory, store)}>
       <Route path='/' component={AppContainer}>
-        <Route path='/about' component={Title} />
+        <Route path='home' component={Home} />
+        <Route path='about' component={About} />
+        <Route path='music' component={Music} />
+        <Route path='portfolio' component={Portfolio} />
+        <Route path='resume' component={Home} />
       </Route>
     </Router>
   </Provider>,
