@@ -13,6 +13,7 @@ const Post = (props) => {
   return (
     <div>
       <h3>{props.post.title} <br /> <small>{props.post.date}</small></h3>
+      <button>Back to blog</button>
       <Markdown
         options={'full', {
           full: true,

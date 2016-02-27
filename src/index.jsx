@@ -16,13 +16,15 @@ import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 //components
-import NavWrapper from './components/NavWrapper';
+import SiteNav from './components/SiteNav';
 import Title from './components/Title';
 import Home from './pages/Home';
 import About from './pages/About';
 import Music from './pages/Music';
 import Portfolio from './pages/Portfolio';
+import Resume from './pages/Resume';
 
+// styles
 const styles = {
   nav: {
     backgroundColor: 'transparent',
@@ -34,10 +36,12 @@ export class App extends Component {
     return (
       <div>
         <div>
-          <NavWrapper/>
+          <SiteNav/>
         </div>
         <div>
-          {this.props.children}
+          {this.props.routing.locationBeforeTransitions.pathname === '/'
+          ? <Home />
+          : <div>{this.props.children}</div>}
         </div>
       </div>
     );
@@ -74,7 +78,7 @@ ReactDOM.render(
         <Route path='about' component={About} />
         <Route path='music' component={Music} />
         <Route path='portfolio' component={Portfolio} />
-        <Route path='resume' component={Home} />
+        <Route path='resume' component={Resume} />
       </Route>
     </Router>
   </Provider>,
