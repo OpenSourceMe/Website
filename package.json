@@ -31,6 +31,7 @@
   "dependencies": {
     "bluebird": "^3.1.1",
     "bootstrap": "3.3.5",
+    "express": "^4.13.4",
     "immutable": "^3.7.6",
     "lodash-node": "latest",
     "node-libs-browser": "0.5.3",
