@@ -1,13 +1,12 @@
 import React from 'react';
-import Page from '../components/Page'
-import data from '../data/portfolio.txt';
+import Portfolio from '../components/Portfolio'
 
-const Portfolio = (props) => {
+const PortfolioPage = (props) => {
   return (
     <div>
-      <Page title='portfolio' content={data} />
+      <Portfolio />
     </div>
   );
 };
 
-export default Portfolio;
+export default PortfolioPage;

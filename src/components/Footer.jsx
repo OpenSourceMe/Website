@@ -11,6 +11,8 @@ const styles = {
 const Footer = (props) => {
   return (
     <div className='row' style={styles}>
+      <br />
+      <hr />
       <div key={1} className="col-md-4 text-center">
         thanks for reading!
       </div>
