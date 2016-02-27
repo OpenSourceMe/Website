@@ -1,34 +1,33 @@
 import React from 'react';
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
+import {Link} from 'react-router';
 
-import Title from './Title';
+const styles = {
+  nav: {
+    padding: 20,
+    margin: 10,
+  },
+  navHead: {
+    padding: 15,
+    margin: 15,
+    float: 'left',
+  },
+  navButton: {
+    padding: 15,
+    margin: 15,
+    border: '1px solid black',
+    textDecoration: 'none',
+    float: 'right',
+  }
+}
 
 const NavWrapper = (props) => {
   return (
-    <div>
-      <Navbar inverse>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <LinkContainer to="/home">
-              <a href='#'>Home</a>
-            </LinkContainer>
-          </Navbar.Brand>
-        </Navbar.Header>
-        <Nav bsStyle="tabs">
-            <LinkContainer to="/about">
-              <NavItem href="#">About</NavItem>
-            </LinkContainer>
-            <LinkContainer to="/orders">
-              <NavItem href="#">Orders</NavItem>
-            </LinkContainer>
-            <LinkContainer to="/settings">
-              <NavItem href="#">Settings</NavItem>
-            </LinkContainer>
-        </Nav>
-    </Navbar>
-
-    {props.children}
+    <div style={styles.nav}>
+      <Link style={styles.navHead} to=''>Lachlan Kermode</Link>
+      <Link style={styles.navButton} to='about'>about</Link>
+      <Link style={styles.navButton} to='music'>music</Link>
+      <Link style={styles.navButton} to='portfolio'>portfolio</Link>
+      <Link style={styles.navButton} to='resume'>resume</Link>
     </div>
   );
 };
