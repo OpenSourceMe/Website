@@ -16,6 +16,7 @@ import { bindActionCreators } from 'redux';
 //components
 import SiteNav from './components/SiteNav';
 import BlogPost from './components/Blog/Post';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Music from './pages/Music';
@@ -40,6 +41,7 @@ export class App extends Component {
           ? <Home />
           : <div>{this.props.children}</div>}
         </div>
+        <Footer />
       </div>
     );
   }

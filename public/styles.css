@@ -3,8 +3,3 @@ basic site styles. more flexibility provided in theme.
 will be over-ridden in JSX.
 *****/
 @import url(https://fonts.googleapis.com/css?family=Josefin+Slab);
-
-p {
-  font-family: Helvetica;
-  font-size: 14px;
-}

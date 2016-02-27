@@ -15,6 +15,12 @@ import Markdown from 'react-remarkable';
 import { Style } from 'radium';
 import theme from '../../theme';
 
+
+const styles = {
+  body: {
+    maxWidth: '80%',
+  },
+};
 // styles for markdown
 //
 const rules = {
@@ -28,6 +34,11 @@ const rules = {
   'a:hover': {
     ...theme.link[':hover'], // no deep merging in spread syntax
     textDecoration: 'none',
+  },
+  'p': {
+    fontFamily: 'Helvetica',
+    fontSize: '16px',
+    lineHeight: '22px',
   }
 }
 
@@ -35,7 +46,7 @@ const Post = (props) => {
   const details = props.posts[props.params.blogId];
   console.log(details)
   return (
-    <div>
+    <div className='container' style={styles.body}>
       <h3>{details.title} <br /> <small>{details.date}</small></h3>
       <Style rules={rules} />
       <Markdown
