@@ -5,6 +5,9 @@ import {Map} from 'immutable';
 
 /* ROUTER */
 import { Router, Route, browserHistory } from 'react-router';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
+import { syncHistoryWithStore } from 'react-router-redux';
 
 /* REDUX */
 import {Provider} from 'react-redux';
@@ -22,7 +25,23 @@ export class App extends Component {
   render() {
     return (
       <div>
-        <NavWrapper />
+          <Navbar inverse>
+            <Navbar.Header>
+              <Navbar.Brand>
+                <LinkContainer to="/home">
+                  <a href='#'>Home</a>
+                </LinkContainer>
+              </Navbar.Brand>
+            </Navbar.Header>
+            <Nav bsStyle="tabs">
+                <LinkContainer to="/about">
+                  <NavItem href="#">About</NavItem>
+                </LinkContainer>
+            </Nav>
+        </Navbar>
+        <div>
+          {this.props.children}
+        </div>
       </div>
     );
   }
@@ -47,11 +66,12 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
+const store = configureStore();
 export const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App)
 
 ReactDOM.render(
-  <Provider store={configureStore()}>
-    <Router history={browserHistory}>
+  <Provider store={store}>
+    <Router history={syncHistoryWithStore(browserHistory, store)}>
       <Route path='/' component={AppContainer}>
         <Route path='/about' component={Title} />
       </Route>
