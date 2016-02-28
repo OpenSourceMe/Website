@@ -1,16 +1,16 @@
 import React from 'react';
 import Markdown from 'react-remarkable';
-import theme from '../theme';
 import { Style } from 'radium';
+import theme from '../../theme';
+
 
 const styles = {
-  body: {
-    maxWidth: '80%',
+  container: {
+    paddingTop: '20px',
   },
 };
 
-// styles for markdown
-const rules = {
+const blogStyle = {
   'h3': {
     ...theme.header,
     textAlign: 'right',
@@ -29,19 +29,17 @@ const rules = {
   }
 }
 
-const PageContent = (props) => {
+const RegularPost = (props) => {
   return (
-    <div className='container' style={styles.body}>
-      <h3 style={theme.header}>{props.title}</h3>
-      <hr />
-      <Style rules={rules} />
+    <div style={styles.container}>
+      <h3>{props.title} <br /> <small>{props.date}</small></h3>
+      <hr/>
+      <Style rules={blogStyle} />
       <Markdown
-        options={{
-          html: true,
-        }}
+        options={'full'}
         source={props.content} />
     </div>
   );
 };
 
-export default PageContent;
+export default RegularPost;
