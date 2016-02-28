@@ -5,7 +5,6 @@ import music from './data/music';
 
 export const createInitialState = () => {
   return new Promise((resolve, reject) => {
-
     resolve({
       pages: {
         about,

@@ -34,7 +34,26 @@ const theme = {
     float: 'right',
     padding: 15,
     margin: 15,
-  }
+  },
+};
+
+export const markdownRules =  {
+  'h3': {
+    ...theme.header,
+    textAlign: 'right',
+  },
+  'a': {
+    ...theme.link
+  },
+  'a:hover': {
+    ...theme.link[':hover'], // no deep merging in spread syntax
+    textDecoration: 'none',
+  },
+  'p': {
+    fontFamily: 'Helvetica',
+    fontSize: '16px',
+    lineHeight: '22px',
+  },
 };
 
 export default theme;

@@ -11,7 +11,7 @@
     "test": "babel-tape-runner test/**/*.test.js | tap-spec",
     "test:watch": "npm run test -- --watch",
     "lint": "eslint src",
-    "start": "npm run server"
+    "start": "npm run build && npm run server"
   },
   "repository": {
     "type": "git",

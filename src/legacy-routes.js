@@ -6,6 +6,7 @@ const legacyRoutes = (
   <Redirect from='/portfolio' to='/page/portfolio' />
   <Redirect from='/about' to='/page/about' />
   <Redirect from='/music' to='/page/music' />
+  <Redirect from='/:anyOther' to='page/notfound' />
   </div>
 );
 
