@@ -1,16 +1,12 @@
+require("../node_modules/bootstrap/dist/css/bootstrap.min.css")
 import React from 'react';
 
 /* ROUTER */
 import { browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
-import { Router, Route } from 'react-router';
+import { Router } from 'react-router';
 
-import Layout from './pages/Layout';
-import BlogPost from './components/Blog/Post';
-import About from './pages/About';
-import Music from './pages/Music';
-import Portfolio from './pages/Portfolio';
-import Resume from './pages/Resume';
+import routes from './routes';
 
 // nb: this is the one funky thing, to get around
 // having to have routes in the same file as the provider
@@ -22,14 +18,7 @@ const App = (props) => {
 
   return (
     <div>
-      <Router history={history}>
-        <Route path='/' component={Layout}>
-          <Route path='/blog/:postName' component={BlogPost} />
-          <Route path='/about' component={About} />
-          <Route path='/music' component={Music} />
-          <Route path='/portfolio' component={Portfolio} />
-          <Route path='/resume' component={Resume} />
-        </Route>
+      <Router history={history} routes={routes}>
       </Router>
     </div>
   );

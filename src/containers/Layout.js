@@ -1,4 +1,3 @@
-require("../../node_modules/bootstrap/dist/css/bootstrap.min.css")
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
@@ -7,17 +6,16 @@ import SiteNav from '../components/SiteNav';
 import Blog from '../components/Blog';
 import Footer from '../components/Footer';
 
+/*           {this.props.routing.locationBeforeTransitions.pathname === '/'
+          ? <Blog posts={this.props.blog.posts} /> */
+
 export class Lay extends Component {
   render() {
     return (
       <div>
+        <SiteNav/>
         <div>
-          <SiteNav/>
-        </div>
-        <div>
-          {this.props.routing.locationBeforeTransitions.pathname === '/'
-          ? <Blog posts={this.props.blog.posts} />
-          : <div>{this.props.children}</div>}
+          {this.props.children}
         </div>
         <Footer />
       </div>

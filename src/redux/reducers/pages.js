@@ -1,7 +1,7 @@
 /* ********
   AUTHOR: breezykermo
-  DATE: 27 February 2016 (Saturday)
-  DESCRIPTION: handles blog content
+  DATE: 28 February 2016 (Sunday)
+  DESCRIPTION: handles other pages
   NOTES:
     using redux ducks; https://github.com/erikras/ducks-modular-redux
 
@@ -9,16 +9,15 @@
 // import posts from '../../data/posts';
 
 const initialState = {
-  posts: [
-    {
-      title: 'first post',
-      date: 'today',
-      content: 'this is the content of my first post',
-    },
-  ],
+  'about': {
+    content: 'about content',
+  },
+  'music': {
+    content: 'music content',
+  },
 };
 
-export const blog = (state = initialState, action) => {
+export const pages = (state = initialState, action) => {
   switch (action.type) {
 
     default:

@@ -31,10 +31,10 @@ const SiteNav = (props) => {
   return (
     <div style={styles.nav}>
       <Link style={styles.navHead} to=''>Lachlan Kermode</Link>
-      <Link style={styles.navButton} to='/about'>about</Link>
-      <Link style={styles.navButton} to='/music'>music</Link>
-      <Link style={styles.navButton} to='/portfolio'>portfolio</Link>
-      <Link style={styles.navButton} to='/resume'>resume</Link>
+      <Link style={styles.navButton} to='/page/about'>about</Link>
+      <Link style={styles.navButton} to='/page/music'>music</Link>
+      <Link style={styles.navButton} to='/page/portfolio'>portfolio</Link>
+      <Link style={styles.navButton} to='/page/resume'>resume</Link>
       <br />
     </div>
   );

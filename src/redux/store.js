@@ -5,22 +5,30 @@ import { browserHistory } from 'react-router';
 import { routerMiddleware } from 'react-router-redux';
 import { reducer } from './reducers/reducer';
 
-const routingMiddleware = routerMiddleware(browserHistory);
+export function configureStore(history, initialState) {
 
-const createFinalStore = compose(
-  applyMiddleware(thunk, multi, routingMiddleware),
-  window.devToolsExtension ? window.devToolsExtension() : f => f
-)(createStore);
+  const routingMiddleware = routerMiddleware(history);
 
-export function configureStore(initialState) {
+  // only devTools if build process in browser
+  // TODO: make production env.
+  let devTools = f => f;
+  if (false) {
+    devTools = window.devToolsExtension ? window.devToolsExtension() : f => f;
+  }
+
+  const createFinalStore = compose(
+    applyMiddleware(thunk, multi, routingMiddleware),
+    devTools
+  )(createStore);
+
   const store = createFinalStore(reducer, initialState);
 
-  // Hot reload reducers (requires Webpack or Browserify HMR to be enabled)
-  if (module.hot) {
-    module.hot.accept('../reducers', () =>
-      store.replaceReducer(require('../reducers')) /* default if you use Babel 6+ */
-    );
-  }
+  // // Hot reload reducers (requires Webpack or Browserify HMR to be enabled)
+  // if (module.hot) {
+  //   module.hot.accept('../reducers', () =>
+  //     store.replaceReducer(require('../reducers')) /* default if you use Babel 6+ */
+  //   );
+  // }
 
   return store;
 }

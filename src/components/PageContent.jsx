@@ -29,7 +29,7 @@ const rules = {
   }
 }
 
-const Page = (props) => {
+const PageContent = (props) => {
   return (
     <div className='container' style={styles.body}>
       <h3 style={theme.header}>{props.title}</h3>
@@ -46,4 +46,4 @@ const Page = (props) => {
   );
 };
 
-export default Page;
+export default PageContent;
