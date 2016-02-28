@@ -58,12 +58,7 @@ const Post = (props) => {
       <h3>{details.title} <br /> <small>{details.date}</small></h3>
       <Style rules={rules} />
       <Markdown
-        options={'full', {
-          full: true,
-          html: true,
-          typographer: true,
-          linkify: true,
-        }}
+        options={'full'}
         source={details.content} />
     </div>
   );

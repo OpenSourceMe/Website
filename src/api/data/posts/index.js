@@ -17,9 +17,9 @@ import h from './in-london';
 import i from './sulle-note';
 import j from './la-residenza';
 import k from './il-mio-zaino';
-import l from './logistics';
-import m from './syllabus';
-import n from './reasons';
+import l from './syllabus';
+import m from './reasons';
+import n from './logistics';
 
 const posts = [
   a,
