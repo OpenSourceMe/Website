@@ -7,9 +7,11 @@
     "build": "webpack --progress --profile --colors",
     "dev": "webpack-dev-server --progress --colors",
     "server:dev": "babel-node server.js",
+    "server": "node entry.js",
     "test": "babel-tape-runner test/**/*.test.js | tap-spec",
     "test:watch": "npm run test -- --watch",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "start": "npm run server"
   },
   "repository": {
     "type": "git",
@@ -30,6 +32,7 @@
   },
   "homepage": "https://github.com/danielkermode/danboiler-react-redux#readme",
   "dependencies": {
+    "babel": "^6.5.2",
     "bluebird": "^3.1.1",
     "bootstrap": "3.3.5",
     "express": "^4.13.4",

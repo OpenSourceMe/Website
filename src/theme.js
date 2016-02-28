@@ -24,6 +24,17 @@ const theme = {
       color: globals.primaryColor,
     },
   },
+  navItem: {
+    cursor: 'crosshair',
+    fontFamily: globals.headerFamily,
+    color: globals.secondaryColor,
+    textDecoration: 'none',
+    fontSize: '16px',
+    borderRadius: '0.8em',
+    float: 'right',
+    padding: 15,
+    margin: 15,
+  }
 };
 
 export default theme;

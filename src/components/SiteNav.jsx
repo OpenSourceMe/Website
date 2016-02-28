@@ -1,6 +1,17 @@
+/* ********
+  AUTHOR: breezykermo
+  DATE: 28 February 2016 (Sunday)
+  DESCRIPTION: site nav
+  NOTES:
+    greatly cheated.
+    in the future this should take props through Layout, and
+    include pages conditionally based on input data.
+
+******** */
 import React from 'react';
 import {Link} from 'react-router';
 import theme from '../theme';
+import Radium from 'radium';
 
 const styles = {
   nav: {
@@ -16,28 +27,20 @@ const styles = {
     margin: 15,
     float: 'left',
   },
-  navButton: {
-    ...theme.link,
-    fontFamily: theme.fontFamily + '!important',
-    padding: 15,
-    margin: 15,
-    border: '1px solid '+theme.secondaryColor,
-    borderRadius: '0.8em',
-    float: 'right',
-  }
 }
 
+// NB: site nav is reversed bc i am a cheat with css.
 const SiteNav = (props) => {
   return (
     <div style={styles.nav}>
       <Link style={styles.navHead} to=''>Lachlan Kermode</Link>
-      <Link style={styles.navButton} to='/page/about'>about</Link>
-      <Link style={styles.navButton} to='/page/music'>music</Link>
-      <Link style={styles.navButton} to='/page/portfolio'>portfolio</Link>
-      <Link style={styles.navButton} to='/resume'>resume</Link>
+      <Link style={theme.navItem} to='/resume'>resume</Link>
+      <Link style={theme.navItem} to='/page/portfolio'>portfolio</Link>
+      <Link style={theme.navItem} to='/page/music'>music</Link>
+      <Link style={theme.navItem} to='/page/about'>about</Link>
       <br />
     </div>
   );
 };
 
-export default SiteNav;
+export default Radium(SiteNav);

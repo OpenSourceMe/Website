@@ -2,12 +2,9 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 //components
-import SiteNav from '../components/SiteNav';
+import SiteNav from '../components/SiteNav'; // NB: I cheat on this.
 import Blog from '../components/Blog';
 import Footer from '../components/Footer';
-
-/*           {this.props.routing.locationBeforeTransitions.pathname === '/'
-          ? <Blog posts={this.props.blog.posts} /> */
 
 export class Lay extends Component {
   render() {
