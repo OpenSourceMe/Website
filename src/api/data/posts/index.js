@@ -6,20 +6,20 @@
     order reflected here is order displayed.
 
 ******** */
-import a from './a-quantitative-update-on-frascati-&-nepi-&-what-they-stand-for.txt';
-import b from './history-falling-apart.txt';
-import c from './i-thought-it-was-a-white-picket-fence.txt';
-import d from './i-wear-you-when-its-cold.txt';
-import e from './in-aotea.txt';
-import f from './intro-to-heidegger.txt';
-import g from './essential-sat-revision.txt';
-import h from './in-london.txt';
-import i from './sulle-note.txt';
-import j from './la-residenza.txt';
-import k from './il-mio-zaino.txt';
-import l from './logistics.txt';
-import m from './syllabus.txt';
-import n from './reasons.txt';
+import a from './a-quantitative-update-on-frascati-&-nepi-&-what-they-stand-for';
+import b from './history-falling-apart';
+import c from './i-thought-it-was-a-white-picket-fence';
+import d from './i-wear-you-when-its-cold';
+import e from './in-aotea';
+import f from './intro-to-heidegger';
+import g from './essential-sat-revision';
+import h from './in-london';
+import i from './sulle-note';
+import j from './la-residenza';
+import k from './il-mio-zaino';
+import l from './logistics';
+import m from './syllabus';
+import n from './reasons';
 
 const posts = [
   a,

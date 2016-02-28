@@ -1,33 +1,21 @@
-const createBlogObject = (raw) => {
-
-};
-
+import posts from './data/posts';
+import about from './data/about';
+import archive from './data/archive';
+import music from './data/music';
 
 export const createInitialState = () => {
   return new Promise((resolve, reject) => {
 
-    let posts;
-
     resolve({
-
       pages: {
-        'about': {
-          content: 'this is the new about content',
-        },
-        'music': {
-          content: 'music content',
-        },
+        about,
+        archive,
+        music,
       },
       blog: {
-        posts: [
-          {
-            title: 'we welcome you',
-            date: 'today',
-            content: 'this is the content of my first post',
-          },
-        ],
+        posts,
       },
-
     })
+
   });
 };
