@@ -7,23 +7,15 @@ import { createMemoryHistory, match, RouterContext } from 'react-router'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 import { configureStore } from './src/redux/store'
 import routes from './src/routes'
-
 // Radium server side
 import { StyleRoot } from 'radium';
-// https://github.com/FormidableLabs/radium/tree/master/docs/api#configmatchmedia
-// import Radium from 'radium';
-// import matchMediaMock from 'match-media-mock';
-// Radium.config.setMatchMedia(matchMediaMock);
-
-// // TODO: get screen size from request
-// matchMediaMock.setConfig({
-//   type: 'screen',
-//   width: '991px',
-//   height: '1240px',
-// });
-//
+// api
+import api from './src/api';
+import { createInitialState } from './src/api/utils';
 
 const app = express()
+
+app.use('/api', api);
 app.use('/public', express.static(__dirname + '/public'))
 
 // nb: this is a React stateless component, clever
@@ -61,15 +53,17 @@ app.use(function (req, res) {
     } else if (renderProps) {
 
       /* i don't need to fetch async data, but i would do it here. */
-      store = configureStore(memoryHistory, store.getState() )
-      const content = renderToString(
-        <Provider store={store}>
-          <StyleRoot radiumConfig={{userAgent: req.headers['user-agent']}}>
-            <RouterContext {...renderProps} />
-          </StyleRoot>
-        </Provider>
-      );
-      res.send('<!doctype html>\n' + renderToString(<HTML content={content} store={store} />));
+      createInitialState().then(initialState => {
+        store = configureStore(memoryHistory, initialState)
+        const content = renderToString(
+          <Provider store={store}>
+            <StyleRoot radiumConfig={{userAgent: req.headers['user-agent']}}>
+              <RouterContext {...renderProps} />
+            </StyleRoot>
+          </Provider>
+        );
+        res.send('<!doctype html>\n' + renderToString(<HTML content={content} store={store} />));
+      })
     }
   })
 

@@ -8,14 +8,7 @@
 ******** */
 // import posts from '../../data/posts';
 
-const initialState = {
-  'about': {
-    content: 'about content',
-  },
-  'music': {
-    content: 'music content',
-  },
-};
+const initialState = {};
 
 export const pages = (state = initialState, action) => {
   switch (action.type) {

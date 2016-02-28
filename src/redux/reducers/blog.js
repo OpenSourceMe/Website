@@ -8,15 +8,7 @@
 ******** */
 // import posts from '../../data/posts';
 
-const initialState = {
-  posts: [
-    {
-      title: 'first post',
-      date: 'today',
-      content: 'this is the content of my first post',
-    },
-  ],
-};
+const initialState = {};
 
 export const blog = (state = initialState, action) => {
   switch (action.type) {
