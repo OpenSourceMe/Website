@@ -1,5 +1,5 @@
 module.exports = {
   title: 'in aotea',
   date: '14th November 2015',
-  content: '',
+  content: '\nmy thoughts are with you in paris\n\nred is the world    \nwhite washes the streets    \nblue are the victims\n\nraise hell through the windows    \nthere is no flight, no eagle, no victory    \ni am watching water boil\n\nmurder at the bataclan    \ni was delighted that the    \nchocolate cost me only sixty cents\n\nwhat if i were the french president    \nwoken by the suicide    \nand so many new emails\n\ni am not drunk nor despaired    \npeople sing in parliament    \ni make pasta and put it with pesto\n\nthere is blood in their espressos    \narmed guards to watch the happy hour    \nmy water is ready on the stove\n\nhow can they think this is a theatre?    \nis tragedy an art for them?    \ncan a true god not hear screams in french?\n\nwhat belief have these people    \nthe illegally in europe    \nthe law that let the horror in\n\nmy crisis is hunger    \ni will not die for my beliefs    \ni will not die from your bullets\n\narrest them, war, arrest them    \nmy conscience, beyond the barricade    \nand i am in aotea\n\nin france it was yesterday    \nin syria it is now    \nthis is our civilisation\n\nblue are the victims    \nwhite washes the streets    \nred is the world',
 }
