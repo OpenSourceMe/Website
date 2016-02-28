@@ -6,9 +6,14 @@
     using redux ducks; https://github.com/erikras/ducks-modular-redux
 
 ******** */
-// import posts from '../../data/posts';
+import about from '../../api/data/about';
+import music from '../../api/data/music';
 
-const initialState = {};
+
+const initialState = {
+  about,
+  music,
+};
 
 export const pages = (state = initialState, action) => {
   switch (action.type) {

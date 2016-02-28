@@ -6,9 +6,11 @@
     using redux ducks; https://github.com/erikras/ducks-modular-redux
 
 ******** */
-// import posts from '../../data/posts';
+import posts from '../../api/data/posts';
 
-const initialState = {};
+const initialState = {
+  posts,
+};
 
 export const blog = (state = initialState, action) => {
   switch (action.type) {

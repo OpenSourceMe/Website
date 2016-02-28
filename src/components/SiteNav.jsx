@@ -34,7 +34,7 @@ const SiteNav = (props) => {
       <Link style={styles.navButton} to='/page/about'>about</Link>
       <Link style={styles.navButton} to='/page/music'>music</Link>
       <Link style={styles.navButton} to='/page/portfolio'>portfolio</Link>
-      <Link style={styles.navButton} to='/page/resume'>resume</Link>
+      <Link style={styles.navButton} to='/resume'>resume</Link>
       <br />
     </div>
   );

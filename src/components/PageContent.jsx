@@ -35,11 +35,8 @@ const PageContent = (props) => {
       <h3 style={theme.header}>{props.title}</h3>
       <Style rules={rules} />
       <Markdown
-        options={'full', {
-          full: true,
+        options={{
           html: true,
-          typographer: true,
-          linkify: true,
         }}
         source={props.content} />
     </div>
