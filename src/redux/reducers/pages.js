@@ -7,12 +7,12 @@
 
 ******** */
 // NB: only need this for client side testing, without loading data from server.
-// import about from '../../api/data/about';
-// import music from '../../api/data/music';
+import about from '../../api/data/about';
+import music from '../../api/data/music';
 
 const initialState = {
-  // about,
-  // music,
+  about,
+  music,
 };
 
 export const pages = (state = initialState, action) => {

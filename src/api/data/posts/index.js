@@ -20,9 +20,13 @@ import k from './il-mio-zaino';
 import l from './syllabus';
 import m from './reasons';
 import n from './logistics';
+import o from './the-coming-archive';
+import p from './my-overpowered-website';
 
 const posts = [
+  p,
   a,
+  o,
   b,
   c,
   d,

@@ -22,6 +22,7 @@ app.use('/public', express.static(__dirname+'./../public'))
 const HTML = ({ content, store }) => (
   <html>
     <head>
+      <title>lachlankermode.com</title>
       <link rel='stylesheet' type='text/css' href='/public/styles.css' />
     </head>
     <body>
@@ -70,11 +71,11 @@ app.use(function (req, res) {
 })
 
 
-app.listen(3000, 'localhost', function (err) {
+app.listen(3000, function (err) {
   if (err) {
-    console.log('we got an error.')
+    console.log('we\'ve got an error.')
     console.log(err);
     return;
   }
-  console.log('listening on http://127.0.0.1:3000')
+  console.log('listening on port 3000')
 })

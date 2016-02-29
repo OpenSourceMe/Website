@@ -7,10 +7,10 @@
 
 ******** */
 // NB: only need this for client side testing, without loading data from server.
-// import posts from '../../api/data/posts';
+import posts from '../../api/data/posts';
 
 const initialState = {
-  // posts,
+  posts,
 };
 
 export const blog = (state = initialState, action) => {

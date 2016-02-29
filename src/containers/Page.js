@@ -4,6 +4,7 @@ import NotFound from '../components/NotFound';
 import PageContent from '../components/PageContent'
 
 const Page = (props) => {
+  console.log(props.params.pageName)
   if (!props[props.params.pageName]) {
     return <NotFound />;
   }
