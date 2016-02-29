@@ -48,6 +48,7 @@ Redux specifies "state" logic for the app (what data is stored in the app). This
 ## notes
 
 Tests still to be written. Test suite runs, but haven't added any.
+Linting in place, but not used at all.
 
 
 

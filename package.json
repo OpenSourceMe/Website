@@ -6,7 +6,6 @@
   "scripts": {
     "build": "webpack --progress --profile --colors",
     "dev": "webpack-dev-server --progress --colors",
-    "server:dev": "babel-node server.js",
     "server": "node entry.js",
     "test": "babel-tape-runner test/**/*.test.js | tap-spec",
     "test:watch": "npm run test -- --watch",
@@ -25,12 +24,12 @@
     "Starter",
     "template"
   ],
-  "author": "Daniel Kermode",
+  "author": "Lachlan Kermode",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/danielkermode/danboiler-react-redux/issues"
+    "url": "https://github.com/breezykermo/lachlankermode.com/issues"
   },
-  "homepage": "https://github.com/danielkermode/danboiler-react-redux#readme",
+  "homepage": "https://github.com//breezykermo/lachlankermode.com#readme",
   "dependencies": {
     "babel": "^6.5.2",
     "bootstrap": "^3.3.6",
