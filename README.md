@@ -18,7 +18,7 @@ Open the web browser to `http://localhost:8080/`
 For running the server side, run:
 
 ```
-> $ npm run server
+> $ npm start
 ```
 NB: no development process for server-side yet, in active development.
 

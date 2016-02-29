@@ -10,7 +10,7 @@
     "test": "babel-tape-runner test/**/*.test.js | tap-spec",
     "test:watch": "npm run test -- --watch",
     "lint": "eslint src",
-    "start": "npm run build && npm run server"
+    "start": "npm run server"
   },
   "repository": {
     "type": "git",
@@ -29,7 +29,7 @@
   "bugs": {
     "url": "https://github.com/breezykermo/lachlankermode.com/issues"
   },
-  "homepage": "https://github.com//breezykermo/lachlankermode.com#readme",
+  "homepage": "https://github.com/breezykermo/lachlankermode.com#readme",
   "dependencies": {
     "babel": "^6.5.2",
     "bootstrap": "^3.3.6",
