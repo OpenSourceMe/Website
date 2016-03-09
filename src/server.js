@@ -53,7 +53,6 @@ app.use(function (req, res) {
       res.redirect(302, redirectLocation.pathname + redirectLocation.search)
     } else if (renderProps) {
 
-      /* i don't need to fetch async data, but i would do it here. */
       createInitialState().then(initialState => {
         store = configureStore(memoryHistory, initialState)
         const content = renderToString(
