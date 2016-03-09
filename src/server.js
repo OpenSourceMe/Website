@@ -3,7 +3,7 @@ import serialize from 'serialize-javascript'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { Provider } from 'react-redux'
-import { createMemoryHistory, match, RouterContext } from 'react-router'
+import { createMemoryHistory, browserHistory, match, RouterContext } from 'react-router'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 import { configureStore } from './redux/store'
 import routes from './routes'
@@ -18,7 +18,6 @@ const app = express()
 app.use('/api', api);
 app.use('/public', express.static(__dirname+'./../public'))
 
-// nb: this is a React stateless component, clever
 const HTML = ({ content, store }) => (
   <html>
     <head>
@@ -35,15 +34,11 @@ const HTML = ({ content, store }) => (
   </html>
 )
 
-
 app.use(function (req, res) {
-
-  // create memoryHistory (can't use hash or browser bc there is no window)
+  // create store (can't use hash or browser history bc there is no window)
   const memoryHistory = createMemoryHistory(req.path)
-  // configure store function adapted to take in a history (makes more sense)
   let store = configureStore(memoryHistory)
   const history = syncHistoryWithStore(memoryHistory, store)
-
   /* react router match history */
   match({ history, routes, location: req.url }, (error, redirectLocation, renderProps) => {
 
@@ -66,15 +61,13 @@ app.use(function (req, res) {
       })
     }
   })
-
 })
 
-
-app.listen(3000, function (err) {
+app.listen(process.env.PORT, function (err) {
   if (err) {
     console.log('we\'ve got an error.')
     console.log(err);
     return;
   }
-  console.log('listening on port 3000')
+  console.log('Listening on port '+process.env.PORT)
 })

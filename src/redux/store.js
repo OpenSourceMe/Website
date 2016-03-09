@@ -11,7 +11,7 @@ export function configureStore(history, initialState) {
   // only devTools if build process in browser
   // TODO: make production env.
   let devTools = f => f;
-  if (false) {
+  if (process.env.NODE_ENV == 'development') {
     devTools = window.devToolsExtension ? window.devToolsExtension() : f => f;
   }
 
