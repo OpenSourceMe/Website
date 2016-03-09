@@ -7,7 +7,7 @@
     "build": "webpack --progress --profile --colors",
     "dev": "NODE_ENV='development' webpack-dev-server --progress --colors",
     "server": "NODE_ENV='production' PORT=3000 node entry.js",
-    "server:dev": "nodemon --exec NODE_ENV='development' PORT=3000 node entry.js",
+    "server:dev": "nodemon --exec PORT=3000 node entry.js",
     "test": "babel-tape-runner test/**/*.test.js | tap-spec",
     "test:watch": "npm run test -- --watch",
     "lint": "eslint src",
