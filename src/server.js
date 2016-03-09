@@ -70,4 +70,6 @@ app.listen(process.env.PORT, function (err) {
     return;
   }
   console.log('Listening on port '+process.env.PORT)
+  console.log('-------')
+  console.log('Note that there are no Redux devTools with server-side rendering. Use `npm run dev` instead.')
 })
