@@ -1,13 +1,18 @@
-/*
- * NOTE: Components require Radium to use all features of theme object.
- */
+/* ********
+  AUTHOR: breezykermo
+  DATE: 30 March 2016 (Wednesday)
+  DESCRIPTION: Global themes for the site.
+  NOTES:
+    Theme styles require radium.
 
+******** */
+/** Globals */
 const globals = {
   primaryColor: '#BEABF6',
   secondaryColor: '#9E85F6',
   headerFamily: 'Josefin Slab, serif',
 };
-
+/** Main theme object */
 const theme = {
   // globals available through theme
   ...globals,
@@ -36,20 +41,20 @@ const theme = {
     margin: 15,
   },
 };
-
-export const markdownRules =  {
-  'h3': {
+/** Markdown rules for blog */
+export const markdownRules = {
+  h3: {
     ...theme.header,
     textAlign: 'right',
   },
-  'a': {
-    ...theme.link
+  a: {
+    ...theme.link,
   },
   'a:hover': {
     ...theme.link[':hover'], // no deep merging in spread syntax
     textDecoration: 'none',
   },
-  'p': {
+  p: {
     fontFamily: 'Helvetica',
     fontSize: '16px',
     lineHeight: '22px',

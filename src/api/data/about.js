@@ -6,5 +6,5 @@ module.exports = {
   [Paideia Institute](https://www.paideiainstitute.org), and as a non-affiliated student.\n\nFor more on what I\'m specifically \
   doing in Rome, see [logistics](/blog/logistics) and [syllabus](/blog/syllabus). If you want to read the speculative theories \
   that justify my being in Rome for the Authorities that demand reason, \
-  see [reasons](/blog/reasons).\n<hr/>\n<div class="text-center"><img src="https://s3.amazonaws.com/collectedpics/lachlankermode.com/lachie-guitar-crop.jpg"></div>',
+  see [reasons](/blog/reasons).\n<hr/>\n<div class="text-center"><img src="https://s3.amazonaws.com/lachlankermode/lachie-guitar-crop.jpg"></div>',
 }

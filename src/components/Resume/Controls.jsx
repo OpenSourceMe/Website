@@ -9,7 +9,6 @@
 ******** */
 import React from 'react';
 import theme from './theme';
-import resume from '../data/resume';
 
 const buttonStyle = {
   color: theme.highlightColor,
@@ -19,11 +18,11 @@ const buttonStyle = {
 
 const Controls = React.createClass({
   gradualFill: function() {
-    this.props.actions.gradualFillResume(resume);
+    this.props.actions.gradualFillResume(this.props.data);
   },
 
   autoFill: function() {
-    this.props.actions.fillResume(resume);
+    this.props.actions.fillResume(this.props.data);
   },
 
   componentDidMount: function() {

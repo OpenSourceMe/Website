@@ -21,6 +21,13 @@ export const updateProfession = (profession) => {
   });
 };
 
+export const CLEAR_HEADER = 'reducer/CLEAR_HEADER';
+export const clearHeader = () => {
+  return({
+    type: CLEAR_HEADER,
+  });
+};
+
 const initialState = {
   name: '',
   profession: '',
@@ -39,6 +46,9 @@ export const header = (state = initialState, action) => {
       ...state,
       profession: action.profession,
     };
+
+  case CLEAR_HEADER:
+    return initialState;
 
   default:
     return state;

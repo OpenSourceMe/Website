@@ -1,5 +1,5 @@
 import React from 'react';
-import A4Resume from '../resume/components/A4Resume';
+import A4Resume from '../components/Resume';
 // nb: this is real funky bc i literally just ported the resume app into here.
 //      A4Resume is the container connected to the store.
 import theme from '../theme';

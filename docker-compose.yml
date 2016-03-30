@@ -1,0 +1,7 @@
+me:
+  volumes:
+   - .:/app
+  build: .
+  # image: breezykermo/personalsite
+  ports:
+   - "3000:3000"

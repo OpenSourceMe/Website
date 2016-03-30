@@ -27,6 +27,15 @@ export const reduceArrayAtIndex = (state, index, reducer, action) => {
   return newState;
 }
 
+export const clearResume = () => {
+  return dispatch => {
+    dispatch(headerActions.clearHeader());
+    dispatch(skillsActions.clearSkills());
+    dispatch(sectionsActions.clearSections());
+    dispatch(detailsActions.clearDetails());
+  };
+};
+
 // NB: there's a lot wrong with this, possiblity to get more than required, etc.
 export const fillResume = (resume) => {
   return dispatch => {
