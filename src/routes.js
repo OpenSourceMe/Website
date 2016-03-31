@@ -14,7 +14,7 @@ import BlogPost from './components/Blog/Post';
 import Page from './containers/Page';
 
 // cheats
-import PortfolioPage from './containers/PortfolioPage';
+import Portfolio from './components/Portfolio';
 import ResumePage from './containers/ResumePage';
 
 import legacyRoutes from './legacy-routes';
@@ -25,7 +25,7 @@ const routes = (
     <Route path="/resume" component={ResumePage} />
     {legacyRoutes}
     <Route path="/blog/:postName" component={BlogPost} />
-    <Route path="/page/portfolio" component={PortfolioPage} />
+    <Route path="/page/portfolio" component={Portfolio} />
     <Route path="/page/:pageName" component={Page} />
   </Route>
 );

@@ -1,9 +1,15 @@
+/* ********
+  AUTHOR: breezykermo
+  DATE: 31 March 2016 (Thursday)
+  DESCRIPTION: Portfolio.
+  NOTES:
+
+******** */
 import React from 'react';
 import Markdown from 'react-remarkable';
 import theme from '../theme';
 import { Style } from 'radium';
-
-// styles for markdown
+/** Markdown Styles */
 const rules = {
   'h4': {
     ...theme.header,

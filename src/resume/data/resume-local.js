@@ -7,6 +7,7 @@
     NB: can use markup syntax in section->content, nowhere else.
 
 ******** */
+/* eslint-disable */
 module.exports = {
   header: {
     'name': 'lachlan kermode',
@@ -132,3 +133,4 @@ module.exports = {
     },
   ],
 };
+/* eslint-enable */

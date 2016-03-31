@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === 'development') {
   initialState = {
     posts,
   };
-};
+}
 
 export const blog = (state = initialState, action) => {
   switch (action.type) {

@@ -6,63 +6,52 @@
     posts in props ought to be strings of a certain format (see lib/posts for examples)
 
 ******** */
-import React, {
-  PropTypes,
-} from 'react';
-
+import React, { PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
-import { push, routerActions } from 'react-router-redux';
+import { routerActions } from 'react-router-redux';
 import { connect } from 'react-redux';
-import {Map} from 'immutable';
-
+import { Map } from 'immutable';
+/** Components */
 import Frag from './Frag';
 
+/** Styles */
 const styles = {
   center: {
     textAlign: 'center',
   },
 };
-
-const createFrag = (post, index, onFragClick) => {
-  return (
-    <Frag key={index} onClickHandler={onFragClick} title={post.title} date={post.date} />
-  );
+/**
+ * Create a post fragment.
+ * @param  {Object} post        Post props.
+ * @param  {number} index       Index of post in lineup.
+ * @param  {function()} onFragClick Handler for onClick.
+ * @return {ReactComponent}             Frag component
+ */
+const createFrag = (post, index, onFragClick) => (
+  <Frag key={index} onClickHandler={onFragClick} title={post.title} date={post.date} />
+);
+/**
+ * Blog, houses Frags.
+ */
+const Blog = (props) => (
+  <div style={styles.center}>
+    {props.posts.map((post, index) => {
+      const onFragClick = () => {
+        const name = post.title.replace(/\s+/g, '-').toLowerCase();
+        props.actions.push(`/blog/${name}`);
+      };
+      return createFrag(post, index, onFragClick);
+    })}
+  </div>
+);
+Blog.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  posts: PropTypes.array.isRequired,
 };
-
-const Blog = React.createClass({
-
-  propTypes: {
-    dispatch: PropTypes.func.isRequired,
-    posts: PropTypes.array.isRequired,
-  },
-
-  render() {
-    return (
-      <div>
-        <div style={styles.center}>
-          {this.props.posts.map((post, index) => {
-            const onFragClick = () => {
-              const name = post.title.replace(/\s+/g, '-').toLowerCase();
-              this.props.actions.push('/blog/'+name);
-            };
-            return createFrag(post, index, onFragClick);
-          })}
-        </div>
-      </div>
-
-    );
-  }
-});
-
-function mapStateToProps(state) {
-  return {
-      ...state.blog,
-  };
-}
-
+/** Redux boiler */
 function mapDispatchToProps(dispatch) {
   const actions = [routerActions];
-  const creators = Map()
+  const creators = Map() // eslint-disable-line new-cap
     .merge(...actions)
     .filter(value => typeof value === 'function')
     .toObject();
@@ -73,5 +62,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(Blog);
+export default connect(state => state.blog, mapDispatchToProps)(Blog);

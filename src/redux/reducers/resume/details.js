@@ -5,31 +5,26 @@
   NOTES:
 
 ******** */
-import { createEmpty } from './utils.js'
-
 export const UPDATE_DETAIL = 'details/UPDATE_DETAIL';
-export const updateDetail = (key, value) => {
-  return({
+export const updateDetail = (key, value) =>
+  ({
     type: UPDATE_DETAIL,
     key,
     value,
   });
-};
 
 export const DELETE_DETAIL = 'details/DELETE_DETAIL';
-export const deleteDetail = (key) => {
-  return({
+export const deleteDetail = (key) =>
+  ({
     type: DELETE_DETAIL,
     key,
   });
-};
 
 export const CLEAR_DETAILS = 'details/CLEAR_DETAILS';
-export const clearDetails = () => {
-  return({
+export const clearDetails = () =>
+  ({
     type: CLEAR_DETAILS,
   });
-};
 
 const initialState = {
   location: '',
@@ -41,20 +36,20 @@ const initialState = {
 /* *************************** */
 /* sidebar reducer */
 export const details = (state = initialState, action) => {
-  switch(action.type) {
+  const newState = state;
+  switch (action.type) {
+    case UPDATE_DETAIL:
+      newState[action.key] = action.value;
+      return newState;
 
-  case UPDATE_DETAIL:
-    state[action.key] = action.value;
-    return state;
+    case DELETE_DETAIL:
+      delete newState[action.key];
+      return newState;
 
-  case DELETE_DETAIL:
-    delete state[action.key];
-    return state;
+    case CLEAR_DETAILS:
+      return {};
 
-  case CLEAR_DETAILS:
-    return {};
-
-  default:
-    return state;
-  };
+    default:
+      return state;
+  }
 };

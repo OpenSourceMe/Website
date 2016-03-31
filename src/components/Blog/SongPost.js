@@ -1,9 +1,16 @@
-import React from 'react';
+/* ********
+  AUTHOR: breezykermo
+  DATE: 31 March 2016 (Thursday)
+  DESCRIPTION: A post of a song, with lyrics.
+  NOTES:
+
+******** */
+import React, { PropTypes } from 'react';
 import Markdown from 'react-remarkable';
 import { Style } from 'radium';
 import theme from '../../theme';
 
-
+/** Styles */
 const styles = {
   container: {
     paddingTop: '20px',
@@ -12,41 +19,30 @@ const styles = {
     textAlign: 'center',
   },
 };
-
-const blogStyle = {
-  'h3': {
-    ...theme.header,
-    textAlign: 'right',
-  },
-  'a': {
-    ...theme.link
-  },
-  'a:hover': {
-    ...theme.link[':hover'], // no deep merging in spread syntax
-    textDecoration: 'none',
-  },
-  'p': {
-    fontFamily: 'Helvetica',
-    fontSize: '16px',
-    lineHeight: '22px',
-  }
-};
-
-const SongPost = (props) => {
-  return (
-    <div style={styles.container}>
-      <h3>{props.title} <br /> <small>{props.date}</small></h3>
-      <hr/>
-      <div style={styles.video}>
-        <iframe width="420" height="315" src={props.source} frameBorder="0" allowFullScreen />
-      </div>
-      <hr />
-      <Style rules={blogStyle} />
-      <Markdown
-        options={'full'}
-        source={props.lyrics} />
+const blogStyle = theme.markdownRules;
+/**
+ * A post of a song, with lyrics.
+ */
+const SongPost = (props) => (
+  <div style={styles.container}>
+    <h3>{props.title} <br /> <small>{props.date}</small></h3>
+    <hr/>
+    <div style={styles.video}>
+      <iframe width="420" height="315" src={props.source} frameBorder="0" allowFullScreen />
     </div>
-  );
+    <hr />
+    <Style rules={blogStyle} />
+    <Markdown
+      options={'full'}
+      source={props.lyrics}
+    />
+  </div>
+);
+SongPost.propTypes = {
+  date: PropTypes.string.isRequired,
+  lyrics: PropTypes.string.isRequired,
+  source: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  type: PropTypes.string,
 };
-
 export default SongPost;

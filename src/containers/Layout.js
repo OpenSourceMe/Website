@@ -1,30 +1,26 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+/* ********
+  AUTHOR: breezykermo
+  DATE: 31 March 2016 (Thursday)
+  DESCRIPTION: Standard Layout Container.
+  NOTES:
 
-//components
+******** */
+import React from 'react';
+import { connect } from 'react-redux';
 import SiteNav from '../components/SiteNav'; // NB: I cheat on this.
-import Blog from '../components/Blog';
 import Footer from '../components/Footer';
+/**
+ * Standard Layout.
+ */
+const Layout = ({ children }) => (
+  <div>
+    <SiteNav/>
+    <div>
+      {children}
+    </div>
+    <Footer />
+  </div>
+);
 
-export class Lay extends Component {
-  render() {
-    return (
-      <div>
-        <SiteNav/>
-        <div>
-          {this.props.children}
-        </div>
-        <Footer />
-      </div>
-    );
-  }
-}
-
-function mapStateToProps(state) {
-  return {
-      ...state,
-  };
-}
-
-const Layout = connect(mapStateToProps)(Lay);
-export default Layout;
+const LayoutContainer = connect(state => state)(Layout);
+export default LayoutContainer;

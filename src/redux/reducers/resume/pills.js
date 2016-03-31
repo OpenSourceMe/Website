@@ -8,31 +8,27 @@
 
 ******** */
 import { createEmpty, reduceArrayAtIndex } from './utils';
-import { remove } from 'lodash-node';
 
 export const ADD_PILL = 'pills/ADD_PILL';
-export const addPill = () => {
-  return({
+export const addPill = () =>
+  ({
     type: ADD_PILL,
   });
-};
 
 export const UPDATE_PILL = 'pills/UPDATE_PILL';
-export const updatePill = (pill, index) => {
-  return({
+export const updatePill = (pill, index) =>
+  ({
     type: UPDATE_PILL,
     pill,
     index,
   });
-};
 
 export const DELETE_PILL = 'pills/DELETE_PILL';
-export const deletePill = (index) => {
-  return({
+export const deletePill = (index) =>
+  ({
     type: DELETE_PILL,
     index,
   });
-};
 
 // internal reducer, not exposed to node env.
 const emptyPill = {
@@ -45,35 +41,34 @@ const emptyPill = {
 };
 
 const pill = (state = emptyPill, action) => {
-  switch(action.type) {
-  case UPDATE_PILL:
-    return action.pill;
+  switch (action.type) {
+    case UPDATE_PILL:
+      return action.pill;
 
-  default:
-    return state;
-  };
+    default:
+      return state;
+  }
 };
 
 /* *************************** */
 /* sidebar reducer */
 export const pills = (state = [], action) => {
-  switch(action.type) {
+  const newState = state.slice();
+  switch (action.type) {
+    case ADD_PILL:
+      return [
+        ...state,
+        createEmpty(pill),
+      ];
 
-  case ADD_PILL:
-    return [
-      ...state,
-      createEmpty(pill),
-    ];
+    case UPDATE_PILL:
+      return reduceArrayAtIndex(state, action.index, pill, action);
 
-  case UPDATE_PILL:
-    return reduceArrayAtIndex(state, action.index, pill, action);
+    case DELETE_PILL:
+      newState.splice(action.index, 1);
+      return state[action.index] ? newState : state;
 
-  case DELETE_PILL:
-    const newState = state.slice();
-    newState.splice(action.index, 1);
-    return state[action.index] ? newState : state;
-
-  default:
-    return state;
-  };
+    default:
+      return state;
+  }
 };

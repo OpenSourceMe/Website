@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === 'development') {
     about,
     music,
   };
-};
+}
 
 export const pages = (state = initialState, action) => {
   switch (action.type) {

@@ -1,33 +1,34 @@
+/* ********
+  AUTHOR: breezykermo
+  DATE: 31 March 2016 (Thursday)
+  DESCRIPTION: Configure Redux store.
+  NOTES:
+
+******** */
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import multi from 'redux-multi';
 import { routerMiddleware } from 'react-router-redux';
 import { reducer } from './reducers/reducer';
-
+/**
+ * Configure Redux store.
+ * @param  {History} history      History to use for React-Redux (different for server rendering).
+ * @param  {Object} initialState The initial state of the store (optional).
+ * @return {Store}              Redux store.
+ */
 export function configureStore(history, initialState) {
-
   const routingMiddleware = routerMiddleware(history);
-
-  // only devTools if build process in browser
-  // TODO: make production env.
+  /** DevTools only during development */
   let devTools = f => f;
-  if (process.env.NODE_ENV == 'development') {
+  if (process.env.NODE_ENV === 'development') {
     devTools = window.devToolsExtension ? window.devToolsExtension() : f => f;
   }
-
+  /** Compose middleware and createStore */
   const createFinalStore = compose(
     applyMiddleware(thunk, multi, routingMiddleware),
     devTools
   )(createStore);
-
   const store = createFinalStore(reducer, initialState);
-
-  // // Hot reload reducers (requires Webpack or Browserify HMR to be enabled)
-  // if (module.hot) {
-  //   module.hot.accept('../reducers', () =>
-  //     store.replaceReducer(require('../reducers')) /* default if you use Babel 6+ */
-  //   );
-  // }
 
   return store;
 }
