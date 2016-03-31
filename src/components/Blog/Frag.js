@@ -12,11 +12,11 @@ import theme from '../../theme.js';
 const styles = {
   title: {
     ...theme.link,
-    fontSize: '18pt',
+    fontSize: 32,
     fontFamily: theme.headerFamily,
   },
   date: {
-    fontSize: 14,
+    fontSize: 18,
     fontWeight: 'lighter',
     color: 'gray',
   },

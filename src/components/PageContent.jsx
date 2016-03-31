@@ -1,6 +1,6 @@
 import React from 'react';
 import Markdown from 'react-remarkable';
-import theme from '../theme';
+import theme, { markdownRules } from '../theme';
 import { Style } from 'radium';
 
 const styles = {
@@ -10,24 +10,7 @@ const styles = {
 };
 
 // styles for markdown
-const rules = {
-  'h3': {
-    ...theme.header,
-    textAlign: 'right',
-  },
-  'a': {
-    ...theme.link
-  },
-  'a:hover': {
-    ...theme.link[':hover'], // no deep merging in spread syntax
-    textDecoration: 'none',
-  },
-  'p': {
-    fontFamily: 'Helvetica',
-    fontSize: '16px',
-    lineHeight: '22px',
-  }
-}
+const rules = markdownRules;
 
 const PageContent = (props) => {
   return (

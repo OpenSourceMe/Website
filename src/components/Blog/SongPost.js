@@ -8,7 +8,7 @@
 import React, { PropTypes } from 'react';
 import Markdown from 'react-remarkable';
 import { Style } from 'radium';
-import theme from '../../theme';
+import theme, { markdownRules } from '../../theme';
 
 /** Styles */
 const styles = {
@@ -19,7 +19,7 @@ const styles = {
     textAlign: 'center',
   },
 };
-const blogStyle = theme.markdownRules;
+const blogStyle = markdownRules;
 /**
  * A post of a song, with lyrics.
  */

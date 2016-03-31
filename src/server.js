@@ -31,6 +31,7 @@ const HTML = ({ content, store }) => (
   <html>
     <head>
       <title>lachlankermode.com</title>
+      <link href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css' />
       <link rel="stylesheet" href="/public/bootstrap.min.css" />
       <link rel="stylesheet" href="/public/styles.css" />
     </head>

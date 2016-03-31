@@ -11,6 +11,7 @@ const globals = {
   primaryColor: '#BEABF6',
   secondaryColor: '#9E85F6',
   headerFamily: 'Josefin Slab, serif',
+  bodyFamily: "'PT Serif', sans-serif",
 };
 /** Main theme object */
 const theme = {
@@ -18,7 +19,8 @@ const theme = {
   ...globals,
   // common styles
   header: {
-    fontSize: '20pt',
+    fontSize: 50,
+    lineHeight: '55px',
     fontFamily: globals.headerFamily,
   },
   link: {
@@ -34,7 +36,7 @@ const theme = {
     fontFamily: globals.headerFamily,
     color: globals.secondaryColor,
     textDecoration: 'none',
-    fontSize: '16px',
+    fontSize: '22px',
     borderRadius: '0.8em',
     float: 'right',
     padding: 15,
@@ -54,10 +56,10 @@ export const markdownRules = {
     ...theme.link[':hover'], // no deep merging in spread syntax
     textDecoration: 'none',
   },
-  p: {
-    fontFamily: 'Helvetica',
-    fontSize: '16px',
-    lineHeight: '22px',
+  body: {
+    fontFamily: globals.bodyFamily,
+    fontSize: '20px',
+    lineHeight: '30px',
   },
 };
 

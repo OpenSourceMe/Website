@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import Markdown from 'react-remarkable';
 import { Style } from 'radium';
-import theme from '../../theme';
+import theme, { markdownRules } from '../../theme';
 
 /** Styles */
 const styles = {
@@ -10,24 +10,7 @@ const styles = {
   },
 };
 /** Markdown rules */
-const blogStyle = {
-  h3: {
-    ...theme.header,
-    textAlign: 'right',
-  },
-  a: {
-    ...theme.link,
-  },
-  'a:hover': {
-    ...theme.link[':hover'], // no deep merging in spread syntax
-    textDecoration: 'none',
-  },
-  p: {
-    fontFamily: 'Helvetica',
-    fontSize: '16px',
-    lineHeight: '22px',
-  },
-};
+const blogStyle = markdownRules;
 /**
  * A regular post, with Markdown content.
  */
