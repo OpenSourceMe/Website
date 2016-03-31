@@ -10,7 +10,7 @@
     "server:dev": "nodemon --exec PORT=3000 node entry.js",
     "test": "babel-tape-runner test/**/*.test.js | tap-spec",
     "test:watch": "npm run test -- --watch",
-    "lint": "eslint src/**/*.js !src/api/data/posts/*.js",
+    "lint": "eslint src/**/*.js !src/api/data/**/*.js",
     "start": "npm run build && npm run server"
   },
   "repository": {
