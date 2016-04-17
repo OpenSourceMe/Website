@@ -6,14 +6,18 @@
 export default {
   PORTFOLIO: {
     matches: /Portfolio/,
-    handler: './templates/portfolio',
+    handler: './handlers/portfolio',
   },
   RESUME: {
     matches: /Resume/,
-    handler: './templates/resume',
+    handler: './handlers/resume',
   },
   BLOG: {
     matches: /Blog/,
-    handler: './templates/blog',
+    handler: './handlers/blog',
+  },
+  default: {
+    matches: /Markdown|md/,
+    handler: './handlers/markdown',
   },
 };

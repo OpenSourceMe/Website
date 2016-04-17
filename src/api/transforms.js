@@ -8,14 +8,14 @@
     hard to test).
 
 ******** */
-// import 'isomorphic-fetch';
-import request from 'request-promise';
+import 'babel-polyfill';
 import CONFIG from './config.json';
 import templates from './templates';
 
 /** URL to retrieve Website content */
 const apiPath = `https://raw.githubusercontent.com/${CONFIG.githubPath}/${CONFIG.branch}/${CONFIG.websiteFolder}`;
-/** Get array of template regexps, for sourceDataFromConfig */
+
+/** Get array of template regexps, for getPageHandler */
 const templateRegexes = Object.keys(templates)
   .map(key => templates[key].matches);
 
@@ -25,7 +25,7 @@ const templateRegexes = Object.keys(templates)
  * @return {func}      - Appropriate handler function for object
  */
 export function getPageHandler(page) {
-  let handler = require(templates.default.handler);
+  let handler = require(templates.default.handler).default;
   for (let index = 0; index < templateRegexes.length; index++) {
     const regexp = templateRegexes[index];
     if (page.template.match(regexp)) {
@@ -38,69 +38,39 @@ export function getPageHandler(page) {
 }
 
 /**
- * Load data from Github repo, according to config
+ * Load data from Github repo, according to config. Each page in the config
+ * file is handled by a handler responsible for its template. Templates claim
+ * responsibility for pages via regular expressions, which can be found in
+ * templates.js.
  * @param  {Object} config - Config object to specify where pages are, and which handlers to use.
  * @return {Promise}      - Resolves with data, rejects with error.
  */
 export function loadData(config = CONFIG) {
-  return new Promise((resolve, reject) => {
-    let home;
-    let pages;
-    console.log(apiPath)
+  let pages;
 
-    const homeHandler = getPageHandler(config.home);
-    const pagesWithHandlers = config.pages
-      .map(page => {
-        const handler = getPageHandler(page);
-        return {
-          title: page.title,
-          content: page.content,
-          handler,
-        };
-      });
+  /** Get handlers for homePage, and for each other page */
+  const homeHandler = getPageHandler(config.home);
+  const pagesWithHandlers = config.pages
+    .map(page => {
+      const { title, content } = page;
+      const handler = getPageHandler(page);
+      return {
+        title,
+        content,
+        handler,
+      };
+    });
 
-    const mdpages = config.pages
-      .filter(page => page.content.type === 'file');
-    /** Get top level files from Github dir, to transform as MD */
-    Promise.all(mdpages.map(page => request(`${apiPath}/${page.content.src}`)))
-      .then(rawPageContents => {
-        const pagesWithMarkdown = rawPageContents
-          .map((md, index) => ({
-            title: mdpages[index].title,
-            transform: 'md',
-            content: md,
-          }));
-        pages = pagesWithMarkdown;
-      })
-      // .then(structure => {
-      //   const contents = structure.map(item => ({
-      //     type: item.type,
-      //     url: item.git_url,
-      //   }));
-      //   markdownPages = contents.filter(f => f.type === 'file');
-      //   /** Call api for directory contents */
-      //   return Promise.all(
-      //     contents
-      //       .filter(f => f.type === 'dir')
-      //       .map(f => fetch(f.url))
-      //   );
-      // })
-      // .then(responses => Promise.all(responses.map(r => r.json())))
-      // .then(dirs => {
-      //   // TODO: there is a github rate limit.....
-      //   console.log(
-      //     dirs.map(dir = dir.tree)
-      //   );
-      // })
-      // .then(() => homeHandler(config.home, apiPath))
-      // .then(homePage => {
-      //   home = homePage;
-      //   return Promise.all(
-      //     pagesWithHandlers.map(p => p.handler(p, apiPath))
-      //   );
-      // })
-      .catch(err => {
-        reject(err);
-      });
-  });
+  /** Handle pages with their handlers, as well as home */
+  return Promise.all(
+    pagesWithHandlers.map(page => page.handler(page, apiPath))
+  )
+    .then(handledPages => {
+      pages = handledPages;
+      return homeHandler(config.home);
+    })
+    .then(homePage => ({
+      home: homePage,
+      pages,
+    }));
 }

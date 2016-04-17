@@ -14,19 +14,10 @@
       content: '{{content in about.md}}'
    }
  */
-import request from 'request';
+import request from 'request-promise';
 
 function blogHandler(config, urlPath) {
-  return new Promise((resolve, reject) => {
-    request(`${urlPath}/${config.content.src}`, (err, res, body) => {
-      if (err) reject(err);
-      resolve({
-        title: config.title,
-        template: config.template,
-        content: body,
-      });
-    });
-  });
+  return Promise.resolve({ home: 'object' });
 }
 
 export default blogHandler;

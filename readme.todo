@@ -1,6 +1,7 @@
 --- Use Github API to read contents of files.
 
 
+-- need to write assertion tests for the data that is coming from github
 - test suite should be more comprehensive (as always)
 - refactor README for OpenSourceMe speak
 - ./src/components/Portfolio.jsx should be reading dynamically from OpenSourceMe repo

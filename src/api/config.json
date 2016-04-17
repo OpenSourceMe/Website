@@ -4,7 +4,7 @@
   "branch": "master",
   "home": {
     "title": "Lachlan Kermode",
-    "template": "Blog",
+    "template": "Pieces",
     "content": {
       "type": "folder",
       "src": "pieces"
@@ -13,7 +13,7 @@
   "pages": [
     {
       "title": "about",
-      "template": "Markdown",
+      "template": "md",
       "content": {
         "type": "file",
         "src": "about.md"
@@ -21,7 +21,7 @@
     },
     {
       "title": "music",
-      "template": "Markdown",
+      "template": "md",
       "content": {
         "type": "file",
         "src": "music.md"
