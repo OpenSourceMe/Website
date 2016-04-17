@@ -1,13 +1,12 @@
 /* ********
   AUTHOR: breezykermo
-  DATE: 27 February 2016 (Saturday)
-  DESCRIPTION: resume data for pdf
+  DATE: 11 February 2016 (Thursday)
+  DESCRIPTION: resume data
   NOTES:
     object model maps to store state
     NB: can use markup syntax in section->content, nowhere else.
 
 ******** */
-/* eslint-disable */
 module.exports = {
   header: {
     'name': 'lachlan kermode',
@@ -59,10 +58,11 @@ module.exports = {
     {
       title: "interests",
       content: 'from auckland new zealand. singer & songwriter: acapella with [princeton footnotes](http://www.princetonfootnotes.com), \
-      folk duo with "[baker and goods](https://bakerandgoods.bandcamp.com/releases)", lead singer in "[chasing april](https://www.youtube.com/watch?v=Us3CcZmnwFA)".\
-       music director and actor in various musicals at princeton, writer for [triangle club](http://www.triangleshow.com/). nz water polo \
+      folk duo with "[baker and goods](https://bakerandgoods.bandcamp.com/releases)", singer in \
+      pop band "[chasing april](https://www.youtube.com/watch?v=Us3CcZmnwFA)".\
+       music director and actor in various musicals at princeton, writer for [triangle club](http://www.triangleshow.com/) at princeton. nz water polo \
       representative 2012, princeton men\'s team 2014, nz champ marist mens team 2014. recently \
-      completed half iron man.',
+      completed half iron man. currently reading and listening to a lot of italian literature.',
     },
     {
       title: 'experience',
@@ -127,10 +127,5 @@ module.exports = {
       [my website](http://lachlankermode.com/) for a [portfolio](http://lachlankermode.com/portfolio/) of websites & apps i have done. references \
       (real words from real people) available on request.',
     },
-    {
-      title: 'live resume',
-      content: 'see the live version of this resume, at [www.lachlankermode.com/resume]()'
-    },
   ],
 };
-/* eslint-enable */

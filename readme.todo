@@ -1,0 +1,9 @@
+---- handler for markdown
+---- handler for portfolio
+---- handler for resume
+--- reading from github repo needs to transform '\n' as well as '\''.
+
+
+- refactor test suite to comb src folder for .spec.js
+- refactor README for OpenSourceMe speak
+- ./src/components/Portfolio.jsx should be reading dynamically from OpenSourceMe repo

@@ -7,12 +7,12 @@
 
 ******** */
 // NB: only need this for client side testing, without loading data from server.
-import posts from '../../api/data/posts';
+// import posts from '../../api/data/posts';
 
 let initialState = {};
 if (process.env.NODE_ENV === 'development') {
   initialState = {
-    posts,
+    posts: [],
   };
 }
 

@@ -1,0 +1,16 @@
+title: Logistics
+date: 02.07.2015
+
+Here are the basic terms of my year. I am working for the [Paideia Institute](https://www.paideiainstitute.org) in Rome from June 3rd though July 31st, as a digital humanities intern. With one other technical intern and three other classicists, I am helping to develop two applications for iPhone and iPad that are geared towards students of Latin and the Classics. In addition to this, Paideia has recently signed up for a content management system called Nationbuilder, a web-based community manager intended for non-profit organizations. I'm essentially managing the technical dimension of this migration, which involves restyling the Paideia website on Nationbuilder's web development framework, and recreating Paideia's web operations within Nationbuilder's framework. They're currently using a bunch of different applications, such as Google Forms, PayPal and MailChimp. Nationbuilder theoretically integrates all of these services into one, though the technical reality is a little more complicated.
+
+From August 3rd until September 12th, I’m thinking of backpacking around Italy during this time, and spending some time in the towns around Rome, though I haven’t worked anything in particular out.
+
+From September 12th through October 31st, Paideia will set me up with an Italian homestay in Rome. During that time, Paideia will also set me up with Italian classes that I will take with the three other Rome fellows for three hours a day, something like five days a week. Paideia's Rome fellowship is an initiative that officially started last year. The fellows  are typically Classics majors who have just graduated college. They spend time in Rome at Paideia’s expense learning Italian and the sites of the city, and they then give tours for Paideia’s high school programs later in the year.
+
+In November, I'll find an apartment/residence in Rome where I can live independently, which will ideally be a living environment where I can continue to practise my Italian. I'll be working with Paideia for this duration, tweaking the website, managing technical projects as they come, etc. I won’t necessarily be staying in Rome from this point on, though I will be regularly checking in with the Paideia staff and fellows in Rome (there are roughly 6 of us in total here next year), for at least three or four hours a week. These terms of agreement will continue through until at least March, at which point I'll reevaluate, and maybe do something else.
+
+Throughout this time in Rome, I will be studying texts in a syllabus I'm generating for myself through conversations with friends, professors and other mentors. The two founders of Paideia, Jason Pedicone and Eric Hewett, both have Princeton PhDs in Classics, and they will serve as mentors and hosts in my autodidactic pilgrimage[^1]. For my current thoughts on what this syllabus will look like, see [syllabus](/blog/syllabus). It's more than anything the vague idea of a reading list at the moment; it will doubtless change and adapt as my mind and thoughts change.
+
+If you're interested in the reasons for my pilgrimage, see [reasons](/blog/reasons).
+
+[^1]: This seems an appropriately interrogative title. We can talk about the hubris, blasphemy and pretention later.

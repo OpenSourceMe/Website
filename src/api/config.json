@@ -1,0 +1,47 @@
+{
+  "contentUrl": "https://raw.githubusercontent.com/OpenSourceMe/LachieKermode",
+  "branch": "master",
+  "githubFolder": "website",
+  "home": {
+    "title": "Lachlan Kermode",
+    "template": "Blog",
+    "content": {
+      "type": "folder",
+      "src": "./pieces"
+    }
+  },
+  "pages": [
+    {
+      "title": "about",
+      "template": "Markdown",
+      "content": {
+        "type": "file",
+        "src": "about.md"
+      }
+    },
+    {
+      "title": "music",
+      "template": "Markdown",
+      "content": {
+        "type": "file",
+        "src": "music.md"
+      }
+    },
+    {
+      "title": "portfolio",
+      "template": "Portfolio",
+      "content": {
+        "type": "folder",
+        "src": "./portfolio"
+      }
+    },
+    {
+      "title": "resume",
+      "template": "Resume",
+      "content": {
+        "type": "folder",
+        "src": "./resume"
+      }
+    }
+  ]
+}

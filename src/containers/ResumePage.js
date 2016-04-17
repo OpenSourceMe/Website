@@ -9,7 +9,7 @@ import React from 'react';
 import A4Resume from '../components/Resume';
 import theme from '../theme';
 import { Style } from 'radium';
-/** Styles for Markdown */
+/** Styles for Markdown, different from theme markdownRules */
 const rules = {
   'h2, h3': {
     ...theme.header,
