@@ -1,8 +1,20 @@
+/* ********
+  AUTHOR: breezykermo
+  DATE: 17 April 2016 (Sunday)
+  DESCRIPTION: Functions to retrieve data.
+  NOTES:
+    NB: very opinionated at the moment, should really modularize a
+    lot more (can tell because some of these functions would be
+    hard to test).
+
+******** */
+// import 'isomorphic-fetch';
+import request from 'request-promise';
 import CONFIG from './config.json';
 import templates from './templates';
 
 /** URL to retrieve Website content */
-const contentUrl = `${CONFIG.contentUrl}/${CONFIG.branch}/${CONFIG.githubFolder}/`;
+const apiPath = `https://raw.githubusercontent.com/${CONFIG.githubPath}/${CONFIG.branch}/${CONFIG.websiteFolder}`;
 /** Get array of template regexps, for sourceDataFromConfig */
 const templateRegexes = Object.keys(templates)
   .map(key => templates[key].matches);
@@ -12,7 +24,7 @@ const templateRegexes = Object.keys(templates)
  * @param  {Object} page - OpenSourceMe Object
  * @return {func}      - Appropriate handler function for object
  */
-function getPageHandler(page) {
+export function getPageHandler(page) {
   let handler = require(templates.default.handler);
   for (let index = 0; index < templateRegexes.length; index++) {
     const regexp = templateRegexes[index];
@@ -34,6 +46,7 @@ export function loadData(config = CONFIG) {
   return new Promise((resolve, reject) => {
     let home;
     let pages;
+    console.log(apiPath)
 
     const homeHandler = getPageHandler(config.home);
     const pagesWithHandlers = config.pages
@@ -46,21 +59,46 @@ export function loadData(config = CONFIG) {
         };
       });
 
-    homeHandler(config.home, contentUrl)
-      .then(homePage => {
-        home = homePage;
-        return Promise.all(
-          pagesWithHandlers.map(p => p.handler(p, contentUrl))
-        );
+    const mdpages = config.pages
+      .filter(page => page.content.type === 'file');
+    /** Get top level files from Github dir, to transform as MD */
+    Promise.all(mdpages.map(page => request(`${apiPath}/${page.content.src}`)))
+      .then(rawPageContents => {
+        const pagesWithMarkdown = rawPageContents
+          .map((md, index) => ({
+            title: mdpages[index].title,
+            transform: 'md',
+            content: md,
+          }));
+        pages = pagesWithMarkdown;
       })
-      .then(otherPages => {
-        pages = otherPages;
-        const data = {
-          home,
-          pages,
-        };
-        resolve(data);
-      })
+      // .then(structure => {
+      //   const contents = structure.map(item => ({
+      //     type: item.type,
+      //     url: item.git_url,
+      //   }));
+      //   markdownPages = contents.filter(f => f.type === 'file');
+      //   /** Call api for directory contents */
+      //   return Promise.all(
+      //     contents
+      //       .filter(f => f.type === 'dir')
+      //       .map(f => fetch(f.url))
+      //   );
+      // })
+      // .then(responses => Promise.all(responses.map(r => r.json())))
+      // .then(dirs => {
+      //   // TODO: there is a github rate limit.....
+      //   console.log(
+      //     dirs.map(dir = dir.tree)
+      //   );
+      // })
+      // .then(() => homeHandler(config.home, apiPath))
+      // .then(homePage => {
+      //   home = homePage;
+      //   return Promise.all(
+      //     pagesWithHandlers.map(p => p.handler(p, apiPath))
+      //   );
+      // })
       .catch(err => {
         reject(err);
       });

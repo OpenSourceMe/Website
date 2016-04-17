@@ -14,11 +14,17 @@
       content: '{{content in about.md}}'
    }
  */
+import request from 'request';
+
 function markdownHandler(config, urlPath) {
   return new Promise((resolve, reject) => {
-    resolve({
-      title: config.title,
-      content: 'Markdown content',
+    request(`${urlPath}/${config.content.src}`, (err, res, body) => {
+      if (err) reject(err);
+      resolve({
+        title: config.title,
+        template: config.template,
+        content: body,
+      });
     });
   });
 }

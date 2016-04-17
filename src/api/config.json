@@ -1,13 +1,13 @@
 {
-  "contentUrl": "https://raw.githubusercontent.com/OpenSourceMe/LachieKermode",
+  "githubPath": "OpenSourceMe/LachieKermode",
+  "websiteFolder": "website",
   "branch": "master",
-  "githubFolder": "website",
   "home": {
     "title": "Lachlan Kermode",
     "template": "Blog",
     "content": {
       "type": "folder",
-      "src": "./pieces"
+      "src": "pieces"
     }
   },
   "pages": [
@@ -32,7 +32,7 @@
       "template": "Portfolio",
       "content": {
         "type": "folder",
-        "src": "./portfolio"
+        "src": "portfolio"
       }
     },
     {
@@ -40,7 +40,7 @@
       "template": "Resume",
       "content": {
         "type": "folder",
-        "src": "./resume"
+        "src": "resume"
       }
     }
   ]

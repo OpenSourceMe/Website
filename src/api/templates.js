@@ -4,24 +4,16 @@
  * This Object MUST have a default case.
  */
 export default {
-  MARKDOWN: {
-    matches: /Markdown/,
-    handler: "./templates/markdown",
-  },
   PORTFOLIO: {
     matches: /Portfolio/,
-    handler: "./templates/portfolio",
+    handler: './templates/portfolio',
   },
   RESUME: {
     matches: /Resume/,
-    handler: "./templates/resume",
+    handler: './templates/resume',
   },
   BLOG: {
     matches: /Blog/,
-    handler: "./templates/blog",
-  },
-  default: {
-    matches: /.*/,
-    handler: "./templates/markdown",
+    handler: './templates/blog',
   },
 };
