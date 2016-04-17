@@ -67,7 +67,7 @@ export function loadData(config = CONFIG) {
   )
     .then(handledPages => {
       pages = handledPages;
-      return homeHandler(config.home);
+      return homeHandler(config.home, apiPath);
     })
     .then(homePage => ({
       home: homePage,

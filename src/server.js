@@ -18,7 +18,7 @@ import routes from './routes';
 import { StyleRoot } from 'radium';
 /** API imports */
 import api from './api';
-import { loadData } from './api/transforms';
+import { loadData } from './api/github';
 
 const app = express();
 /** 'api' folder handles '/api' routes */
@@ -64,7 +64,9 @@ app.use((req, res) => {
       res.redirect(302, redirectLocation.pathname + redirectLocation.search);
     /** Successful match, render app serverside */
     } else if (renderProps) {
+      // NB: hits here twice per request for some reason...
       loadData().then(state => {
+        console.log(state);
         store = configureStore(memoryHistory, state);
         const content = (
           <Provider store={store}>

@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router(); // eslint-disable-line
+import { loadData } from './github';
 
 router.get('/initial-state', (req, res) => {
-  res.json({});
+  loadData().then(state => res.json(state));
 });
 
 export default router;

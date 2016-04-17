@@ -14,13 +14,18 @@
 
 
  */
-function resumeHandler(config, urlPath) {
-  return new Promise((resolve, reject) => {
-    resolve({
-      title: config.title,
-      content: 'resume content',
+import request from 'request-promise';
+
+function resumeHandler(page, apiPath) {
+  return request(`${apiPath}/${page.content.src}/resume.json`)
+    .then(json => {
+      const resume = JSON.parse(json);
+      return {
+        title: page.title,
+        transform: 'Resume',
+        content: resume,
+      };
     });
-  });
 }
 
 export default resumeHandler;

@@ -1,6 +1,4 @@
---- Use Github API to read contents of files.
-
-
+--- write handler for Pieces, pulling from URLs in index
 -- need to write assertion tests for the data that is coming from github
 - test suite should be more comprehensive (as always)
 - refactor README for OpenSourceMe speak

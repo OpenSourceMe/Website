@@ -16,8 +16,17 @@
  */
 import request from 'request-promise';
 
-function blogHandler(config, urlPath) {
-  return Promise.resolve({ home: 'object' });
+function piecesHandler(page, apiPath) {
+  return request(`${apiPath}/${page.content.src}/index.json`)
+    .then(json => {
+      const contents = JSON.parse(json);
+      /** TODO: load from listed files */
+      return {
+        title: page.title,
+        transform: 'Pieces',
+        content: 'Not yet loading from files',
+      };
+    });
 }
 
-export default blogHandler;
+export default piecesHandler;

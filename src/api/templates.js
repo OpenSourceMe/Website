@@ -4,16 +4,16 @@
  * This Object MUST have a default case.
  */
 export default {
-  PORTFOLIO: {
+  portfolio: {
     matches: /Portfolio/,
     handler: './handlers/portfolio',
   },
-  RESUME: {
+  resume: {
     matches: /Resume/,
     handler: './handlers/resume',
   },
-  BLOG: {
-    matches: /Blog/,
+  pieces: {
+    matches: /Pieces/,
     handler: './handlers/blog',
   },
   default: {
