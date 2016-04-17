@@ -18,7 +18,7 @@ import routes from './routes';
 import { StyleRoot } from 'radium';
 /** API imports */
 import api from './api';
-import { createInitialState } from './api/utils';
+import { loadData } from './api/transforms';
 
 const app = express();
 /** 'api' folder handles '/api' routes */
@@ -64,9 +64,9 @@ app.use((req, res) => {
       res.redirect(302, redirectLocation.pathname + redirectLocation.search);
     /** Successful match, render app serverside */
     } else if (renderProps) {
-      createInitialState().then(initialState => {
-        store = configureStore(memoryHistory, initialState);
-        const content = renderToString(
+      loadData().then(state => {
+        store = configureStore(memoryHistory, state);
+        const content = (
           <Provider store={store}>
             <StyleRoot radiumConfig={{ userAgent: req.headers['user-agent'] }}>
               <RouterContext {...renderProps} />

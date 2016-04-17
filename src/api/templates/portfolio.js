@@ -14,8 +14,13 @@
 
 
  */
-async function portfolioHandler(config, urlPath) {
-
+function portfolioHandler(config, urlPath) {
+  return new Promise((resolve, reject) => {
+    resolve({
+      title: config.title,
+      content: 'portfolio content',
+    });
+  });
 }
 
 export default portfolioHandler;

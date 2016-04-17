@@ -3,6 +3,7 @@ var path = require('path');
 
 module.exports = {
     entry: [
+    'babel-polyfill',
     './src/index.jsx' // Your appʼs entry point
   ],
     // devtool: process.env.WEBPACK_DEVTOOL || 'source-map',

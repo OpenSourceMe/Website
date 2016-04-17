@@ -16,7 +16,12 @@ export default {
     matches: /Resume/,
     handler: "./templates/resume",
   },
+  BLOG: {
+    matches: /Blog/,
+    handler: "./templates/blog",
+  },
   default: {
+    matches: /.*/,
     handler: "./templates/markdown",
   },
 };

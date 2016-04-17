@@ -14,13 +14,13 @@
       content: '{{content in about.md}}'
    }
  */
-function markdownHandler(config, urlPath) {
+function blogHandler(config, urlPath) {
   return new Promise((resolve, reject) => {
     resolve({
       title: config.title,
-      content: 'Markdown content',
+      content: 'blog content',
     });
   });
 }
 
-export default markdownHandler;
+export default blogHandler;
