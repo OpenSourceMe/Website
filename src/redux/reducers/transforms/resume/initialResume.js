@@ -7,6 +7,12 @@
     for consistency's sake
 
 ******** */
+const initialState = {
+  details: {},
+  header: {},
+  sections: [],
+  skills: {},
+};
 /** Initial Data */
 export const initialResume = (state = initialState, action) => {
   switch (action.type) {

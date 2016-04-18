@@ -16,7 +16,7 @@ import Sidebar from './Sidebar';
 import Section from './Section';
 import theme from './theme';
 /** Actions */
-import * as utilsActions from '../../redux/reducers/resume/utils';
+import * as utilsActions from '../../redux/reducers/transforms/resume/utils';
 
 /** Styles */
 const pageStyle = {
