@@ -7,12 +7,10 @@
     for consistency's sake
 
 ******** */
-// HACK
-import jsonData from '../../../resume/data/resume';
-const initialState = jsonData;
 /** Initial Data */
-/* eslint-disable no-unused-vars, arrow-body-style */
 export const initialResume = (state = initialState, action) => {
-/* eslint-enable no-unused-vars, arrow-body-style */
-  return state;
+  switch (action.type) {
+    default:
+      return state;
+  }
 };

@@ -9,7 +9,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import multi from 'redux-multi';
 import { routerMiddleware } from 'react-router-redux';
-import { reducer } from './reducers/reducer';
+import reducer from './reducers/reducer';
 /**
  * Configure Redux store.
  * @param  {History} history      History to use for React-Redux (different for server rendering).

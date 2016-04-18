@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-import { blog } from './blog';
-import { pages } from './pages';
-import { resume } from './resume';
 import { routerReducer } from 'react-router-redux';
+import { home } from './home';
+import { pages } from './pages';
 
-export const reducer = combineReducers({
+const reducer = combineReducers({
   routing: routerReducer,
-  blog,
+  home,
   pages,
-  resume,
 });
+
+export default reducer;

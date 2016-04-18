@@ -1,6 +1,6 @@
 const initialState = {};
 
-export const pages = (state = initialState, action) => {
+export const piecesTransform = (state = initialState, action) => {
   switch (action.type) {
 
     default:

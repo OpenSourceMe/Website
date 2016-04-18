@@ -11,7 +11,9 @@ import { StyleRoot } from 'radium';
 
 import App from './App';
 
-const state = window.__initialState__ || undefined;
+// const state = window.__initialState__ || undefined;
+const state = require('./falseState').default;
+console.log(state)
 export const store = configureStore(browserHistory, state);
 
 ReactDOM.render(
