@@ -5,22 +5,30 @@
   NOTES:
 
 ******** */
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import SiteNav from '../components/SiteNav'; // NB: I cheat on this.
-import Footer from '../components/Footer';
-/**
- * Standard Layout.
- */
-const Layout = ({ children }) => (
+import Nav from '../components/core/Nav';
+import Footer from '../components/core/Footer';
+import components from '../components';
+import { createNavPathways } from '../util/react';
+
+const Layout = props => (
   <div>
-    <SiteNav/>
+    <Nav pathways={createNavPathways(components, props.home, props.pages)}/>
     <div>
-      {children}
+      {props.children}
     </div>
     <Footer />
   </div>
 );
+Layout.propTypes = {
+  home: PropTypes.object.isRequired,
+  pages: PropTypes.array.isRequired,
+  children: PropTypes.any,
+};
 
-const LayoutContainer = connect(state => state)(Layout);
+const LayoutContainer = connect(state => ({
+  home: state.home,
+  pages: state.pages,
+}))(Layout);
 export default LayoutContainer;

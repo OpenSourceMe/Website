@@ -14,9 +14,9 @@ import { Map } from 'immutable';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import Section from './Section';
-import theme from './theme';
+import theme from '../../../theme';
 /** Actions */
-import * as utilsActions from '../../redux/reducers/transforms/resume/utils';
+import * as utilsActions from '../../../redux/reducers/transforms/resume/utils';
 
 /** Styles */
 const pageStyle = {

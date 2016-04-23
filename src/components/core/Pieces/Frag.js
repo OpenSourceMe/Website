@@ -6,7 +6,7 @@
 
 ******** */
 import React, { PropTypes } from 'react';
-import theme from '../../theme.js';
+import theme from '../../../theme.js';
 
 /** Styles */
 const styles = {

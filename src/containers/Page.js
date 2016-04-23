@@ -7,8 +7,8 @@
 ******** */
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import NotFound from '../components/NotFound';
-import PageContent from '../components/PageContent';
+import NotFound from '../components/core/NotFound';
+import Md from '../components/core/md';
 /**
  * Page Container.
  */
@@ -20,7 +20,7 @@ const Page = (props) => {
   const page = props.pages[props.params.pageName];
 
   return (
-    <PageContent title={page.title} content={page.content} />
+    <Md title={page.title} content={page.content} />
   );
 };
 Page.propTypes = {

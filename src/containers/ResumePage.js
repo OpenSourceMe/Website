@@ -6,7 +6,7 @@
 
 ******** */
 import React from 'react';
-import A4Resume from '../components/Resume';
+import A4Resume from '../components/extended/Resume';
 import theme from '../theme';
 import { Style } from 'radium';
 /** Styles for Markdown, different from theme markdownRules */

@@ -8,7 +8,7 @@
 import React, { PropTypes } from 'react';
 import Markdown from 'react-remarkable';
 import { Style } from 'radium';
-import theme, { markdownRules } from '../../theme';
+import theme, { markdownRules } from '../../../theme';
 
 /** Styles */
 const styles = {

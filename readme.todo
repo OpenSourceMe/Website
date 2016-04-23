@@ -1,5 +1,8 @@
+----- editing layout at the moment, trying to get requires working
 --- refactor reducers completely, to match github json structure.
 --- make a responsive top nav, for god's sake
+-- NotFound needs to read message from github
+-- footer info needs to come from github as well
 ---- need to write assertion tests for the data that is coming from github (REALLY IMPORTANT, as fetches from the wrong url will case website to completely break)
 - test suite should be more comprehensive (as always)
 - refactor README for OpenSourceMe speak

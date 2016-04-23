@@ -1,6 +1,6 @@
 import React from 'react';
 import Radium from 'radium';
-import theme from '../theme';
+import theme from '../../../theme';
 
 const styles = {
   marginTop: '2em',
