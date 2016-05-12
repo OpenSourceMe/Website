@@ -2,11 +2,6 @@
   AUTHOR: breezykermo
   DATE: 28 February 2016 (Sunday)
   DESCRIPTION: site nav
-  NOTES:
-    greatly cheated.
-    in the future this should take props through Layout, and
-    include pages conditionally based on input data.
-    TODO how???
 
 ******** */
 import React, { PropTypes } from 'react';
