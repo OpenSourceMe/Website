@@ -10,13 +10,9 @@ import { IndexRoute, Route } from 'react-router';
 /** Components */
 import Layout from './containers/Layout';
 import Pieces from './components/core/Pieces';
-import Piece from './components/core/Pieces/Post';
+import RenderPage from './containers/RenderPage';
 
 const FindPiece = () => {
-
-};
-
-const FindComponent = () => {
 
 };
 
@@ -27,7 +23,7 @@ const routes = (
     <IndexRoute component={Pieces} />
     {legacyRoutes}
     <Route path="/blog/:postName" component={FindPiece} />
-    <Route path="/page/:pageName" component={FindComponent} />
+    <Route path="/page/:pageName" component={RenderPage} />
   </Route>
 );
 export default routes;

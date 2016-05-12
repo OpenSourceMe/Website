@@ -22,5 +22,6 @@ export default {
     flex: 1,
     ...theme.header,
     ...theme.link,
+    fontSize: 24,
   },
 };

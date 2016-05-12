@@ -44,17 +44,17 @@ class A4Resume extends React.Component {
   /** Render */
   render() {
     const allSections = [];
-    this.props.sections.forEach((sectionProps, key) => {
+    this.props.content.sections.forEach((sectionProps, key) => {
       allSections.push(<Section key={key} id={key} {...sectionProps} />);
     });
     return (
       <div className="row" style={pageStyle}>
         <div className="">
-          <Header {...this.props.header} />
+          <Header {...this.props.content.header} />
           <div className="col-xs-4">
             <Sidebar
-              details={this.props.details}
-              skills={this.props.skills}
+              details={this.props.content.details}
+              skills={this.props.content.skills}
             />
           </div>
           <div className="col-xs-8" style={{ padding: '0 2em 0 0' }}>
@@ -66,24 +66,25 @@ class A4Resume extends React.Component {
   }
 }
 A4Resume.propTypes = {
-  header: PropTypes.shape({
-    name: PropTypes.string,
-    profession: PropTypes.string,
-  }),
-  details: PropTypes.shape({
-    email: PropTypes.string,
-    location: PropTypes.string,
-    phoneNo: PropTypes.string,
-    website: PropTypes.string,
-  }),
-  skills: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string,
-    values: PropTypes.arrayOf(PropTypes.string),
-  })),
-  sections: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string,
-    content: PropTypes.string,
-  })),
+  content: PropTypes.object,
+  // header: PropTypes.shape({
+  //   name: PropTypes.string,
+  //   profession: PropTypes.string,
+  // }),
+  // details: PropTypes.shape({
+  //   email: PropTypes.string,
+  //   location: PropTypes.string,
+  //   phoneNo: PropTypes.string,
+  //   website: PropTypes.string,
+  // }),
+  // skills: PropTypes.arrayOf(PropTypes.shape({
+  //   name: PropTypes.string,
+  //   values: PropTypes.arrayOf(PropTypes.string),
+  // })),
+  // sections: PropTypes.arrayOf(PropTypes.shape({
+  //   title: PropTypes.string,
+  //   content: PropTypes.string,
+  // })),
   initialResume: PropTypes.object, // NB: couldn't be bothered writiing this out again.
   actions: PropTypes.objectOf(PropTypes.func),
 };

@@ -9,7 +9,7 @@ const styles = {
   },
 };
 
-const PageContent = (props) => (
+const Md = (props) => (
   <div className="container" style={styles.body}>
     <h3 style={theme.header}>{props.title}</h3>
     <hr />
@@ -20,9 +20,9 @@ const PageContent = (props) => (
     />
   </div>
 );
-PageContent.propTypes = {
+Md.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
 };
 
-export default PageContent;
+export default Md;

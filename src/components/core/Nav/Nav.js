@@ -5,7 +5,6 @@
 
 ******** */
 import React, { PropTypes } from 'react';
-import { Style } from 'radium';
 import { Link } from 'react-router';
 import styles from './Nav.styles';
 
@@ -16,7 +15,7 @@ const Nav = (props) => {
   const pages = Object.keys(pathways).map(key => pathways[key]);
   const pageHeaders = pages.map(page => (
     <Link to={`/page/${page.title}`} style={styles.page}>
-      <h3>{page.title}</h3>
+      {page.title}
     </Link>
   ));
 

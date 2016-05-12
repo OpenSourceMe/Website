@@ -1,2 +1,2 @@
-import PageContent from './PageContent';
-export default PageContent;
+import Md from './Md';
+export default Md;
