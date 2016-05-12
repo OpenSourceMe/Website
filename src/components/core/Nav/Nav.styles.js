@@ -4,17 +4,14 @@ export default {
   nav: {
     padding: 20,
     margin: 10,
-    height: '100px',
+    minHeight: '100px',
     width: '100%',
   },
   navHead: {
     ...theme.header,
     ...theme.link,
-    padding: 15,
+    // padding: 15,
     margin: 15,
-    // position: 'fixed',
-    // left: 100,
-    // top: 20,
   },
   pagesContainer: {
     display: 'flex',
@@ -23,5 +20,7 @@ export default {
   },
   page: {
     flex: 1,
+    ...theme.header,
+    ...theme.link,
   },
 };

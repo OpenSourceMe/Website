@@ -19,7 +19,7 @@ const theme = {
   ...globals,
   // common styles
   header: {
-    fontSize: 50,
+    fontSize: 40,
     lineHeight: '55px',
     fontFamily: globals.headerFamily,
   },

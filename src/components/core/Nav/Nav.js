@@ -16,15 +16,22 @@ const Nav = (props) => {
   const pages = Object.keys(pathways).map(key => pathways[key]);
   const pageHeaders = pages.map(page => (
     <Link to={`/page/${page.title}`} style={styles.page}>
-      <h1>{page.title}</h1>
+      <h3>{page.title}</h3>
     </Link>
   ));
 
-  console.log(pages)
+  const header = home.image ? (
+    <img src={home.image.source} />
+  ) : (
+    <Link style={styles.navHead} to="/">{home.title}</Link>
+  );
+
   return (
-    <div style={styles.nav}>
-      <Link style={styles.navHead} to="/">{home.title}</Link>
-      <div style={styles.pagesContainer}>
+    <div style={styles.nav} className="row">
+      <div className="col-md-6">
+        {header}
+      </div>
+      <div style={styles.pagesContainer} className="col-md-6">
         {pageHeaders}
       </div>
       <br />
