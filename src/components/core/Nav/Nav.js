@@ -10,43 +10,28 @@
 
 ******** */
 import React, { PropTypes } from 'react';
+import { Style } from 'radium';
 import { Link } from 'react-router';
-import theme from '../../../theme';
+import styles from './Nav.styles';
 
-const styles = {
-  nav: {
-    padding: 20,
-    margin: 10,
-    height: '100px',
-    width: '100%',
-  },
-  navHead: {
-    ...theme.header,
-    ...theme.link,
-    padding: 15,
-    margin: 15,
-    float: 'left',
-  },
-};
-/**
- * <Link style={theme.navItem} to="/resume">resume</Link>
-      <Link style={theme.navItem} to="/page/portfolio">portfolio</Link>
-      <Link style={theme.navItem} to="/page/music">music</Link>
-      <Link style={theme.navItem} to="/page/about">about</Link>
- */
-// NB: site nav is reversed bc i am a cheat with css.
 const Nav = (props) => {
   const { pathways } = props;
   const { home } = pathways;
   delete pathways.home;
   const pages = Object.keys(pathways).map(key => pathways[key]);
+  const pageHeaders = pages.map(page => (
+    <Link to={`/page/${page.title}`} style={styles.page}>
+      <h1>{page.title}</h1>
+    </Link>
+  ));
+
+  console.log(pages)
   return (
     <div style={styles.nav}>
       <Link style={styles.navHead} to="/">{home.title}</Link>
-      {pages.forEach((page, index) => {
-        console.log(page);
-        console.log(index);
-      })}
+      <div style={styles.pagesContainer}>
+        {pageHeaders}
+      </div>
       <br />
     </div>
   );
