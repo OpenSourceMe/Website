@@ -4,7 +4,7 @@ import { Style } from 'radium';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import Section from './Section';
-import theme from '../../../theme';
+import theme from './theme';
 
 const styles = {
   pageStyle: {
@@ -32,7 +32,7 @@ class Resume extends React.Component {
 
     return (
       <div className="row" style={styles.pageStyle}>
-        <Style rules={{}} />
+        <Style rules={theme.markdownRules} />
         <div className="">
           <Header {...content.header} />
           <div className="col-xs-4">

@@ -28,7 +28,6 @@ const Page = (props) => {
   } else if (page.transform === 'Portfolio') {
     component = <Portfolio title={page.title} content={page.content} />;
   } else if (page.transform === 'Resume') {
-    console.log(props.initialResume);
     component = (
       <Resume
         title={page.title}

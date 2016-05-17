@@ -7,7 +7,7 @@
 
 ******** */
 /** Globals */
-const globals = {
+export const globals = {
   primaryColor: '#BEABF6',
   secondaryColor: '#9E85F6',
   headerFamily: 'Josefin Slab, serif',
