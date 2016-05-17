@@ -5,12 +5,12 @@ import theme from './theme';
 
 const styles = {
   container: {
-    padding: '1em 0 0 1em',
+    padding: '0',
   },
   title: {
     textAlign: 'right',
     padding: '0',
-    margin: '8px 2em',
+    margin: '0 1em',
   },
   hr: {
     margin: '0 0 15px 0',

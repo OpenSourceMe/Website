@@ -7,17 +7,22 @@ export default {
   headerColor: '#4c4c4c',
   backgroundColor: '#EBEBEB',
   markdownRules: {
-    ...globalTheme,
-    h3: {
-      textAlign: 'right',
+    'h2, h3': {
+      ...globalTheme.header,
+      fontSize: 20,
+      textAlign: 'center',
+      padding: '0',
+      margin: '0',
+    },
+    h4: {
+      fontSize: 16,
     },
     a: {
       ...globalTheme.link,
-      ':hover': globalTheme.link[':hover'],
     },
-    body: {
-      fontSize: '15px',
-      lineHeight: '17px',
+    'a:hover': {
+      ...globalTheme.link[':hover'], // no deep merging in spread syntax
+      textDecoration: 'none',
     },
   },
 };

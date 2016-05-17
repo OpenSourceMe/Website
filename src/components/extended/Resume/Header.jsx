@@ -9,7 +9,10 @@ const styles = {
     color: 'white',
     padding: '1em 0',
   },
-  name: { lineHeight: '0.8' },
+  name: {
+    fontSize: 28,
+    lineHeight: '0.8',
+  },
   weighted: {
     fontWeight: 'bold',
     color: theme.mainColor,

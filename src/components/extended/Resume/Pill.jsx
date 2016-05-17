@@ -22,7 +22,7 @@ const styles = {
     fontSize: 12,
   },
   pillRight: {
-    fontSize: 8,
+    fontSize: 10,
   },
 };
 
