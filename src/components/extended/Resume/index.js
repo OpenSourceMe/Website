@@ -8,15 +8,15 @@
 ******** */
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { Map } from 'immutable';
+import { Style } from 'radium';
 /** Components */
 import Header from './Header';
 import Sidebar from './Sidebar';
 import Section from './Section';
 import theme from '../../../theme';
 /** Actions */
-import * as utilsActions from '../../../redux/reducers/transforms/resume/utils';
+// import { mapDispatchToProps } from '../../../util/redux';
+// import * as utilsActions from '../../../redux/reducers/transforms/resume/utils';
 
 /** Styles */
 const pageStyle = {
@@ -33,13 +33,18 @@ const pageStyle = {
  * A4Resume component, index point for Resume inner app.
  */
 class A4Resume extends React.Component {
+  static propTypes = {
+    content: PropTypes.object,
+    initialResume: PropTypes.object,
+    // actions: PropTypes.objectOf(PropTypes.func),
+  };
   /** Fill with data on mount */
   componentDidMount() {
-    this.props.actions.gradualFillResume(this.props.initialResume);
+    // this.props.actions.gradualFillResume(this.props.initialResume);
   }
   /** Clear data on unmount */
   componentWillUnmount() {
-    this.props.actions.clearResume();
+    // this.props.actions.clearResume();
   }
   /** Render */
   render() {
@@ -49,6 +54,7 @@ class A4Resume extends React.Component {
     });
     return (
       <div className="row" style={pageStyle}>
+        <Style rules={{}} />
         <div className="">
           <Header {...this.props.content.header} />
           <div className="col-xs-4">
@@ -65,45 +71,8 @@ class A4Resume extends React.Component {
     );
   }
 }
-A4Resume.propTypes = {
-  content: PropTypes.object,
-  // header: PropTypes.shape({
-  //   name: PropTypes.string,
-  //   profession: PropTypes.string,
-  // }),
-  // details: PropTypes.shape({
-  //   email: PropTypes.string,
-  //   location: PropTypes.string,
-  //   phoneNo: PropTypes.string,
-  //   website: PropTypes.string,
-  // }),
-  // skills: PropTypes.arrayOf(PropTypes.shape({
-  //   name: PropTypes.string,
-  //   values: PropTypes.arrayOf(PropTypes.string),
-  // })),
-  // sections: PropTypes.arrayOf(PropTypes.shape({
-  //   title: PropTypes.string,
-  //   content: PropTypes.string,
-  // })),
-  initialResume: PropTypes.object, // NB: couldn't be bothered writiing this out again.
-  actions: PropTypes.objectOf(PropTypes.func),
-};
-/** Redux boiler */
-const mapDispatchToProps = (dispatch) => {
-  const actions = [utilsActions];
-  const creators = Map() // eslint-disable-line new-cap
-    .merge(...actions)
-    .filter(value => typeof value === 'function')
-    .toObject();
 
-  return {
-    actions: bindActionCreators(creators, dispatch),
-    dispatch,
-  };
-};
-/** Create Redux Container */
-const A4ResumeContainer = connect(
-  state => state.resume,
-  mapDispatchToProps
-  )(A4Resume);
-export default A4ResumeContainer;
+export default connect(
+  state => state.resumeTransform
+  // mapDispatchToProps(utilsActions)
+)(A4Resume);

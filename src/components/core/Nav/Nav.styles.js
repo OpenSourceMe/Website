@@ -18,6 +18,11 @@ export default {
     flexDirection: 'row',
     flex: 4,
   },
+  pagesRow: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   page: {
     flex: 1,
     ...theme.header,

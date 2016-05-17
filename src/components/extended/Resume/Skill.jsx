@@ -5,7 +5,7 @@
   NOTES:
 
 ******** */
-import React from 'react';
+import React, { PropTypes } from 'react';
 import theme from './theme';
 
 const hrStyle = {
@@ -21,7 +21,7 @@ const formatType = (text) => {
   return (
     <span>
       {mostOfType}
-      <span style={{color: theme.mainColor}}>
+      <span style={{ color: theme.mainColor }}>
         {lastThreeChars}
       </span>
     </span>
@@ -29,9 +29,10 @@ const formatType = (text) => {
 };
 
 const Skill = (props) => {
-  const values = props.values.map(value => {
-    return <li key={value}>{value}</li>;
-  });
+  console.log(props.name);
+  console.log(props.values);
+  const values = props.values
+    .map(value => <li key={value}>{value}</li>);
 
   return (
     <div>
@@ -42,6 +43,10 @@ const Skill = (props) => {
       </ul>
     </div>
   );
+};
+Skill.propTypes = {
+  values: PropTypes.array.isRequired,
+  name: PropTypes.string,
 };
 
 export default Skill;

@@ -5,7 +5,7 @@
   NOTES:
 
 ******** */
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Details from './Details';
 import Skill from './Skill';
 
@@ -14,9 +14,8 @@ const sidebarStyle = {
 };
 
 const Sidebar = (props) => {
-  const skills = props.skills.map((skillProps, index) => {
-    return <Skill key={index} {...skillProps} />
-  });
+  const skills = Object.keys(props.skills)
+    .map(key => <Skill key={key} name={key} values={props.skills[key]} />);
 
   return (
     <div style={sidebarStyle}>
@@ -24,6 +23,10 @@ const Sidebar = (props) => {
       {skills}
     </div>
   );
+};
+Sidebar.propTypes = {
+  skills: PropTypes.object,
+  details: PropTypes.object,
 };
 
 export default Sidebar;

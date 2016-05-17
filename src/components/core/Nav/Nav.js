@@ -14,9 +14,11 @@ const Nav = (props) => {
   delete pathways.home;
   const pages = Object.keys(pathways).map(key => pathways[key]);
   const pageHeaders = pages.map(page => (
-    <Link to={`/page/${page.title}`} style={styles.page}>
-      {page.title}
-    </Link>
+    <div key={page.title} className="col-sm-3">
+      <Link to={`/page/${page.title}`} style={styles.page}>
+        {page.title}
+      </Link>
+    </div>
   ));
 
   const header = home.image ? (
@@ -31,7 +33,9 @@ const Nav = (props) => {
         {header}
       </div>
       <div style={styles.pagesContainer} className="col-md-6">
-        {pageHeaders}
+        <div className="row" style={styles.pagesRow}>
+          {pageHeaders}
+        </div>
       </div>
       <br />
     </div>
