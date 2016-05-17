@@ -45,7 +45,7 @@ Nav.propTypes = {
   pathways: PropTypes.objectOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
     transform: PropTypes.string.isRequired,
-    component: PropTypes.func.isRequired,
+    component: PropTypes.func,
   })).isRequired,
 };
 
