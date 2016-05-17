@@ -9,7 +9,7 @@ const styles = {
   },
 };
 
-const Md = (props) => (
+const MarkDown = (props) => (
   <div className="container" style={styles.body}>
     <h3 style={theme.header}>{props.title}</h3>
     <hr />
@@ -20,9 +20,9 @@ const Md = (props) => (
     />
   </div>
 );
-Md.propTypes = {
+MarkDown.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
 };
 
-export default Md;
+export default MarkDown;

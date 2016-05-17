@@ -1,16 +1,11 @@
-/* ********
-  AUTHOR: breezykermo
-  DATE: 11 February 2016 (Thursday)
-  DESCRIPTION: Sidebar component
-  NOTES:
-
-******** */
 import React, { PropTypes } from 'react';
 import Details from './Details';
 import Skill from './Skill';
 
-const sidebarStyle = {
-  padding: '10px',
+const styles = {
+  sidebar: {
+    padding: '10px',
+  },
 };
 
 const Sidebar = (props) => {
@@ -18,7 +13,7 @@ const Sidebar = (props) => {
     .map(key => <Skill key={key} name={key} values={props.skills[key]} />);
 
   return (
-    <div style={sidebarStyle}>
+    <div style={styles.sidebar}>
       <Details {...props.details}/>
       {skills}
     </div>

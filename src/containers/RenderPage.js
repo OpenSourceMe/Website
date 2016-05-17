@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import NotFound from '../components/core/NotFound';
-import Md from '../components/core/md';
+import MarkDown from '../components/core/MarkDown';
 import Portfolio from '../components/extended/Portfolio';
 import Resume from '../components/extended/Resume';
 /** Transforms */
@@ -24,7 +24,7 @@ const Page = (props) => {
   const page = possiblePages[props.params.pageName];
   let component;
   if (page.transform === 'md') {
-    component = <Md title={page.title} content={page.content} />;
+    component = <MarkDown title={page.title} content={page.content} />;
   } else if (page.transform === 'Portfolio') {
     component = <Portfolio title={page.title} content={page.content} />;
   } else if (page.transform === 'Resume') {
@@ -51,6 +51,5 @@ Page.propTypes = {
 export default connect(
   state => ({
     pages: state.pages,
-    initialResume: state.resumeTransform.initialResume,
   })
 )(Page);

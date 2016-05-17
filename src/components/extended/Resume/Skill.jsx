@@ -8,11 +8,13 @@
 import React, { PropTypes } from 'react';
 import theme from './theme';
 
-const hrStyle = {
-  margin: '5px',
-  borderColor: theme.highlightColor,
-  backgroundColor: theme.highlightColor,
-  color: theme.highlightColor,
+const styles = {
+  hr: {
+    margin: '5px',
+    borderColor: theme.highlightColor,
+    backgroundColor: theme.highlightColor,
+    color: theme.highlightColor,
+  },
 };
 
 const formatType = (text) => {
@@ -28,22 +30,15 @@ const formatType = (text) => {
   );
 };
 
-const Skill = (props) => {
-  console.log(props.name);
-  console.log(props.values);
-  const values = props.values
-    .map(value => <li key={value}>{value}</li>);
-
-  return (
-    <div>
-      <h4>{formatType(props.name)}</h4>
-      <hr style={hrStyle} />
-      <ul>
-        {values}
-      </ul>
-    </div>
-  );
-};
+const Skill = (props) => (
+  <div>
+    <h4>{formatType(props.name)}</h4>
+    <hr style={styles.hr} />
+    <ul>
+      {props.values.map(value => <li key={value}>{value}</li>)}
+    </ul>
+  </div>
+);
 Skill.propTypes = {
   values: PropTypes.array.isRequired,
   name: PropTypes.string,
