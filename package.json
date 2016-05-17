@@ -68,7 +68,7 @@
     "babel-tape-runner": "^2.0.0",
     "css-loader": "0.23.1",
     "enzyme": "^2.0.0",
-    "eslint": "^2.10.2",
+    "eslint": "^1.10.3",
     "eslint-config-airbnb": "^5.0.0",
     "eslint-plugin-import": "^1.4.0",
     "eslint-plugin-jsx-a11y": "^0.6.2",

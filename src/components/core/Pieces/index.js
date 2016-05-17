@@ -10,6 +10,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { mapDispatchToProps } from '../../../util/redux';
 import { routerActions } from 'react-router-redux';
+import sortByDate from './sortByDate';
 import Frag from './Frag';
 
 /** Styles */
@@ -33,7 +34,7 @@ const createFrag = (post, index, onFragClick) => (
  */
 const Pieces = (props) => (
   <div style={styles.center}>
-    {props.posts.map((post, index) => {
+    {sortByDate(props.posts).map((post, index) => {
       const onFragClick = () => {
         const name = post.title.replace(/\s+/g, '-').toLowerCase();
         props.actions.push(`/pieces/${name}`);
