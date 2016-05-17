@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 // import { mapDispatchToProps } from '../util/redux';
 /** Components */
 import NotFound from '../components/core/NotFound';
-import RegularPost from '../components/core/Pieces/RegularPost';
-import SongPost from '../components/core/Pieces/SongPost';
+import RegularPost from '../components/core/Pieces/types/Regular';
+import SongPost from '../components/core/Pieces/types/Song';
 
 const styles = {
   body: {
