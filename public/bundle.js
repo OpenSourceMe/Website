@@ -38675,33 +38675,17 @@
 
 	'use strict';
 
-	import _Object$defineProperty from 'babel-runtime/core-js/object/define-property';
-	import _Object$keys from 'babel-runtime/core-js/object/keys';
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 
 	var _Nav = __webpack_require__(603);
 
-	_Object$keys(_Nav).forEach(function (key) {
-	  if (key === "default") return;
-
-	  _Object$defineProperty(exports, key, {
-	    enumerable: true,
-	    get: function get() {
-	      return _Nav[key];
-	    }
-	  });
-	});
-
-	Object.defineProperty(exports, 'default', {
-	  enumerable: true,
-	  get: function get() {
-	    return _interopRequireDefault(_Nav).default;
-	  }
-	});
+	var _Nav2 = _interopRequireDefault(_Nav);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _Nav2.default;
 
 /***/ },
 /* 603 */
@@ -39213,33 +39197,17 @@
 
 	'use strict';
 
-	import _Object$defineProperty from 'babel-runtime/core-js/object/define-property';
-	import _Object$keys from 'babel-runtime/core-js/object/keys';
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 
 	var _Footer = __webpack_require__(627);
 
-	_Object$keys(_Footer).forEach(function (key) {
-	  if (key === "default") return;
-
-	  _Object$defineProperty(exports, key, {
-	    enumerable: true,
-	    get: function get() {
-	      return _Footer[key];
-	    }
-	  });
-	});
-
-	Object.defineProperty(exports, 'default', {
-	  enumerable: true,
-	  get: function get() {
-	    return _interopRequireDefault(_Footer).default;
-	  }
-	});
+	var _Footer2 = _interopRequireDefault(_Footer);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _Footer2.default;
 
 /***/ },
 /* 627 */
@@ -39357,33 +39325,17 @@
 
 	'use strict';
 
-	import _Object$defineProperty from 'babel-runtime/core-js/object/define-property';
-	import _Object$keys from 'babel-runtime/core-js/object/keys';
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 
 	var _MarkDown = __webpack_require__(630);
 
-	_Object$keys(_MarkDown).forEach(function (key) {
-	  if (key === "default") return;
-
-	  _Object$defineProperty(exports, key, {
-	    enumerable: true,
-	    get: function get() {
-	      return _MarkDown[key];
-	    }
-	  });
-	});
-
-	Object.defineProperty(exports, 'default', {
-	  enumerable: true,
-	  get: function get() {
-	    return _interopRequireDefault(_MarkDown).default;
-	  }
-	});
+	var _MarkDown2 = _interopRequireDefault(_MarkDown);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _MarkDown2.default;
 
 /***/ },
 /* 630 */
@@ -49882,33 +49834,17 @@
 
 	'use strict';
 
-	import _Object$defineProperty from 'babel-runtime/core-js/object/define-property';
-	import _Object$keys from 'babel-runtime/core-js/object/keys';
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 
 	var _NotFound = __webpack_require__(694);
 
-	_Object$keys(_NotFound).forEach(function (key) {
-	  if (key === "default") return;
-
-	  _Object$defineProperty(exports, key, {
-	    enumerable: true,
-	    get: function get() {
-	      return _NotFound[key];
-	    }
-	  });
-	});
-
-	Object.defineProperty(exports, 'default', {
-	  enumerable: true,
-	  get: function get() {
-	    return _interopRequireDefault(_NotFound).default;
-	  }
-	});
+	var _NotFound2 = _interopRequireDefault(_NotFound);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _NotFound2.default;
 
 /***/ },
 /* 694 */
