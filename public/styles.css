@@ -1,5 +1,4 @@
 /****
-basic site styles. more flexibility provided in theme.
-will be over-ridden in JSX.
+Google fonts -- should import in js, get rid of this completely
 *****/
 @import url(https://fonts.googleapis.com/css?family=Josefin+Slab);
