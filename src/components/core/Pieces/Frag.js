@@ -1,14 +1,6 @@
-/* ********
-  AUTHOR: breezykermo
-  DATE: 31 March 2016 (Thursday)
-  DESCRIPTION: Frag for Blog homepage.
-  NOTES:
-
-******** */
 import React, { PropTypes } from 'react';
 import theme from '../../../theme.js';
 
-/** Styles */
 const styles = {
   title: {
     ...theme.link,
@@ -21,9 +13,7 @@ const styles = {
     color: 'gray',
   },
 };
-/**
- * Frag, display meta of Blog post.
- */
+
 const Frag = (props) => (
   <div onClick={props.onClickHandler} className="row">
     <div className="col-md-6 col-md-offset-3">

@@ -1,9 +1,3 @@
-/* ********
-  AUTHOR: breezykermo
-  DATE: 28 February 2016 (Sunday)
-  DESCRIPTION: site nav
-
-******** */
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import styles from './Nav.styles';
@@ -12,6 +6,7 @@ const Nav = (props) => {
   const { pathways } = props;
   const { home } = pathways;
   delete pathways.home;
+
   const pages = Object.keys(pathways).map(key => pathways[key]);
   const pageHeaders = pages.map(page => (
     <div key={page.title} className="col-sm-3">

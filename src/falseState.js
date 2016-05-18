@@ -1,3 +1,6 @@
+// for developing site without server (e.g., without pulling content from github)
+
+/* eslint-disable quotes, quote-props, comma-dangle, max-len */
 export default {
   "home": {
     "title": "Lachlan Kermode",
@@ -235,4 +238,4 @@ export default {
       }
     }
   ]
-}
+};

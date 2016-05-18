@@ -3,7 +3,6 @@ import Markdown from 'react-remarkable';
 import { Style } from 'radium';
 import { markdownRules } from '../../../../theme';
 
-/** Styles */
 const styles = {
   container: {
     paddingTop: '20px',
@@ -12,11 +11,8 @@ const styles = {
     textAlign: 'center',
   },
 };
-const blogStyle = markdownRules;
-/**
- * A post of a song, with lyrics.
- */
-const SongPost = (props) => (
+
+const Song = (props) => (
   <div style={styles.container}>
     <h3>{props.title} <br /> <small>{props.date}</small></h3>
     <hr/>
@@ -24,18 +20,18 @@ const SongPost = (props) => (
       <iframe width="420" height="315" src={props.source} frameBorder="0" allowFullScreen />
     </div>
     <hr />
-    <Style rules={blogStyle} />
+    <Style rules={markdownRules} />
     <Markdown
       options={'full'}
       source={props.lyrics}
     />
   </div>
 );
-SongPost.propTypes = {
+Song.propTypes = {
   date: PropTypes.string.isRequired,
   lyrics: PropTypes.string.isRequired,
   source: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   type: PropTypes.string,
 };
-export default SongPost;
+export default Song;

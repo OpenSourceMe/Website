@@ -10,7 +10,6 @@ export default {
   navHead: {
     ...theme.header,
     ...theme.link,
-    // padding: 15,
     margin: 15,
   },
   pagesContainer: {

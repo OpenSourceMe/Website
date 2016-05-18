@@ -1,10 +1,3 @@
-/* ********
-  AUTHOR: breezykermo
-  DATE: 31 March 2016 (Thursday)
-  DESCRIPTION: Standard Layout Container.
-  NOTES:
-
-******** */
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Nav from '../components/core/Nav';

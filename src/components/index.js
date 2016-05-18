@@ -10,7 +10,7 @@ export default {
   MarkDown,
   NotFound,
   Pieces,
-  /* Custom */
+  /* Extended components */
   Portfolio,
   Resume,
 };

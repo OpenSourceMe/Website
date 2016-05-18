@@ -1,8 +1,5 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-// import { routerActions } from 'react-router-redux';
-// import { mapDispatchToProps } from '../util/redux';
-/** Components */
 import NotFound from '../components/core/NotFound';
 import RegularPost from '../components/core/Pieces/types/Regular';
 import SongPost from '../components/core/Pieces/types/Song';
@@ -12,9 +9,7 @@ const styles = {
     maxWidth: '80%',
   },
 };
-/**
- * RenderPiece by type.
- */
+
 const RenderPiece = props => {
   /** Find right content from query param */
   const potentialNames = props.pieces.map(p => p.title.replace(/\s+/g, '-').toLowerCase());
@@ -45,7 +40,6 @@ RenderPiece.propTypes = {
     title: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
     content: PropTypes.string,
-    // types: PropTypes.string,
   })),
   params: PropTypes.shape({
     pieceName: PropTypes.string.isRequired,

@@ -1,10 +1,3 @@
-/* ********
-  AUTHOR: breezykermo
-  DATE: 11 February 2016 (Thursday)
-  DESCRIPTION: Skill component
-  NOTES:
-
-******** */
 import React, { PropTypes } from 'react';
 import theme from './theme';
 

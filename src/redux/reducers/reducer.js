@@ -7,7 +7,7 @@ const reducer = combineReducers({
   routing: routerReducer,
   home,
   pages,
-  /** Custom components can also have associated reducers */
+  /** Extended components could also have associated reducers */
 });
 
 export default reducer;

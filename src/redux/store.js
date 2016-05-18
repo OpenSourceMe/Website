@@ -1,10 +1,3 @@
-/* ********
-  AUTHOR: breezykermo
-  DATE: 31 March 2016 (Thursday)
-  DESCRIPTION: Configure Redux store.
-  NOTES:
-
-******** */
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import multi from 'redux-multi';

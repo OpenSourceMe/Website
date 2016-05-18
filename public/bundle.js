@@ -7822,7 +7822,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// const state = window.__initialState__ || undefined;
-	var state = __webpack_require__(776).default;
+	var state = __webpack_require__(777).default;
 
 	var store = exports.store = (0, _store.configureStore)(_reactRouter.browserHistory, state);
 
@@ -29371,13 +29371,7 @@
 	  var store = createFinalStore(_reducer2.default, initialState);
 
 	  return store;
-	} /* ********
-	    AUTHOR: breezykermo
-	    DATE: 31 March 2016 (Thursday)
-	    DESCRIPTION: Configure Redux store.
-	    NOTES:
-	  
-	  ******** */
+	}
 
 /***/ },
 /* 484 */
@@ -29811,7 +29805,7 @@
 	  pages: _pages.pages
 	});
 
-	/** Custom components can also have associated reducers */
+	/** Extended components could also have associated reducers */
 	exports.default = reducer;
 
 /***/ },
@@ -38566,9 +38560,6 @@
 	  return _react2.default.createElement(_reactRouter.Router, { history: history, routes: _routes2.default });
 	};
 
-	/* ROUTER */
-
-
 	exports.default = App;
 
 /***/ },
@@ -38595,15 +38586,15 @@
 
 	var _Pieces2 = _interopRequireDefault(_Pieces);
 
-	var _RenderPiece = __webpack_require__(771);
+	var _RenderPiece = __webpack_require__(772);
 
 	var _RenderPiece2 = _interopRequireDefault(_RenderPiece);
 
-	var _RenderPage = __webpack_require__(774);
+	var _RenderPage = __webpack_require__(775);
 
 	var _RenderPage2 = _interopRequireDefault(_RenderPage);
 
-	var _legacyRoutes = __webpack_require__(775);
+	var _legacyRoutes = __webpack_require__(776);
 
 	var _legacyRoutes2 = _interopRequireDefault(_legacyRoutes);
 
@@ -38647,18 +38638,9 @@
 
 	var _components2 = _interopRequireDefault(_components);
 
-	var _react3 = __webpack_require__(770);
+	var _react3 = __webpack_require__(771);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	/* ********
-	  AUTHOR: breezykermo
-	  DATE: 31 March 2016 (Thursday)
-	  DESCRIPTION: Standard Layout Container.
-	  NOTES:
-
-	******** */
-
 
 	var Layout = function Layout(props) {
 	  return _react2.default.createElement(
@@ -38693,11 +38675,24 @@
 
 	'use strict';
 
+	import _Object$defineProperty from 'babel-runtime/core-js/object/define-property';
+	import _Object$keys from 'babel-runtime/core-js/object/keys';
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 
 	var _Nav = __webpack_require__(603);
+
+	_Object$keys(_Nav).forEach(function (key) {
+	  if (key === "default") return;
+
+	  _Object$defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _Nav[key];
+	    }
+	  });
+	});
 
 	Object.defineProperty(exports, 'default', {
 	  enumerable: true,
@@ -38739,6 +38734,7 @@
 	  var home = pathways.home;
 
 	  delete pathways.home;
+
 	  var pages = (0, _keys2.default)(pathways).map(function (key) {
 	    return pathways[key];
 	  });
@@ -38779,13 +38775,7 @@
 	    ),
 	    _react2.default.createElement('br', null)
 	  );
-	}; /* ********
-	     AUTHOR: breezykermo
-	     DATE: 28 February 2016 (Sunday)
-	     DESCRIPTION: site nav
-	   
-	   ******** */
-
+	};
 	Nav.propTypes = {
 	  pathways: _react.PropTypes.objectOf(_react.PropTypes.shape({
 	    title: _react.PropTypes.string.isRequired,
@@ -38998,7 +38988,6 @@
 	    width: '100%'
 	  },
 	  navHead: (0, _extends3.default)({}, _theme2.default.header, _theme2.default.link, {
-	    // padding: 15,
 	    margin: 15
 	  }),
 	  pagesContainer: {
@@ -39224,17 +39213,33 @@
 
 	'use strict';
 
+	import _Object$defineProperty from 'babel-runtime/core-js/object/define-property';
+	import _Object$keys from 'babel-runtime/core-js/object/keys';
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 
 	var _Footer = __webpack_require__(627);
 
-	var _Footer2 = _interopRequireDefault(_Footer);
+	_Object$keys(_Footer).forEach(function (key) {
+	  if (key === "default") return;
+
+	  _Object$defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _Footer[key];
+	    }
+	  });
+	});
+
+	Object.defineProperty(exports, 'default', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_Footer).default;
+	  }
+	});
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _Footer2.default;
 
 /***/ },
 /* 627 */
@@ -39265,8 +39270,8 @@
 	  marginBottom: '5em'
 	};
 
-	// note: radium requires keys
-	var Footer = function Footer(props) {
+	// NB: radium requires keys
+	var Footer = function Footer() {
 	  return _react2.default.createElement(
 	    'div',
 	    { className: 'row', style: styles },
@@ -39298,7 +39303,7 @@
 	  );
 	};
 
-	exports.default = (0, _radium2.default)(Footer);
+	exports.default = (0, _radium2.default)(Footer); // eslint-disable-line new-cap
 
 /***/ },
 /* 628 */
@@ -39326,11 +39331,11 @@
 
 	var _Pieces2 = _interopRequireDefault(_Pieces);
 
-	var _Portfolio = __webpack_require__(729);
+	var _Portfolio = __webpack_require__(730);
 
 	var _Portfolio2 = _interopRequireDefault(_Portfolio);
 
-	var _Resume = __webpack_require__(732);
+	var _Resume = __webpack_require__(733);
 
 	var _Resume2 = _interopRequireDefault(_Resume);
 
@@ -39341,7 +39346,7 @@
 	  MarkDown: _MarkDown2.default,
 	  NotFound: _NotFound2.default,
 	  Pieces: _Pieces2.default,
-	  /* Custom */
+	  /* Extended components */
 	  Portfolio: _Portfolio2.default,
 	  Resume: _Resume2.default
 	};
@@ -39352,17 +39357,33 @@
 
 	'use strict';
 
+	import _Object$defineProperty from 'babel-runtime/core-js/object/define-property';
+	import _Object$keys from 'babel-runtime/core-js/object/keys';
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 
 	var _MarkDown = __webpack_require__(630);
 
-	var _MarkDown2 = _interopRequireDefault(_MarkDown);
+	_Object$keys(_MarkDown).forEach(function (key) {
+	  if (key === "default") return;
+
+	  _Object$defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _MarkDown[key];
+	    }
+	  });
+	});
+
+	Object.defineProperty(exports, 'default', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_MarkDown).default;
+	  }
+	});
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _MarkDown2.default;
 
 /***/ },
 /* 630 */
@@ -49861,17 +49882,33 @@
 
 	'use strict';
 
+	import _Object$defineProperty from 'babel-runtime/core-js/object/define-property';
+	import _Object$keys from 'babel-runtime/core-js/object/keys';
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 
 	var _NotFound = __webpack_require__(694);
 
-	var _NotFound2 = _interopRequireDefault(_NotFound);
+	_Object$keys(_NotFound).forEach(function (key) {
+	  if (key === "default") return;
+
+	  _Object$defineProperty(exports, key, {
+	    enumerable: true,
+	    get: function get() {
+	      return _NotFound[key];
+	    }
+	  });
+	});
+
+	Object.defineProperty(exports, 'default', {
+	  enumerable: true,
+	  get: function get() {
+	    return _interopRequireDefault(_NotFound).default;
+	  }
+	});
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _NotFound2.default;
 
 /***/ },
 /* 694 */
@@ -49938,42 +49975,22 @@
 
 	var _reactRouterRedux = __webpack_require__(486);
 
-	var _sortByDate = __webpack_require__(727);
+	var _createFrag = __webpack_require__(727);
+
+	var _createFrag2 = _interopRequireDefault(_createFrag);
+
+	var _sortByDate = __webpack_require__(729);
 
 	var _sortByDate2 = _interopRequireDefault(_sortByDate);
 
-	var _Frag = __webpack_require__(728);
-
-	var _Frag2 = _interopRequireDefault(_Frag);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	/** Styles */
-	/* ********
-	AUTHOR: breezykermo
-	DATE: 26 February 2016 (Friday)
-	DESCRIPTION: basic blog component, renders all posts or a single post on click
-	NOTES:
-	  posts in props ought to be strings of a certain format (see lib/posts for examples)
-	******** */
 	var styles = {
 	  center: {
 	    textAlign: 'center'
 	  }
 	};
-	/**
-	 * Create a post fragment.
-	 * @param  {  Object} post        Post props.
-	 * @param  {number} index       Index of post in lineup.
-	 * @param  {function()} onFragClick Handler for onClick.
-	 * @return {ReactComponent}             Frag component
-	 */
-	var createFrag = function createFrag(post, index, onFragClick) {
-	  return _react2.default.createElement(_Frag2.default, { key: index, onClickHandler: onFragClick, title: post.title, date: post.date });
-	};
-	/**
-	 * Blog, houses Frags.
-	 */
+
 	var Pieces = function Pieces(props) {
 	  return _react2.default.createElement(
 	    'div',
@@ -49983,14 +50000,13 @@
 	        var name = post.title.replace(/\s+/g, '-').toLowerCase();
 	        props.actions.push('/pieces/' + name);
 	      };
-	      return createFrag(post, index, onFragClick);
+	      return (0, _createFrag2.default)(post, index, onFragClick);
 	    })
 	  );
 	};
 	Pieces.propTypes = {
 	  posts: _react.PropTypes.array.isRequired,
-	  actions: _react.PropTypes.objectOf(_react.PropTypes.func).isRequired,
-	  dispatch: _react.PropTypes.func.isRequired
+	  actions: _react.PropTypes.objectOf(_react.PropTypes.func).isRequired
 	};
 
 	exports.default = (0, _reactRedux.connect)(function (state) {
@@ -55498,30 +55514,36 @@
 
 /***/ },
 /* 727 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	var toISO = function toISO(dateVal) {
-	  return Date.parse(dateVal.split(/\./).reverse().join('-'));
+
+	var _react = __webpack_require__(293);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Frag = __webpack_require__(728);
+
+	var _Frag2 = _interopRequireDefault(_Frag);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * Create a post fragment.
+	 * @param  {  Object} post        Post props.
+	 * @param  {number} index       Index of post in lineup.
+	 * @param  {function()} onFragClick Handler for onClick.
+	 * @return {ReactComponent}             Frag component
+	 */
+	var createFrag = function createFrag(post, index, onFragClick) {
+	  return _react2.default.createElement(_Frag2.default, { key: index, onClickHandler: onFragClick, title: post.title, date: post.date });
 	};
 
-	var sortByDate = function sortByDate(pieces) {
-	  return pieces.sort(function (a, b) {
-	    /* ISO date format */
-	    var d1 = toISO(a.date);
-	    var d2 = toISO(b.date);
-
-	    if (d1 < d2) return 1;
-	    if (d1 > d2) return -1;
-	    return 0;
-	  });
-	};
-
-	exports.default = sortByDate;
+	exports.default = createFrag;
 
 /***/ },
 /* 728 */
@@ -55547,14 +55569,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	/** Styles */
-	/* ********
-	  AUTHOR: breezykermo
-	  DATE: 31 March 2016 (Thursday)
-	  DESCRIPTION: Frag for Blog homepage.
-	  NOTES:
-
-	******** */
 	var styles = {
 	  title: (0, _extends3.default)({}, _theme2.default.link, {
 	    fontSize: 32,
@@ -55566,9 +55580,7 @@
 	    color: 'gray'
 	  }
 	};
-	/**
-	 * Frag, display meta of Blog post.
-	 */
+
 	var Frag = function Frag(props) {
 	  return _react2.default.createElement(
 	    'div',
@@ -55600,6 +55612,33 @@
 
 /***/ },
 /* 729 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var toISO = function toISO(dateVal) {
+	  return Date.parse(dateVal.split(/\./).reverse().join('-'));
+	};
+
+	var sortByDate = function sortByDate(pieces) {
+	  return pieces.sort(function (a, b) {
+	    /* ISO date format */
+	    var d1 = toISO(a.date);
+	    var d2 = toISO(b.date);
+
+	    if (d1 < d2) return 1;
+	    if (d1 > d2) return -1;
+	    return 0;
+	  });
+	};
+
+	exports.default = sortByDate;
+
+/***/ },
+/* 730 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -55608,7 +55647,7 @@
 	  value: true
 	});
 
-	var _Portfolio = __webpack_require__(730);
+	var _Portfolio = __webpack_require__(731);
 
 	var _Portfolio2 = _interopRequireDefault(_Portfolio);
 
@@ -55617,7 +55656,7 @@
 	exports.default = _Portfolio2.default;
 
 /***/ },
-/* 730 */
+/* 731 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -55640,20 +55679,12 @@
 
 	var _radium = __webpack_require__(553);
 
-	var _Work = __webpack_require__(731);
+	var _Work = __webpack_require__(732);
 
 	var _Work2 = _interopRequireDefault(_Work);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	/** Markdown Styles */
-	/* ********
-	  AUTHOR: breezykermo
-	  DATE: 31 March 2016 (Thursday)
-	  DESCRIPTION: Portfolio.
-	  NOTES:
-
-	******** */
 	var rules = {
 	  h4: (0, _extends3.default)({}, _theme2.default.header, {
 	    textAlign: 'center',
@@ -55702,7 +55733,7 @@
 	exports.default = Portfolio;
 
 /***/ },
-/* 731 */
+/* 732 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -55756,7 +55787,7 @@
 	exports.default = Work;
 
 /***/ },
-/* 732 */
+/* 733 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -55769,23 +55800,23 @@
 
 	var _extends3 = _interopRequireDefault(_extends2);
 
-	var _getPrototypeOf = __webpack_require__(733);
+	var _getPrototypeOf = __webpack_require__(734);
 
 	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-	var _classCallCheck2 = __webpack_require__(736);
+	var _classCallCheck2 = __webpack_require__(737);
 
 	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-	var _createClass2 = __webpack_require__(737);
+	var _createClass2 = __webpack_require__(738);
 
 	var _createClass3 = _interopRequireDefault(_createClass2);
 
-	var _possibleConstructorReturn2 = __webpack_require__(740);
+	var _possibleConstructorReturn2 = __webpack_require__(741);
 
 	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
 
-	var _inherits2 = __webpack_require__(751);
+	var _inherits2 = __webpack_require__(752);
 
 	var _inherits3 = _interopRequireDefault(_inherits2);
 
@@ -55795,19 +55826,19 @@
 
 	var _radium = __webpack_require__(553);
 
-	var _Header = __webpack_require__(758);
+	var _Header = __webpack_require__(759);
 
 	var _Header2 = _interopRequireDefault(_Header);
 
-	var _Sidebar = __webpack_require__(760);
+	var _Sidebar = __webpack_require__(761);
 
 	var _Sidebar2 = _interopRequireDefault(_Sidebar);
 
-	var _Section = __webpack_require__(763);
+	var _Section = __webpack_require__(764);
 
 	var _Section2 = _interopRequireDefault(_Section);
 
-	var _theme = __webpack_require__(759);
+	var _theme = __webpack_require__(760);
 
 	var _theme2 = _interopRequireDefault(_theme);
 
@@ -55883,20 +55914,20 @@
 	exports.default = Resume;
 
 /***/ },
-/* 733 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(734), __esModule: true };
-
-/***/ },
 /* 734 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(735);
-	module.exports = __webpack_require__(612).Object.getPrototypeOf;
+	module.exports = { "default": __webpack_require__(735), __esModule: true };
 
 /***/ },
 /* 735 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(736);
+	module.exports = __webpack_require__(612).Object.getPrototypeOf;
+
+/***/ },
+/* 736 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.2.9 Object.getPrototypeOf(O)
@@ -55909,7 +55940,7 @@
 	});
 
 /***/ },
-/* 736 */
+/* 737 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -55923,14 +55954,14 @@
 	};
 
 /***/ },
-/* 737 */
+/* 738 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	exports.__esModule = true;
 
-	var _defineProperty = __webpack_require__(738);
+	var _defineProperty = __webpack_require__(739);
 
 	var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -55955,13 +55986,13 @@
 	}();
 
 /***/ },
-/* 738 */
+/* 739 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(739), __esModule: true };
+	module.exports = { "default": __webpack_require__(740), __esModule: true };
 
 /***/ },
-/* 739 */
+/* 740 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = __webpack_require__(622);
@@ -55970,14 +56001,14 @@
 	};
 
 /***/ },
-/* 740 */
+/* 741 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	exports.__esModule = true;
 
-	var _typeof2 = __webpack_require__(741);
+	var _typeof2 = __webpack_require__(742);
 
 	var _typeof3 = _interopRequireDefault(_typeof2);
 
@@ -55992,12 +56023,12 @@
 	};
 
 /***/ },
-/* 741 */
+/* 742 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	var _Symbol = __webpack_require__(742)["default"];
+	var _Symbol = __webpack_require__(743)["default"];
 
 	exports["default"] = function (obj) {
 	  return obj && obj.constructor === _Symbol ? "symbol" : typeof obj;
@@ -56006,21 +56037,21 @@
 	exports.__esModule = true;
 
 /***/ },
-/* 742 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(743), __esModule: true };
-
-/***/ },
 /* 743 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(744);
-	__webpack_require__(750);
-	module.exports = __webpack_require__(612).Symbol;
+	module.exports = { "default": __webpack_require__(744), __esModule: true };
 
 /***/ },
 /* 744 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(745);
+	__webpack_require__(751);
+	module.exports = __webpack_require__(612).Symbol;
+
+/***/ },
+/* 745 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -56036,12 +56067,12 @@
 	  , setToStringTag = __webpack_require__(713)
 	  , uid            = __webpack_require__(716)
 	  , wks            = __webpack_require__(714)
-	  , keyOf          = __webpack_require__(745)
-	  , $names         = __webpack_require__(747)
-	  , enumKeys       = __webpack_require__(748)
-	  , isArray        = __webpack_require__(749)
+	  , keyOf          = __webpack_require__(746)
+	  , $names         = __webpack_require__(748)
+	  , enumKeys       = __webpack_require__(749)
+	  , isArray        = __webpack_require__(750)
 	  , anObject       = __webpack_require__(719)
-	  , toIObject      = __webpack_require__(746)
+	  , toIObject      = __webpack_require__(747)
 	  , createDesc     = __webpack_require__(708)
 	  , getDesc        = $.getDesc
 	  , setDesc        = $.setDesc
@@ -56252,11 +56283,11 @@
 	setToStringTag(global.JSON, 'JSON', true);
 
 /***/ },
-/* 745 */
+/* 746 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var $         = __webpack_require__(622)
-	  , toIObject = __webpack_require__(746);
+	  , toIObject = __webpack_require__(747);
 	module.exports = function(object, el){
 	  var O      = toIObject(object)
 	    , keys   = $.getKeys(O)
@@ -56267,7 +56298,7 @@
 	};
 
 /***/ },
-/* 746 */
+/* 747 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// to indexed object, toObject with fallback for non-array-like ES3 strings
@@ -56278,11 +56309,11 @@
 	};
 
 /***/ },
-/* 747 */
+/* 748 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
-	var toIObject = __webpack_require__(746)
+	var toIObject = __webpack_require__(747)
 	  , getNames  = __webpack_require__(622).getNames
 	  , toString  = {}.toString;
 
@@ -56303,7 +56334,7 @@
 	};
 
 /***/ },
-/* 748 */
+/* 749 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// all enumerable object keys, includes symbols
@@ -56322,7 +56353,7 @@
 	};
 
 /***/ },
-/* 749 */
+/* 750 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.2.2 IsArray(argument)
@@ -56332,20 +56363,20 @@
 	};
 
 /***/ },
-/* 750 */
+/* 751 */
 /***/ function(module, exports) {
 
 	
 
 /***/ },
-/* 751 */
+/* 752 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	var _Object$create = __webpack_require__(752)["default"];
+	var _Object$create = __webpack_require__(753)["default"];
 
-	var _Object$setPrototypeOf = __webpack_require__(754)["default"];
+	var _Object$setPrototypeOf = __webpack_require__(755)["default"];
 
 	exports["default"] = function (subClass, superClass) {
 	  if (typeof superClass !== "function" && superClass !== null) {
@@ -56366,13 +56397,13 @@
 	exports.__esModule = true;
 
 /***/ },
-/* 752 */
+/* 753 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(753), __esModule: true };
+	module.exports = { "default": __webpack_require__(754), __esModule: true };
 
 /***/ },
-/* 753 */
+/* 754 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var $ = __webpack_require__(622);
@@ -56381,28 +56412,28 @@
 	};
 
 /***/ },
-/* 754 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(755), __esModule: true };
-
-/***/ },
 /* 755 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(756);
-	module.exports = __webpack_require__(612).Object.setPrototypeOf;
+	module.exports = { "default": __webpack_require__(756), __esModule: true };
 
 /***/ },
 /* 756 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// 19.1.3.19 Object.setPrototypeOf(O, proto)
-	var $export = __webpack_require__(610);
-	$export($export.S, 'Object', {setPrototypeOf: __webpack_require__(757).set});
+	__webpack_require__(757);
+	module.exports = __webpack_require__(612).Object.setPrototypeOf;
 
 /***/ },
 /* 757 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.3.19 Object.setPrototypeOf(O, proto)
+	var $export = __webpack_require__(610);
+	$export($export.S, 'Object', {setPrototypeOf: __webpack_require__(758).set});
+
+/***/ },
+/* 758 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// Works with __proto__ only. Old v8 can't work with null proto objects.
@@ -56433,7 +56464,7 @@
 	};
 
 /***/ },
-/* 758 */
+/* 759 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -56446,7 +56477,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _theme = __webpack_require__(759);
+	var _theme = __webpack_require__(760);
 
 	var _theme2 = _interopRequireDefault(_theme);
 
@@ -56508,7 +56539,7 @@
 	exports.default = Header;
 
 /***/ },
-/* 759 */
+/* 760 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -56526,8 +56557,6 @@
 	var _theme2 = _interopRequireDefault(_theme);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	// console.log(globalTheme);
 
 	exports.default = {
 	  mainColor: '#BB83FF',
@@ -56552,7 +56581,7 @@
 	};
 
 /***/ },
-/* 760 */
+/* 761 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -56569,11 +56598,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Details = __webpack_require__(761);
+	var _Details = __webpack_require__(762);
 
 	var _Details2 = _interopRequireDefault(_Details);
 
-	var _Skill = __webpack_require__(762);
+	var _Skill = __webpack_require__(763);
 
 	var _Skill2 = _interopRequireDefault(_Skill);
 
@@ -56605,7 +56634,7 @@
 	exports.default = Sidebar;
 
 /***/ },
-/* 761 */
+/* 762 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -56690,7 +56719,7 @@
 	exports.default = Details;
 
 /***/ },
-/* 762 */
+/* 763 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -56703,20 +56732,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _theme = __webpack_require__(759);
+	var _theme = __webpack_require__(760);
 
 	var _theme2 = _interopRequireDefault(_theme);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	/* ********
-	  AUTHOR: breezykermo
-	  DATE: 11 February 2016 (Thursday)
-	  DESCRIPTION: Skill component
-	  NOTES:
-
-	******** */
-
 
 	var styles = {
 	  hr: {
@@ -56773,7 +56793,7 @@
 	exports.default = Skill;
 
 /***/ },
-/* 763 */
+/* 764 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -56790,13 +56810,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _markdown = __webpack_require__(764);
+	var _markdown = __webpack_require__(765);
 
-	var _Pill = __webpack_require__(769);
+	var _Pill = __webpack_require__(770);
 
 	var _Pill2 = _interopRequireDefault(_Pill);
 
-	var _theme = __webpack_require__(759);
+	var _theme = __webpack_require__(760);
 
 	var _theme2 = _interopRequireDefault(_theme);
 
@@ -56869,16 +56889,16 @@
 	exports.default = Section;
 
 /***/ },
-/* 764 */
+/* 765 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// super simple module for the most common nodejs use case.
-	exports.markdown = __webpack_require__(765);
+	exports.markdown = __webpack_require__(766);
 	exports.parse = exports.markdown.toHTML;
 
 
 /***/ },
-/* 765 */
+/* 766 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// Released under MIT license
@@ -57010,7 +57030,7 @@
 
 	// node
 	function mk_block_inspect() {
-	  var util = __webpack_require__(766);
+	  var util = __webpack_require__(767);
 	  return "Markdown.mk_block( " +
 	          util.inspect(this.toString()) +
 	          ", " +
@@ -58609,7 +58629,7 @@
 
 
 /***/ },
-/* 766 */
+/* 767 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global, process) {// Copyright Joyent, Inc. and other Node contributors.
@@ -59137,7 +59157,7 @@
 	}
 	exports.isPrimitive = isPrimitive;
 
-	exports.isBuffer = __webpack_require__(767);
+	exports.isBuffer = __webpack_require__(768);
 
 	function objectToString(o) {
 	  return Object.prototype.toString.call(o);
@@ -59181,7 +59201,7 @@
 	 *     prototype.
 	 * @param {function} superCtor Constructor function to inherit prototype from.
 	 */
-	exports.inherits = __webpack_require__(768);
+	exports.inherits = __webpack_require__(769);
 
 	exports._extend = function(origin, add) {
 	  // Don't do anything if add isn't an object
@@ -59202,7 +59222,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(288)))
 
 /***/ },
-/* 767 */
+/* 768 */
 /***/ function(module, exports) {
 
 	module.exports = function isBuffer(arg) {
@@ -59213,7 +59233,7 @@
 	}
 
 /***/ },
-/* 768 */
+/* 769 */
 /***/ function(module, exports) {
 
 	if (typeof Object.create === 'function') {
@@ -59242,7 +59262,7 @@
 
 
 /***/ },
-/* 769 */
+/* 770 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -59325,7 +59345,7 @@
 	exports.default = Pill;
 
 /***/ },
-/* 770 */
+/* 771 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -59370,7 +59390,7 @@
 	};
 
 /***/ },
-/* 771 */
+/* 772 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -59389,13 +59409,13 @@
 
 	var _NotFound2 = _interopRequireDefault(_NotFound);
 
-	var _RegularPost = __webpack_require__(772);
+	var _Regular = __webpack_require__(773);
 
-	var _RegularPost2 = _interopRequireDefault(_RegularPost);
+	var _Regular2 = _interopRequireDefault(_Regular);
 
-	var _SongPost = __webpack_require__(773);
+	var _Song = __webpack_require__(774);
 
-	var _SongPost2 = _interopRequireDefault(_SongPost);
+	var _Song2 = _interopRequireDefault(_Song);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -59404,13 +59424,7 @@
 	    maxWidth: '80%'
 	  }
 	};
-	/**
-	 * RenderPiece by type.
-	 */
 
-	// import { routerActions } from 'react-router-redux';
-	// import { mapDispatchToProps } from '../util/redux';
-	/** Components */
 	var RenderPiece = function RenderPiece(props) {
 	  /** Find right content from query param */
 	  var potentialNames = props.pieces.map(function (p) {
@@ -59425,11 +59439,11 @@
 	  var content = void 0;
 	  switch (details.type) {
 	    case 'song':
-	      content = _react2.default.createElement(_SongPost2.default, details);
+	      content = _react2.default.createElement(_Song2.default, details);
 	      break;
 
 	    default:
-	      content = _react2.default.createElement(_RegularPost2.default, details);
+	      content = _react2.default.createElement(_Regular2.default, details);
 	  }
 
 	  return _react2.default.createElement(
@@ -59444,7 +59458,6 @@
 	    date: _react.PropTypes.string.isRequired,
 	    content: _react.PropTypes.string
 	  })),
-	  // types: PropTypes.string,
 	  params: _react.PropTypes.shape({
 	    pieceName: _react.PropTypes.string.isRequired
 	  })
@@ -59455,73 +59468,6 @@
 	    pieces: state.home.content
 	  };
 	})(RenderPiece);
-
-/***/ },
-/* 772 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(293);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactRemarkable = __webpack_require__(631);
-
-	var _reactRemarkable2 = _interopRequireDefault(_reactRemarkable);
-
-	var _radium = __webpack_require__(553);
-
-	var _theme = __webpack_require__(625);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	/** Styles */
-	var styles = {
-	  container: {
-	    paddingTop: '20px'
-	  }
-	};
-	/** Markdown rules */
-	var blogStyle = _theme.markdownRules;
-	/**
-	 * A regular post, with Markdown content.
-	 */
-	var RegularPost = function RegularPost(props) {
-	  return _react2.default.createElement(
-	    'div',
-	    { style: styles.container },
-	    _react2.default.createElement(
-	      'h3',
-	      null,
-	      props.title,
-	      ' ',
-	      _react2.default.createElement('br', null),
-	      ' ',
-	      _react2.default.createElement(
-	        'small',
-	        null,
-	        props.date
-	      )
-	    ),
-	    _react2.default.createElement('hr', null),
-	    _react2.default.createElement(_radium.Style, { rules: blogStyle }),
-	    _react2.default.createElement(_reactRemarkable2.default, {
-	      options: 'full',
-	      source: props.content
-	    })
-	  );
-	};
-	RegularPost.propTypes = {
-	  title: _react.PropTypes.string.isRequired,
-	  date: _react.PropTypes.string.isRequired,
-	  content: _react.PropTypes.string.isRequired
-	};
-	exports.default = RegularPost;
 
 /***/ },
 /* 773 */
@@ -59545,18 +59491,70 @@
 
 	var _theme = __webpack_require__(625);
 
-	var _theme2 = _interopRequireDefault(_theme);
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var styles = {
+	  container: {
+	    paddingTop: '20px'
+	  }
+	};
+
+	var Regular = function Regular(props) {
+	  return _react2.default.createElement(
+	    'div',
+	    { style: styles.container },
+	    _react2.default.createElement(
+	      'h3',
+	      null,
+	      props.title,
+	      ' ',
+	      _react2.default.createElement('br', null),
+	      ' ',
+	      _react2.default.createElement(
+	        'small',
+	        null,
+	        props.date
+	      )
+	    ),
+	    _react2.default.createElement('hr', null),
+	    _react2.default.createElement(_radium.Style, { rules: _theme.markdownRules }),
+	    _react2.default.createElement(_reactRemarkable2.default, {
+	      options: 'full',
+	      source: props.content
+	    })
+	  );
+	};
+	Regular.propTypes = {
+	  title: _react.PropTypes.string.isRequired,
+	  date: _react.PropTypes.string.isRequired,
+	  content: _react.PropTypes.string.isRequired
+	};
+	exports.default = Regular;
+
+/***/ },
+/* 774 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(293);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRemarkable = __webpack_require__(631);
+
+	var _reactRemarkable2 = _interopRequireDefault(_reactRemarkable);
+
+	var _radium = __webpack_require__(553);
+
+	var _theme = __webpack_require__(625);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	/** Styles */
-	/* ********
-	  AUTHOR: breezykermo
-	  DATE: 31 March 2016 (Thursday)
-	  DESCRIPTION: A post of a song, with lyrics.
-	  NOTES:
-
-	******** */
 	var styles = {
 	  container: {
 	    paddingTop: '20px'
@@ -59565,11 +59563,8 @@
 	    textAlign: 'center'
 	  }
 	};
-	var blogStyle = _theme.markdownRules;
-	/**
-	 * A post of a song, with lyrics.
-	 */
-	var SongPost = function SongPost(props) {
+
+	var Song = function Song(props) {
 	  return _react2.default.createElement(
 	    'div',
 	    { style: styles.container },
@@ -59593,24 +59588,24 @@
 	      _react2.default.createElement('iframe', { width: '420', height: '315', src: props.source, frameBorder: '0', allowFullScreen: true })
 	    ),
 	    _react2.default.createElement('hr', null),
-	    _react2.default.createElement(_radium.Style, { rules: blogStyle }),
+	    _react2.default.createElement(_radium.Style, { rules: _theme.markdownRules }),
 	    _react2.default.createElement(_reactRemarkable2.default, {
 	      options: 'full',
 	      source: props.lyrics
 	    })
 	  );
 	};
-	SongPost.propTypes = {
+	Song.propTypes = {
 	  date: _react.PropTypes.string.isRequired,
 	  lyrics: _react.PropTypes.string.isRequired,
 	  source: _react.PropTypes.string.isRequired,
 	  title: _react.PropTypes.string.isRequired,
 	  type: _react.PropTypes.string
 	};
-	exports.default = SongPost;
+	exports.default = Song;
 
 /***/ },
-/* 774 */
+/* 775 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -59633,22 +59628,16 @@
 
 	var _MarkDown2 = _interopRequireDefault(_MarkDown);
 
-	var _Portfolio = __webpack_require__(729);
+	var _Portfolio = __webpack_require__(730);
 
 	var _Portfolio2 = _interopRequireDefault(_Portfolio);
 
-	var _Resume = __webpack_require__(732);
+	var _Resume = __webpack_require__(733);
 
 	var _Resume2 = _interopRequireDefault(_Resume);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	/** Transforms */
-	// import { mapDispatchToProps } from '../util/redux';
-	// import resumeActions from '../redux/reducers/transforms/resume';
-	/**
-	 * Page Container.
-	 */
 	var Page = function Page(props) {
 	  var possiblePages = {};
 	  props.pages.forEach(function (page) {
@@ -59684,6 +59673,7 @@
 	    pageName: _react.PropTypes.string.isRequired
 	  })
 	};
+
 	exports.default = (0, _reactRedux.connect)(function (state) {
 	  return {
 	    pages: state.pages
@@ -59691,7 +59681,7 @@
 	})(Page);
 
 /***/ },
-/* 775 */
+/* 776 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -59720,7 +59710,7 @@
 	exports.default = legacyRoutes;
 
 /***/ },
-/* 776 */
+/* 777 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -59728,6 +59718,9 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	// for developing site without server (e.g., without pulling content from github)
+
+	/* eslint-disable quotes, quote-props, comma-dangle, max-len */
 	exports.default = {
 	  "home": {
 	    "title": "Lachlan Kermode",

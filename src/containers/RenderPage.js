@@ -4,12 +4,7 @@ import NotFound from '../components/core/NotFound';
 import MarkDown from '../components/core/MarkDown';
 import Portfolio from '../components/extended/Portfolio';
 import Resume from '../components/extended/Resume';
-/** Transforms */
-// import { mapDispatchToProps } from '../util/redux';
-// import resumeActions from '../redux/reducers/transforms/resume';
-/**
- * Page Container.
- */
+
 const Page = (props) => {
   const possiblePages = {};
   props.pages.forEach(page => {
@@ -47,6 +42,7 @@ Page.propTypes = {
     pageName: PropTypes.string.isRequired,
   }),
 };
+
 export default connect(
   state => ({
     pages: state.pages,

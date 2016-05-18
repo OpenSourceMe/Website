@@ -1,5 +1,4 @@
 import globalTheme from '../../../theme';
-// console.log(globalTheme);
 
 export default {
   mainColor: '#BB83FF',

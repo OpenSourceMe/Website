@@ -1,18 +1,8 @@
-/* ********
-  AUTHOR: breezykermo
-  DATE: 31 March 2016 (Thursday)
-  DESCRIPTION: Portfolio.
-  NOTES:
-
-******** */
-import React, {
-  PropTypes,
-} from 'react';
+import React, { PropTypes } from 'react';
 import theme from '../../../theme';
 import { Style } from 'radium';
 import Work from './Work';
 
-/** Markdown Styles */
 const rules = {
   h4: {
     ...theme.header,

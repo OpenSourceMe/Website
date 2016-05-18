@@ -1,10 +1,3 @@
-/* ********
-  AUTHOR: breezykermo
-  DATE: 30 March 2016 (Wednesday)
-  DESCRIPTION: Serverside rendering of React application.
-  NOTES:
-
-******** */
 import express from 'express';
 import serialize from 'serialize-javascript';
 import React from 'react';
@@ -14,9 +7,7 @@ import { createMemoryHistory, match, RouterContext } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { configureStore } from './redux/store';
 import routes from './routes';
-/** Radium serverside */
 import { StyleRoot } from 'radium';
-/** API imports */
 import api from './api';
 import { loadData } from './api/github';
 
@@ -64,9 +55,8 @@ app.use((req, res) => {
       res.redirect(302, redirectLocation.pathname + redirectLocation.search);
     /** Successful match, render app serverside */
     } else if (renderProps) {
-      // NB: hits here twice per request for some reason...
+      // NB, TODO: hits here twice per request for some reason...
       loadData().then(state => {
-        console.log(state);
         store = configureStore(memoryHistory, state);
         const content = (
           <Provider store={store}>
