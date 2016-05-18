@@ -1,4 +1,4 @@
 me:
-  image: breezykermo/personalsite
+  build: .
   ports:
    - "3000:3000"
