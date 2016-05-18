@@ -1,15 +1,5 @@
-/* ********
-  AUTHOR: breezykermo
-  DATE: 17 April 2016 (Sunday)
-  DESCRIPTION: Functions to retrieve data.
-  NOTES:
-    NB: very opinionated at the moment, should really modularize a
-    lot more (can tell because some of these functions would be
-    hard to test).
-
-******** */
 import 'babel-polyfill';
-import CONFIG from './config.json';
+import CONFIG from '../../config/core.json';
 import templates from './templates';
 
 /** URL to retrieve Website content */
