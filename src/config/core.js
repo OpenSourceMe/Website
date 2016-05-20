@@ -1,9 +1,9 @@
 export default {
-  githubPath: 'OpenSourceMe/LachieKermode',
-  websiteFolder: 'Website',
-  branch: 'master',
+  githubPath: process.env.GITHUB_PATH || 'OpenSourceMe/LachieKermode',
+  websiteFolder: process.env.WEBSITE_FOLDER || 'Website',
+  branch: process.env.BRANCH || 'master',
   home: {
-    title: 'Lachlan Kermode',
+    title: process.env.SITE_TITLE || 'My OpenSourceMe',
     template: 'Pieces',
     content: {
       type: 'folder',
