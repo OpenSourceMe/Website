@@ -5,12 +5,11 @@
   "scripts": {
     "build": "webpack --progress --profile --colors",
     "browser:dev": "NODE_ENV='development' webpack-dev-server --progress",
-    "server": "NODE_ENV='production' PORT=3000 node entry.js",
-    "server:dev": "npm run build && nodemon --exec NODE_ENV='production' PORT=3000 node entry.js",
+    "server": "NODE_ENV=production PORT=3000 node entry.js",
     "test": "babel-tape-runner src/**/*.spec.js | tap-spec",
     "test:watch": "npm run test -- --watch",
     "lint": "eslint --config=.eslintrc src/** src/**/*.js !src/api/data/**/*.js",
-    "start": "npm run build && npm run server"
+    "start": "NODE_ENV='production' npm run build && npm run server"
   },
   "repository": {
     "type": "git",
@@ -76,7 +75,6 @@
     "file-loader": "0.8.4",
     "mockery": "^1.6.2",
     "nock": "^3.6.0",
-    "nodemon": "^1.9.1",
     "raw-loader": "^0.5.1",
     "redux-mock-store": "0.0.4",
     "rewire": "^2.5.1",

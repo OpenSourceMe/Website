@@ -7,11 +7,12 @@ import { StyleRoot } from 'radium';
 import App from './App';
 
 /** Hydrate state from server, isomorphic render */
-let state = window.__initialState__ || undefined;
-if (process.env.NODE_ENV === 'development') {
+const state = window.__initialState__ || undefined;
+// console.log(process.env.NODE_ENV);
+// if (process.env.NODE_ENV === 'development') {
   /** For browser development (w/o express server), use false state */
-  state = require('./config/development/falseState').default;
-}
+  // state = require('./config/development/falseState').default;
+// }
 
 export const store = configureStore(browserHistory, state);
 
