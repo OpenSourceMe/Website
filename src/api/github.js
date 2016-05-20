@@ -1,5 +1,5 @@
 import 'babel-polyfill';
-import CONFIG from '../config/core.json';
+import CONFIG from '../config/core';
 import templates from './templates';
 
 /** URL to retrieve Website content */
