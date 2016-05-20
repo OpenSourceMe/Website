@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import theme from '../../../theme.js';
+import theme from '../../../config/theme';
 
 const styles = {
   title: {

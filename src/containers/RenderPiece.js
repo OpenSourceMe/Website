@@ -4,12 +4,6 @@ import NotFound from '../components/core/NotFound';
 import RegularPost from '../components/core/Pieces/types/Regular';
 import SongPost from '../components/core/Pieces/types/Song';
 
-const styles = {
-  body: {
-    maxWidth: '80%',
-  },
-};
-
 const RenderPiece = props => {
   /** Find right content from query param */
   const potentialNames = props.pieces.map(p => p.title.replace(/\s+/g, '-').toLowerCase());
@@ -30,7 +24,7 @@ const RenderPiece = props => {
   }
 
   return (
-    <div className="container" style={styles.body}>
+    <div className="container" style={{ maxWidth: '80%' }}>
       {content}
     </div>
   );

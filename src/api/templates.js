@@ -17,7 +17,7 @@ export default {
     handler: './handlers/blog',
   },
   default: {
-    matches: /Markdown|md/,
+    matches: /Mark(D|d)own|(M|m)d/,
     handler: './handlers/markdown',
   },
 };

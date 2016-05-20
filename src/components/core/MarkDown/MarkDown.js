@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import Markdown from 'react-remarkable';
-import theme, { markdownRules } from '../../../theme';
+import theme, { markdownRules } from '../../../config/theme';
 import { Style } from 'radium';
 
 const styles = {

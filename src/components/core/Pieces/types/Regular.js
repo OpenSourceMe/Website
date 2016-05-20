@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import Markdown from 'react-remarkable';
 import { Style } from 'radium';
-import { markdownRules } from '../../../../theme';
+import { markdownRules } from '../../../../config/theme';
 
 const styles = {
   container: {

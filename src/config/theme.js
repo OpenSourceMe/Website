@@ -1,11 +1,6 @@
-/* ********
-  AUTHOR: breezykermo
-  DATE: 30 March 2016 (Wednesday)
-  DESCRIPTION: Global themes for the site.
-  NOTES:
-    Theme styles require radium.
-
-******** */
+/**
+ * Theme across website.
+ */
 /** Globals */
 export const globals = {
   primaryColor: '#BEABF6',
@@ -13,37 +8,24 @@ export const globals = {
   headerFamily: 'Josefin Slab, serif',
   bodyFamily: "'PT Serif', sans-serif",
 };
-/** Main theme object */
+
 const theme = {
-  // globals available through theme
   ...globals,
-  // common styles
   header: {
     fontSize: 40,
     lineHeight: '55px',
     fontFamily: globals.headerFamily,
   },
   link: {
-    cursor: 'crosshair',
+    cursor: 'pointer',
     color: globals.secondaryColor,
     textDecoration: 'none',
     ':hover': {
       color: globals.primaryColor,
     },
   },
-  navItem: {
-    cursor: 'crosshair',
-    fontFamily: globals.headerFamily,
-    color: globals.secondaryColor,
-    textDecoration: 'none',
-    fontSize: '22px',
-    borderRadius: '0.8em',
-    float: 'right',
-    padding: 15,
-    margin: 15,
-  },
 };
-/** Markdown rules for blog */
+
 export const markdownRules = {
   h3: {
     ...theme.header,

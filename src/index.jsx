@@ -6,8 +6,12 @@ import { browserHistory } from 'react-router';
 import { StyleRoot } from 'radium';
 import App from './App';
 
-// const state = window.__initialState__ || undefined;
-const state = require('./falseState').default;
+/** Hydrate state from server, isomorphic render */
+let state = window.__initialState__ || undefined;
+if (process.env.NODE_ENV === 'development') {
+  /** For browser development (w/o express server), use false state */
+  state = require('./config/development/falseState').default;
+}
 
 export const store = configureStore(browserHistory, state);
 

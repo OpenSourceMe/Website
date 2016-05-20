@@ -1,4 +1,4 @@
-import theme from '../../../theme';
+import theme from '../../../config/theme';
 
 export default {
   nav: {

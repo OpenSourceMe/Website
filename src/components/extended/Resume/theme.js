@@ -1,4 +1,4 @@
-import globalTheme from '../../../theme';
+import globalTheme from '../../../config/theme';
 
 export default {
   mainColor: '#BB83FF',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { markdownRules } from '../../../theme';
+import { markdownRules } from '../../../config/theme';
 import { Style } from 'radium';
 
 const NotFound = () => (

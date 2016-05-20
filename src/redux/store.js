@@ -16,7 +16,7 @@ export function configureStore(history, initialState) {
   if (process.env.NODE_ENV === 'development') {
     devTools = window.devToolsExtension ? window.devToolsExtension() : f => f;
   }
-  /** Compose middleware and createStore */
+
   const createFinalStore = compose(
     applyMiddleware(thunk, multi, routingMiddleware),
     devTools

@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import theme from '../../../theme';
+import theme from '../../../config/theme';
 import { Style } from 'radium';
 import Work from './Work';
 

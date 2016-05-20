@@ -7792,7 +7792,7 @@
 /* 292 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -7821,8 +7821,12 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// const state = window.__initialState__ || undefined;
-	var state = __webpack_require__(777).default;
+	/** Hydrate state from server, isomorphic render */
+	var state = window.__initialState__ || undefined;
+	if (process.NODE_ENV === 'development') {
+	  /** For browser development (w/o express server), use false state */
+	  state = __webpack_require__(777).default;
+	}
 
 	var store = exports.store = (0, _store.configureStore)(_reactRouter.browserHistory, state);
 
@@ -7835,6 +7839,7 @@
 	    _react2.default.createElement(_App2.default, null)
 	  )
 	), document.querySelector('#app'));
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(288)))
 
 /***/ },
 /* 293 */
@@ -59579,6 +59584,7 @@
 	  props.pages.forEach(function (page) {
 	    possiblePages[page.title] = page;
 	  });
+	  console.log(possiblePages);
 	  /** NotFound if page title doesn't exist */
 	  if (!possiblePages[props.params.pageName]) {
 	    return _react2.default.createElement(_NotFound2.default, null);
@@ -59592,6 +59598,7 @@
 	  } else if (page.transform === 'Portfolio') {
 	    component = _react2.default.createElement(_Portfolio2.default, { title: page.title, content: page.content });
 	  } else if (page.transform === 'Resume') {
+	    console.log(page);
 	    component = _react2.default.createElement(_Resume2.default, {
 	      title: page.title,
 	      content: page.content,
