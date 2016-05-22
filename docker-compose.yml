@@ -1,8 +1,9 @@
 me:
-  build: .
+  # build: .
+  image: opensourceme/website
   environment:
-    SITE_TITLE: 'Lachie' # defaults to 'My OpenSourceMe'
-    GITHUB_PATH: 'OpenSourceMe/LachieKermode'
+    SITE_TITLE: 'Lachlan Kermode' # defaults to 'My OpenSourceMe'
+    GITHUB_PATH: 'breezykermo/LachieKermode'
     WEBSITE_FOLDER: 'Website' # defaults to 'Website'
     BRANCH: 'master' # defaults to 'master'
   ports:
