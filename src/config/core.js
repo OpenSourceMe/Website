@@ -2,6 +2,11 @@ export default {
   githubPath: process.env.GITHUB_PATH || 'OpenSourceMe/LachieKermode',
   websiteFolder: process.env.WEBSITE_FOLDER || 'Website',
   branch: process.env.BRANCH || 'master',
+  footer: {
+    left: 'Thanks for using this software!',
+    center: '<a href="https://github.com/OpenSourceMe/Website">Check out the source on Github</a>',
+    right: '🙏🙏🙏',
+  },
   home: {
     title: process.env.SITE_TITLE || 'My OpenSourceMe',
     template: 'Pieces',

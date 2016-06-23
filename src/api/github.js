@@ -62,5 +62,6 @@ export function loadData(config = CONFIG) {
     .then(homePage => ({
       home: homePage,
       pages,
+      footer: config.footer,
     }));
 }
