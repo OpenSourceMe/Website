@@ -11,17 +11,18 @@ const Layout = props => (
     <div>
       {props.children}
     </div>
-    <Footer />
+    <Footer {...props.footer} />
   </div>
 );
 Layout.propTypes = {
   home: PropTypes.object.isRequired,
   pages: PropTypes.array.isRequired,
+  footer: PropTypes.object.isRequired,
   children: PropTypes.any,
 };
 
-const LayoutContainer = connect(state => ({
+export default connect(state => ({
   home: state.home,
   pages: state.pages,
+  footer: state.footer,
 }))(Layout);
-export default LayoutContainer;

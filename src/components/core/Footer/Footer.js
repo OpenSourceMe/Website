@@ -1,27 +1,38 @@
-import React from 'react';
-import Radium from 'radium';
-import theme from '../../../config/theme';
+import React, { PropTypes } from 'react';
+import Markdown from 'react-remarkable';
+import { markdownRules } from '../../../config/theme';
+import { Style } from 'radium';
 
 const styles = {
-  marginTop: '2em',
-  marginBottom: '5em',
+  container: {
+    marginTop: '2em',
+    marginBottom: '5em',
+  },
+  item: {
+    paddingTop: '2em',
+  },
 };
 
-// NB: radium requires keys
-const Footer = () => (
-  <div className="row" style={styles}>
+const Footer = props => (
+  <div className="row" style={styles.container}>
     <br />
     <hr />
-    <div key={1} className="col-md-4 text-center">
-      thanks for reading!
+    <Style rules={markdownRules} />
+    <div style={styles.item} className="col-md-4 text-center">
+      <Markdown options={{ html: true }} source={props.left} />
     </div>
-    <div key={2} className="col-md-4 text-center">
-      <a key={4} style={theme.link} href="https://github.com/breezykermo/lachlankermode.com">lachlankermode.com on Github</a>
+    <div style={styles.item} className="col-md-4 text-center">
+      <Markdown options={{ html: true }} source={props.center} />
     </div>
-    <div key={3} className="col-md-4 text-center">
-      <a key={5} style={theme.link} href="https://www.twitter.com/lachlankermode">Twitter Me.</a>
+    <div style={styles.item} className="col-md-4 text-center">
+      <Markdown options={{ html: true }} source={props.right} />
     </div>
   </div>
 );
+Footer.propTypes = {
+  left: PropTypes.string,
+  center: PropTypes.string,
+  right: PropTypes.string,
+};
 
-export default Radium(Footer); // eslint-disable-line new-cap
+export default Footer;
