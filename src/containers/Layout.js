@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
+import LoadingBar from '../components/core/LoadingBar';
 import Nav from '../components/core/Nav';
 import Footer from '../components/core/Footer';
 import components from '../components';
@@ -7,11 +8,16 @@ import { createNavPathways } from '../util/react';
 
 const Layout = props => (
   <div>
-    <Nav pathways={createNavPathways(components, props.home, props.pages)}/>
+    { !(props.home && Array.isArray(props.home.content) && props.home.content.length > 0) ? (
+      <LoadingBar />
+    ) : (
     <div>
-      {props.children}
-    </div>
-    <Footer {...props.footer} />
+      <Nav pathways={createNavPathways(components, props.home, props.pages)}/>
+      <div>
+        {props.children}
+      </div>
+      <Footer {...props.footer} />
+    </div>)}
   </div>
 );
 Layout.propTypes = {

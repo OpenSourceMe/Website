@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/OpenSourceMe/Website#readme",
   "dependencies": {
+    "aphrodite": "^0.4.1",
     "babel": "^6.5.2",
     "bootstrap": "^3.3.6",
     "express": "^4.13.4",
@@ -41,6 +42,7 @@
     "radium": "^0.16.6",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
+    "react-loading": "0.0.9",
     "react-redux": "^4.0.4",
     "react-remarkable": "^1.1.1",
     "react-router": "^2.4.0",

@@ -60,7 +60,7 @@ app.use((req, res) => {
         store = configureStore(memoryHistory, state);
         const content = (
           <Provider store={store}>
-            <StyleRoot radiumConfig={{ userAgent: req.headers['user-agent'] }}>
+            <StyleRoot>
               <RouterContext {...renderProps} />
             </StyleRoot>
           </Provider>

@@ -1,0 +1,12 @@
+me:
+  build: .
+  environment:
+    SITE_TITLE: 'Lachlan Kermode' # defaults to 'My OpenSourceMe'
+    GITHUB_PATH: 'breezykermo/LachieKermode'
+    WEBSITE_FOLDER: 'Website' # defaults to 'Website'
+    BRANCH: 'master' # defaults to 'master'
+  ports:
+   - "3000:3000"
+  volumes:
+   - "./src:/app/src"
+  command: NODE_ENV="production" webpack-dev-server --progress
