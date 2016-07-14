@@ -1,6 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import multi from 'redux-multi';
 import { routerMiddleware } from 'react-router-redux';
 import reducer from './reducers/reducer';
 /**
@@ -18,7 +17,7 @@ export function configureStore(history, initialState) {
   }
 
   const createFinalStore = compose(
-    applyMiddleware(thunk, multi, routingMiddleware),
+    applyMiddleware(thunk, routingMiddleware),
     devTools
   )(createStore);
   const store = createFinalStore(reducer, initialState);
