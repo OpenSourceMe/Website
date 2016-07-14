@@ -1,8 +1,5 @@
 import { StyleSheet } from 'aphrodite';
 
-/**
- * Theme across website.
- */
 /** Globals */
 export const globals = {
   primaryColor: '#BEABF6',
@@ -11,8 +8,11 @@ export const globals = {
   bodyFamily: "'PT Serif', sans-serif",
 };
 
+
+/**
+ * Theme across website.
+ */
 const theme = StyleSheet.create({
-  ...globals,
   header: {
     fontSize: 40,
     lineHeight: '55px',
