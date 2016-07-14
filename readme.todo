@@ -10,6 +10,12 @@ Components
  - LoadingBar
  - MarkDown
  - Nav
+ - NotFound
+ - Frag
+ - Pieces/types
+ - Portfolio
+
+ RESUME - needs markdown rules....
 
 
 NB: I'm giving up Markdown style translation for the time being, and will rewrite a markdown component that accepts styles.

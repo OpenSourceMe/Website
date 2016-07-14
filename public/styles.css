@@ -2,3 +2,28 @@
 Google fonts -- should import in js, get rid of this completely
 *****/
 @import url(https://fonts.googleapis.com/css?family=Josefin+Slab);
+
+
+/* TODO: THIS IS A STRONG HACK. Need to create a Markdown component that accepts aphrodite styles. */
+body {
+  font-family: "PT Serif", sans-serif; /* globals.bodyFamily */
+  font-size: 20px;
+  line-height: 30px;
+}
+
+h3 {
+  font-size: 40px;
+  line-height: 55px;
+  font-family: "Josefin Slab", serif; /* globals.headerFamily */
+  text-align: right;
+}
+
+a {
+  cursor: pointer;
+  color: #9E85F6; /* globals.secondaryColor */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #BEABF6; /* globals.primaryColor */
+}

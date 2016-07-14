@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { configureStore } from './redux/store';
 import { browserHistory } from 'react-router';
-import { StyleRoot } from 'radium';
 import App from './App';
 
 /** Hydrate state from server, isomorphic render */
@@ -18,9 +17,7 @@ export const store = configureStore(browserHistory, state);
 
 ReactDOM.render(
   <Provider store={store}>
-    <StyleRoot radiumConfig={{ userAgent: navigator.userAgent }}>
-      <App />
-    </StyleRoot>
+    <App />
   </Provider>,
   document.querySelector('#app')
 );

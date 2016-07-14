@@ -16,8 +16,8 @@ const Footer = props => (
   <div className={`row ${css(styles.container)}`}>
     <br />
     <hr />
-    {[props.left, props.center, props.right].map(content => (
-      <div className={`col-md-4 text-center ${css(styles.item)}`}>
+    {[props.left, props.center, props.right].map((content, index) => (
+      <div key={index} className={`col-md-4 text-center ${css(styles.item)}`}>
         <Markdown options={{ html: true }} source={content} />
       </div>
     ))}

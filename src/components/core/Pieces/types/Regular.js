@@ -1,19 +1,14 @@
 import React, { PropTypes } from 'react';
 import Markdown from 'react-remarkable';
-import { Style } from 'radium';
-import { markdownRules } from '../../../../config/theme';
-
-const styles = {
-  container: {
-    paddingTop: '20px',
-  },
-};
 
 const Regular = (props) => (
-  <div style={styles.container}>
-    <h3>{props.title} <br /> <small>{props.date}</small></h3>
+  <div style={{ paddingTop: 20 }}>
+    <h3>
+      {props.title}
+      <br />
+      <small>{props.date}</small>
+    </h3>
     <hr/>
-    <Style rules={markdownRules} />
     <Markdown
       options={'full'}
       source={props.content}

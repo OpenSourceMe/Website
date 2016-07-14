@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
+import { StyleSheet, css } from 'aphrodite';
 
-const styles = {
+const styles = StyleSheet.create({
   work: {
     paddingBottom: '2em',
     margin: '4em',
@@ -8,12 +9,12 @@ const styles = {
   tag: {
     textAlign: 'center',
   },
-};
+});
 
 const Work = (props) => (
-  <div style={styles.work}>
+  <div className={css(styles.work)}>
     <h4><a href={props.link}>{props.title}</a></h4>
-    <div style={styles.tag}>
+    <div className={css(styles.tag)}>
       {props.tag}
     </div>
   </div>

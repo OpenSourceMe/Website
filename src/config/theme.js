@@ -28,23 +28,4 @@ const theme = StyleSheet.create({
   },
 });
 
-export const markdownRules = {
-  h3: {
-    ...theme.header,
-    textAlign: 'right',
-  },
-  a: {
-    ...theme.link,
-  },
-  'a:hover': {
-    ...theme.link[':hover'], // no deep merging in spread syntax
-    textDecoration: 'none',
-  },
-  body: {
-    fontFamily: globals.bodyFamily,
-    fontSize: '20px',
-    lineHeight: '30px',
-  },
-};
-
 export default theme;

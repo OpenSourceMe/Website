@@ -5,14 +5,8 @@ import { routerActions } from 'react-router-redux';
 import createFrag from './createFrag';
 import sortByDate from './sortByDate';
 
-const styles = {
-  center: {
-    textAlign: 'center',
-  },
-};
-
 const Pieces = (props) => (
-  <div style={styles.center}>
+  <div style={{ textAlign: 'center' }}>
     {sortByDate(props.posts).map((post, index) => {
       const onFragClick = () => {
         const name = post.title.replace(/\s+/g, '-').toLowerCase();
