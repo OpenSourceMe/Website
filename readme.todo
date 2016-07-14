@@ -1,21 +1,6 @@
 APHRODITE PROGRESS
 
-Global
--------
-
-
-Components
-----------
- - Footer
- - LoadingBar
- - MarkDown
- - Nav
- - NotFound
- - Frag
- - Pieces/types
- - Portfolio
-
  RESUME - needs markdown rules....
-
-
 NB: I'm giving up Markdown style translation for the time being, and will rewrite a markdown component that accepts styles.
+
+Currently breaks down @ resume, for some prop related reason....

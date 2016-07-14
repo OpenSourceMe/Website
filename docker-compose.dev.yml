@@ -9,4 +9,3 @@ me:
    - "3000:3000"
   volumes:
    - "./src:/app/src"
-  command: NODE_ENV="production" webpack-dev-server --progress

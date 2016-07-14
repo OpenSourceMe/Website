@@ -1,5 +1,7 @@
-import globalTheme from '../../../config/theme';
+// import globalTheme from '../../../config/theme';
 
+// NB: Resume uses inline styling w/o Radium, therefore no point in changing.
+// It is just here where we need to find a fix, in the Markdown.
 export default {
   mainColor: '#BB83FF',
   highlightColor: '#D4D4D4',
@@ -7,7 +9,7 @@ export default {
   backgroundColor: '#EBEBEB',
   markdownRules: {
     'h2, h3': {
-      ...globalTheme.header,
+      // ...globalTheme.header,
       fontSize: 20,
       textAlign: 'center',
       padding: '0',
@@ -17,10 +19,10 @@ export default {
       fontSize: 16,
     },
     a: {
-      ...globalTheme.link,
+      // ...globalTheme.link,
     },
     'a:hover': {
-      ...globalTheme.link[':hover'], // no deep merging in spread syntax
+      // ...globalTheme.link[':hover'], // no deep merging in spread syntax
       textDecoration: 'none',
     },
   },
