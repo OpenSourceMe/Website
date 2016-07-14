@@ -1,19 +1,12 @@
 import React from 'react';
 import Loading from 'react-loading';
+import { css } from 'aphrodite';
 import { globals } from '../../../config/theme';
+import styles from '../../../common/styles';
 
 const LoadingBar = () => (
-  <div
-    style={{
-      display: 'flex',
-      height: '100vh',
-      borderRadius: 5000,
-      justifyContent: 'center',
-      alignItems: 'center',
-    }}
-  >
+  <div className={css(styles.fullScreen, styles.flexCenter)}>
     <Loading
-      style={{ height: 200, width: 200 }}
       type="bars"
       color={globals.secondaryColor}
     />

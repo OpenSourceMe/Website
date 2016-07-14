@@ -1,2 +1,1 @@
-import MarkDown from './MarkDown';
-export default MarkDown;
+export { default } from './MarkDown';

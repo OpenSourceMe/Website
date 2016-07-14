@@ -1,6 +1,6 @@
-import theme from '../../../config/theme';
+import { StyleSheet } from 'aphrodite';
 
-export default {
+export default StyleSheet.create({
   nav: {
     padding: 20,
     margin: 10,
@@ -8,8 +8,6 @@ export default {
     width: '100%',
   },
   navHead: {
-    ...theme.header,
-    ...theme.link,
     margin: 15,
   },
   pagesContainer: {
@@ -24,8 +22,6 @@ export default {
   },
   page: {
     flex: 1,
-    ...theme.header,
-    ...theme.link,
     fontSize: 24,
   },
-};
+});

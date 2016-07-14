@@ -1,3 +1,5 @@
+import { StyleSheet } from 'aphrodite';
+
 /**
  * Theme across website.
  */
@@ -9,7 +11,7 @@ export const globals = {
   bodyFamily: "'PT Serif', sans-serif",
 };
 
-const theme = {
+const theme = StyleSheet.create({
   ...globals,
   header: {
     fontSize: 40,
@@ -24,7 +26,7 @@ const theme = {
       color: globals.primaryColor,
     },
   },
-};
+});
 
 export const markdownRules = {
   h3: {

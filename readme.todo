@@ -1,6 +1,15 @@
------ editing layout at the moment, trying to get requires working
--- NotFound needs to read message from github
--- footer info needs to come from github as well
----- need to write assertion tests for the data that is coming from github (REALLY IMPORTANT, as fetches from the wrong url will case website to completely break)
-- test suite should be more comprehensive (as always)
-- refactor README for OpenSourceMe speak
+APHRODITE PROGRESS
+
+Global
+-------
+
+
+Components
+----------
+ - Footer
+ - LoadingBar
+ - MarkDown
+ - Nav
+
+
+NB: I'm giving up Markdown style translation for the time being, and will rewrite a markdown component that accepts styles.

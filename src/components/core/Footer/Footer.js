@@ -1,9 +1,8 @@
 import React, { PropTypes } from 'react';
+import { StyleSheet, css } from 'aphrodite';
 import Markdown from 'react-remarkable';
-import { markdownRules } from '../../../config/theme';
-import { Style } from 'radium';
 
-const styles = {
+const styles = StyleSheet.create({
   container: {
     marginTop: '2em',
     marginBottom: '5em',
@@ -11,22 +10,17 @@ const styles = {
   item: {
     paddingTop: '2em',
   },
-};
+});
 
 const Footer = props => (
-  <div className="row" style={styles.container}>
+  <div className={`row ${css(styles.container)}`}>
     <br />
     <hr />
-    <Style rules={markdownRules} />
-    <div style={styles.item} className="col-md-4 text-center">
-      <Markdown options={{ html: true }} source={props.left} />
-    </div>
-    <div style={styles.item} className="col-md-4 text-center">
-      <Markdown options={{ html: true }} source={props.center} />
-    </div>
-    <div style={styles.item} className="col-md-4 text-center">
-      <Markdown options={{ html: true }} source={props.right} />
-    </div>
+    {[props.left, props.center, props.right].map(content => (
+      <div className={`col-md-4 text-center ${css(styles.item)}`}>
+        <Markdown options={{ html: true }} source={content} />
+      </div>
+    ))}
   </div>
 );
 Footer.propTypes = {

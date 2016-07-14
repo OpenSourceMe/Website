@@ -1,19 +1,12 @@
 import React, { PropTypes } from 'react';
 import Markdown from 'react-remarkable';
-import theme, { markdownRules } from '../../../config/theme';
-import { Style } from 'radium';
-
-const styles = {
-  body: {
-    maxWidth: '80%',
-  },
-};
+import { css } from 'aphrodite';
+import theme from '../../../config/theme';
 
 const MarkDown = (props) => (
-  <div className="container" style={styles.body}>
-    <h3 style={theme.header}>{props.title}</h3>
+  <div className="container">
+    <h3 className={css(theme.header)}>{props.title}</h3>
     <hr />
-    <Style rules={markdownRules} />
     <Markdown
       options={{ html: true }}
       source={props.content}
