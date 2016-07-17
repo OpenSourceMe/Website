@@ -8,7 +8,7 @@ import { store } from './index';
 const App = () => {
   const history = syncHistoryWithStore(browserHistory, store);
   return (
-    <Router history={history} routes={routes} />
+    <Router history={history} routes={routes} onUpdate={() => window.scrollTo(0, 0)} />
   );
 };
 

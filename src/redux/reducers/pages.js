@@ -1,5 +1,6 @@
 let initialState = {};
 if (process.env.NODE_ENV === 'development') {
+  // initialState = require('../../config/development/falseState').pages
   initialState = [
     {
       title: 'Page 1',
